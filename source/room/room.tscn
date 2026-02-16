@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcc1thb5d1bl8"]
+
+[ext_resource type="PackedScene" uid="uid://52b8d2sfi07d" path="res://source/sections/prototype/proto_a_1.tscn" id="1_a5ckb"]
+[ext_resource type="PackedScene" uid="uid://lyrwr44mckqk" path="res://source/sections/prototype/proto_a_2.tscn" id="2_f2a3q"]
+[ext_resource type="PackedScene" uid="uid://ewd3bdmrocri" path="res://source/sections/prototype/proto_a_3.tscn" id="3_5xmys"]
+[ext_resource type="PackedScene" uid="uid://bltbuvvsiddny" path="res://source/sections/prototype/proto_a_4.tscn" id="4_tlaby"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="5_f2a3q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skmkw"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Room" type="Node3D"]
+
+[node name="Center" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_skmkw")
+size = Vector3(1, 0.1, 1)
+
+[node name="Hall_1" type="Node3D" parent="Center"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6983496, 0, 0.9716984)
+
+[node name="ProtoA1" parent="Center/Hall_1" instance=ExtResource("1_a5ckb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23661733, 0, 0)
+
+[node name="Hall_2" type="Node3D" parent="Center"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.57038224, 0, 1.7246337)
+
+[node name="ProtoA2" parent="Center/Hall_2" instance=ExtResource("2_f2a3q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24739099, 0, 0.46082872)
+
+[node name="Hall_3" type="Node3D" parent="Center"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.3148607, 0, -0.52871037)
+
+[node name="ProtoA3" parent="Center/Hall_3" instance=ExtResource("3_5xmys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70682514, 0, 0.495458)
+
+[node name="Hall_4" type="Node3D" parent="Center"]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -0.94290316, 0, -1.276085)
+
+[node name="ProtoA4" parent="Center/Hall_4" instance=ExtResource("4_tlaby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7500564, 0, -0.00583601)
+
+[node name="ProtoController" parent="." instance=ExtResource("5_f2a3q")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.9209529, 0, -0.5029979)
+input_left = "ui_left"
+input_right = "ui_right"
+input_forward = "ui_up"
+input_back = "ui_down"
