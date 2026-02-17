@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg1ah23vqw44r"]
+
+[ext_resource type="Script" uid="uid://5gxm6rgctq4j" path="res://source/props/key_item.gd" id="1_3gwuh"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8ky8m"]
+radius = 0.1
+height = 0.3
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ky8m"]
+radius = 0.10888672
+height = 0.3154297
+
+[node name="KeyItem" type="Node3D"]
+script = ExtResource("1_3gwuh")
+
+[node name="Item" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_8ky8m")
+
+[node name="Detector" type="Area3D" parent="."]
+
+[node name="Collision" type="CollisionShape3D" parent="Detector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0017089844, 0)
+shape = SubResource("CapsuleShape3D_8ky8m")

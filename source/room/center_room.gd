@@ -7,14 +7,6 @@ var spots: Array[Node3D] = []
 func _ready() -> void:
 	EventBusSingleton.on_event.connect(_on_event)
 	_load_spots()
-	get_tree().create_timer(2.0).timeout.connect(func(): EventBusSingleton.send_event(MoveToNextSpotEvent.new()))
-	get_tree().create_timer(2.0*3).timeout.connect(func(): EventBusSingleton.send_event(MoveToNextSpotEvent.new()))
-	get_tree().create_timer(2.0*6).timeout.connect(func(): EventBusSingleton.send_event(MoveToNextSpotEvent.new()))
-	get_tree().create_timer(2.0*9).timeout.connect(func(): EventBusSingleton.send_event(MoveToNextSpotEvent.new()))
-	get_tree().create_timer(2.0*12).timeout.connect(func(): EventBusSingleton.send_event(MoveToNextSpotEvent.new()))
-	get_tree().create_timer(2.0*15).timeout.connect(func(): EventBusSingleton.send_event(MoveToNextSpotEvent.new()))
-	get_tree().create_timer(2.0*18).timeout.connect(func(): EventBusSingleton.send_event(MoveToNextSpotEvent.new()))
-	get_tree().create_timer(2.0*21).timeout.connect(func(): EventBusSingleton.send_event(MoveToNextSpotEvent.new()))
 
 func _load_spots() -> void:
 	for section in get_children():

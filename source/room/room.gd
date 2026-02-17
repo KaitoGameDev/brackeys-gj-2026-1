@@ -14,7 +14,12 @@ func _ready() -> void:
 	EventBusSingleton.on_event.connect(_on_event)
 	
 func _on_event(event: Object) -> void:
+	if event is MoveToNextSpotEvent: return _on_move_to_next_spot()
 	if event is PlayerEndMovementEvent: return _on_playern_movement_end()
+	
+func _on_move_to_next_spot() -> void:
+	if _current_hall == 3:
+		EventBusSingleton.send_event(PlayerChangedFloorEvent.new())
 	
 func _on_playern_movement_end() -> void:
 	if sections.size() == 0: return
