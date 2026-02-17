@@ -38,12 +38,26 @@ var freeflying: bool = false
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var collider: CollisionShape3D = $Collider
+@onready var animator: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
 	check_input_mappings()
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
+	GlobalElements.player = self
+	EventBusSingleton.on_event.connect(_on_event)
+
+
+func _on_event(event: Object) -> void:
+	if event is MoveToNextSpotEvent: return _on_move()
+	if event is PlayerEndMovementEvent: return _on_end_movement()
+	
+func _on_move() -> void:
+	animator.play("walking")
+	
+func _on_end_movement() -> void:
+	animator.play("idle")
 
 
 func _unhandled_input(event: InputEvent) -> void:
