@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://btowpe3pof064"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqhre"]
+albedo_color = Color(0.6392157, 0.70980394, 1, 1)
+
+[node name="ProtoA4" type="Node3D"]
+
+[node name="Floor" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_aqhre")
+use_collision = true
+collision_layer = 512
+size = Vector3(2, 0.1, 4)
+
+[node name="player_spot" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+radius = 0.1
+
+[node name="Label" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, 1.5)
+pixel_size = 0.01
+text = "D4"

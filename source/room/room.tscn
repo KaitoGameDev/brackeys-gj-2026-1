@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dcc1thb5d1bl8"]
+[gd_scene load_steps=26 format=3 uid="uid://dcc1thb5d1bl8"]
 
 [ext_resource type="Script" uid="uid://bxwqxnnxepbuy" path="res://source/room/center_room.gd" id="1_5xmys"]
 [ext_resource type="PackedScene" uid="uid://52b8d2sfi07d" path="res://source/sections/prototype/proto_a_1.tscn" id="1_a5ckb"]
@@ -11,6 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://bltbuvvsiddny" path="res://source/sections/prototype/proto_a_4.tscn" id="4_tlaby"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="5_f2a3q"]
 [ext_resource type="PackedScene" uid="uid://dt2gdcuf063fs" path="res://source/sections/prototype/proto_b_4.tscn" id="5_p1a1p"]
+[ext_resource type="PackedScene" uid="uid://egp4qiunr7we" path="res://source/sections/prototype/proto_c_1.tscn" id="6_sgtef"]
+[ext_resource type="PackedScene" uid="uid://t3d0efu0iffw" path="res://source/sections/prototype/proto_c_2.tscn" id="7_t1ay8"]
+[ext_resource type="PackedScene" uid="uid://b1d542srjm7p5" path="res://source/sections/prototype/proto_c_3.tscn" id="8_8ckvx"]
+[ext_resource type="PackedScene" uid="uid://b5s1byoa42mkb" path="res://source/sections/prototype/proto_c_4.tscn" id="9_e3gco"]
+[ext_resource type="PackedScene" uid="uid://cegbj2epl8bwf" path="res://source/sections/prototype/proto_d_1.tscn" id="10_hvm5k"]
+[ext_resource type="PackedScene" uid="uid://wtbyiy60vg7s" path="res://source/sections/prototype/proto_d_2.tscn" id="11_k10tv"]
+[ext_resource type="PackedScene" uid="uid://84fdswhbv20g" path="res://source/sections/prototype/proto_d_3.tscn" id="12_ija0u"]
+[ext_resource type="PackedScene" uid="uid://btowpe3pof064" path="res://source/sections/prototype/proto_d_4.tscn" id="13_2dm64"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2a3q"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -37,7 +45,7 @@ size = Vector2(2, 6.03)
 
 [node name="Room" type="Node3D"]
 script = ExtResource("1_tlaby")
-sections = Array[PackedScene]([ExtResource("2_uon0k"), ExtResource("3_vxkmb"), ExtResource("4_ockle"), ExtResource("5_p1a1p")])
+sections = Array[PackedScene]([ExtResource("2_uon0k"), ExtResource("3_vxkmb"), ExtResource("4_ockle"), ExtResource("5_p1a1p"), ExtResource("6_sgtef"), ExtResource("7_t1ay8"), ExtResource("8_8ckvx"), ExtResource("9_e3gco"), ExtResource("10_hvm5k"), ExtResource("11_k10tv"), ExtResource("12_ija0u"), ExtResource("13_2dm64")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tlaby")
