@@ -36,9 +36,9 @@ workflows:
     jobs:
       - authorize-workflow:
           type: approval
-        filters:
-          <<: *filter-master
+          filters:
+            <<: *filter-master
 
       - build-and-publish:
-        filters:
-          <<: *filter-master
+          filters:
+            <<: *filter-master
