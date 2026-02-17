@@ -1,0 +1,38 @@
+[gd_resource type="VisualShader" load_steps=3 format=3 uid="uid://bfxqg2g41n4l5"]
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_5s7gl"]
+parameter_name = "Disolver_Texture"
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_deyui"]
+expanded_output_ports = [0]
+source = 5
+texture_type = 1
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, depth_test_default, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform sampler2D Disolver_Texture : source_color;
+
+
+
+void vertex() {
+	vec4 n_out3p0;
+// Texture2D:3
+	n_out3p0 = texture(Disolver_Texture, UV);
+	float n_out3p1 = n_out3p0.r;
+
+
+// Output:0
+	COLOR.rgb = vec3(n_out3p1);
+
+
+}
+"
+nodes/vertex/0/position = Vector2(1280, 160)
+nodes/vertex/2/node = SubResource("VisualShaderNodeTexture2DParameter_5s7gl")
+nodes/vertex/2/position = Vector2(-60, 140)
+nodes/vertex/3/node = SubResource("VisualShaderNodeTexture_deyui")
+nodes/vertex/3/position = Vector2(680, 240)
+nodes/vertex/connections = PackedInt32Array(2, 0, 3, 2, 3, 1, 0, 6)

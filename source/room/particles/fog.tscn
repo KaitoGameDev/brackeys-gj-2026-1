@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm2tl2lfjxjwr"]
+
+[ext_resource type="ArrayMesh" uid="uid://dq5dcixygespq" path="res://assets/materials/static_mesh_cloud.obj" id="1_njng6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njng6"]
+albedo_color = Color(0.85821766, 0.85821784, 0.8582178, 0)
+
+[sub_resource type="Curve" id="Curve_o8a1c"]
+_data = [Vector2(0.014652029, 0.41650975), 0.0, 0.0, 0, 0, Vector2(0.8021979, 0.8000628), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_m8p1y"]
+width = 128
+curve = SubResource("Curve_o8a1c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_umba3"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.5
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(-0.3, 1, 0)
+spread = 0.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+orbit_velocity_min = 0.5000001
+orbit_velocity_max = 0.5000001
+gravity = Vector3(0, 0, 0)
+scale_max = 1.1999999
+scale_curve = SubResource("CurveTexture_m8p1y")
+
+[node name="Fog" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_njng6")
+amount = 10
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_umba3")
+draw_pass_1 = ExtResource("1_njng6")

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdc0o1atpw863"
-path.s3tc="res://.godot/imported/noise.jpg-6cc8d00e447ec838f8972e604f12a6bb.s3tc.ctex"
+uid="uid://b7lc4oetyvunn"
+path.s3tc="res://.godot/imported/T_PerlinNoise_Tiled11_inv.png-f75c28cc14be1e1d8b21828b7c640117.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/shaders_elements/noise.jpg"
-dest_files=["res://.godot/imported/noise.jpg-6cc8d00e447ec838f8972e604f12a6bb.s3tc.ctex"]
+source_file="res://assets/shaders_elements/T_PerlinNoise_Tiled11_inv.png"
+dest_files=["res://.godot/imported/T_PerlinNoise_Tiled11_inv.png-f75c28cc14be1e1d8b21828b7c640117.s3tc.ctex"]
 
 [params]
 
