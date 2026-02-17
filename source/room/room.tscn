@@ -158,6 +158,9 @@ mesh = SubResource("PlaneMesh_uon0k")
 [node name="KeyItem" parent="." instance=ExtResource("20_t1ay8")]
 transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, -2.1031384, 0.2999997, 0.95888937)
 
+[node name="KeyItem5" parent="." instance=ExtResource("20_t1ay8")]
+transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, -2.1031384, 0.2999997, 1.83084)
+
 [node name="KeyItem2" parent="." instance=ExtResource("20_t1ay8")]
 transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, 1.5390034, 0.2999997, 2.0761197)
 
