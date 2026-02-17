@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsbvt2nfklkcf"]
+
+[ext_resource type="Shader" uid="uid://bkommyp2eprt8" path="res://source/room/room.gdshader" id="1_yhwlu"]
+[ext_resource type="Texture2D" uid="uid://cdc0o1atpw863" path="res://assets/shaders_elements/noise.jpg" id="2_yjlvc"]
+[ext_resource type="Script" uid="uid://dndm2juf275js" path="res://source/creature/sanity_filter.gd" id="3_yjlvc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ija0u"]
+shader = ExtResource("1_yhwlu")
+shader_parameter/noise = ExtResource("2_yjlvc")
+shader_parameter/slow = 20.0
+shader_parameter/multiplier = 0.0
+shader_parameter/contrast = 15.0
+
+[node name="SanityFilter" type="ColorRect"]
+material = SubResource("ShaderMaterial_ija0u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_yjlvc")
+shader = SubResource("ShaderMaterial_ija0u")

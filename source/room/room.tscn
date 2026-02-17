@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dcc1thb5d1bl8"]
+[gd_scene load_steps=32 format=3 uid="uid://dcc1thb5d1bl8"]
 
 [ext_resource type="Script" uid="uid://bxwqxnnxepbuy" path="res://source/room/center_room.gd" id="1_5xmys"]
 [ext_resource type="PackedScene" uid="uid://52b8d2sfi07d" path="res://source/sections/prototype/proto_a_1.tscn" id="1_a5ckb"]
@@ -23,6 +23,8 @@
 [ext_resource type="AudioStream" uid="uid://d1o2nm3mxqsgn" path="res://assets/audio/dungeon_loop.mp3" id="15_hvm5k"]
 [ext_resource type="AudioStream" uid="uid://0gx8rb2sh576" path="res://assets/audio/forest_loop.mp3" id="16_k10tv"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="20_t1ay8"]
+[ext_resource type="PackedScene" uid="uid://cbj12sjnq5onk" path="res://source/creature/creature.tscn" id="24_k10tv"]
+[ext_resource type="PackedScene" uid="uid://dsbvt2nfklkcf" path="res://source/creature/sanity_filter.tscn" id="25_ija0u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2a3q"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -111,6 +113,9 @@ input_right = "ui_right"
 input_forward = "ui_up"
 input_back = "ui_down"
 
+[node name="Creature" parent="player_pivot" instance=ExtResource("24_k10tv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8523662, 0.63756645, -1.7538409)
+
 [node name="Walls" type="Node3D" parent="."]
 
 [node name="InnerWall1" type="MeshInstance3D" parent="Walls"]
@@ -156,3 +161,16 @@ transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0,
 
 [node name="KeyItem4" parent="." instance=ExtResource("20_t1ay8")]
 transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, -1.9369516, 0.2999997, -1.9872549)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SanityFilter" parent="Control" instance=ExtResource("25_ija0u")]
+layout_mode = 1
+mouse_filter = 2

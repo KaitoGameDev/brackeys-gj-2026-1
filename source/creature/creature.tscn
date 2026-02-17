@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbj12sjnq5onk"]
+
+[ext_resource type="Script" uid="uid://dhb8nhocl4ja6" path="res://source/creature/creature.gd" id="1_dkhfh"]
+[ext_resource type="Texture2D" uid="uid://csmvgnp8bleaw" path="res://assets/sprites/ghost_creature.png" id="1_x1nkw"]
+[ext_resource type="AudioStream" uid="uid://bvflpapdqnrh5" path="res://assets/audio/creature_approach.ogg" id="2_sm6sn"]
+
+[node name="Creature" type="Node3D"]
+script = ExtResource("1_dkhfh")
+approach_sound = ExtResource("2_sm6sn")
+time_seg = 20.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Creature"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0, 0)
+texture = ExtResource("1_x1nkw")
