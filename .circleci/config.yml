@@ -40,5 +40,7 @@ workflows:
             <<: *filter-master
 
       - build-and-publish:
+          requires:
+            - authorize-workflow
           filters:
             <<: *filter-master
