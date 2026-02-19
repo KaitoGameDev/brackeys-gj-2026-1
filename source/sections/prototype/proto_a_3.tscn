@@ -1,4 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ewd3bdmrocri"]
+[gd_scene load_steps=8 format=3 uid="uid://ewd3bdmrocri"]
+
+[ext_resource type="ArrayMesh" uid="uid://ftjmhiffg853" path="res://assets/synty_models/dungeon/SM_Env_Tiles_01.res" id="1_qokkb"]
+[ext_resource type="ArrayMesh" uid="uid://ug277yuqby0u" path="res://assets/synty_models/dungeon/SM_Env_Wall_Trim_Edge_01.res" id="2_iiy03"]
+[ext_resource type="ArrayMesh" uid="uid://rhufdtkykgb4" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_Coner_Outer_01.res" id="3_5j64m"]
+[ext_resource type="ArrayMesh" path="res://assets/synty_models/dungeon/SM_Env_Wall_01.res" id="4_tppmx"]
+[ext_resource type="ArrayMesh" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_Coner_Inner_01.res" id="5_h4rdo"]
+[ext_resource type="ArrayMesh" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_01.res" id="6_iiy03"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fs332"]
 albedo_color = Color(1, 1, 0, 1)
@@ -6,6 +13,7 @@ albedo_color = Color(1, 1, 0, 1)
 [node name="ProtoA3" type="Node3D"]
 
 [node name="Floor" type="CSGBox3D" parent="."]
+visible = false
 material_override = SubResource("StandardMaterial3D_fs332")
 use_collision = true
 collision_layer = 512
@@ -19,3 +27,55 @@ radius = 0.1
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, 1.5)
 pixel_size = 0.01
 text = "A3"
+
+[node name="SmEnvTiles01" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.400689, 0, 0, 0, 0.25, 0, 0, 0, 0.400689, -1.0003018, 0.0022714846, -1.9975804)
+mesh = ExtResource("1_qokkb")
+
+[node name="SmEnvTiles02" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.400689, 0, 0, 0, 0.25, 0, 0, 0, 0.400689, -1.0003018, 0.0022714846, 0.008268118)
+mesh = ExtResource("1_qokkb")
+
+[node name="SmEnvWallTrimEdge03" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.98040485, 0, 0.0034633875)
+mesh = ExtResource("2_iiy03")
+
+[node name="SmEnvWallTrimEdge05" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.7528267e-08, 0, -0.401, 0, 0.401, 0, 0.401, 0, -1.7528267e-08, 0.95605505, 0, -1.9983478)
+mesh = ExtResource("2_iiy03")
+
+[node name="SmEnvWallTrimEdge04" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.9809917, 0, 2.0057192)
+mesh = ExtResource("2_iiy03")
+
+[node name="SmEnvWallEndConerOuter01" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.752827e-08, 0, -0.40100008, 0, 0.40100005, 0, 0.40100008, 0, -1.752827e-08, 0.87959605, 0, 0.042765915)
+mesh = ExtResource("3_5j64m")
+
+[node name="SmEnvWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.7528267e-08, 0, -0.401, 0, 0.401, 0, 0.401, 0, -1.7528267e-08, 0.93095225, 4.7683716e-07, -1.953244)
+mesh = ExtResource("4_tppmx")
+
+[node name="SmEnvWall02" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.9583879, 4.7683716e-07, 0.046187997)
+mesh = ExtResource("4_tppmx")
+
+[node name="SmEnvWall03" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.9583879, 4.7683716e-07, 1.9466134)
+mesh = ExtResource("4_tppmx")
+
+[node name="SmEnvWallTrimEdge06" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.40099996, 0, -3.505653e-08, 0, 0.401, 0, 3.505653e-08, 0, -0.40099996, 0.9977921, 0, 1.9958388)
+mesh = ExtResource("2_iiy03")
+
+[node name="SmEnvWall04" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.40099996, 0, -3.505653e-08, 0, 0.401, 0, 3.505653e-08, 0, -0.40099996, 0.94823, 4.7683716e-07, 1.9564939)
+mesh = ExtResource("4_tppmx")
+
+[node name="SmEnvWallEndConerInner01" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.7528265e-08, 0, -0.40099996, 0, 0.401, 0, 0.40099996, 0, -1.7528265e-08, -0.7582654, 0, 1.8079278)
+mesh = ExtResource("5_h4rdo")
+
+[node name="SmEnvWallEnd01" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.40100002, 0, 3.5056534e-08, 0, 0.401, 0, -3.5056534e-08, 0, -0.40100002, 0.87179554, 0, 1.9425838)
+mesh = ExtResource("6_iiy03")

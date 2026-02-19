@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf6eu6dtek55k"]
+
+[ext_resource type="ArrayMesh" uid="uid://k11hqv6cp3ns" path="res://assets/synty_models/dungeon/SM_Env_Wall_Round_01.res" id="1_c3q6h"]
+[ext_resource type="ArrayMesh" uid="uid://bmrl8qs28duk8" path="res://assets/synty_models/dungeon/SM_Env_DoorDouble_Round_01.res" id="2_4nh4e"]
+[ext_resource type="ArrayMesh" uid="uid://3a0kim1myxq6" path="res://assets/synty_models/dungeon/SM_Env_DoorDouble_Round_02.res" id="3_ki7g3"]
+[ext_resource type="ArrayMesh" uid="uid://dsf840t1sbjxl" path="res://assets/synty_models/dungeon/SM_Env_Door_Frame_Round_02.res" id="4_87fqi"]
+[ext_resource type="PackedScene" uid="uid://bpctyjxcdnqvq" path="res://assets/synty_models/forest/SM_Rock_Cluster_Large_01.fbx" id="5_011lv"]
+
+[node name="Tower" type="MeshInstance3D"]
+gi_mode = 2
+
+[node name="SmEnvWallRound01" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.4679759, 0, 0, 0, 2.5653422, 0, 0, 0, 2.5268772, 0, 0, 0)
+mesh = ExtResource("1_c3q6h")
+
+[node name="SmEnvWallRound02" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.94198567, 0, 2.335575, 0, 2.5653422, 0, -2.281133, 0, 0.9644673, 0, 12.645185, 0)
+mesh = ExtResource("1_c3q6h")
+
+[node name="SmEnvWallRound03" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.94198567, 0, 2.335575, 0, 2.5653422, 0, -2.281133, 0, 0.9644673, 0, 25.197325, 0)
+mesh = ExtResource("1_c3q6h")
+
+[node name="SmEnvDoorDoubleRound01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3423121, 0.19840467, -6.5378895)
+mesh = ExtResource("2_4nh4e")
+
+[node name="SmEnvDoorDoubleRound02" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2975395, 0.19840467, -6.5378895)
+mesh = ExtResource("3_ki7g3")
+
+[node name="SmEnvDoorFrameRound03" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19840467, -6.334858)
+mesh = ExtResource("4_87fqi")
+
+[node name="SM_Rock_Cluster_Large_01" parent="." instance=ExtResource("5_011lv")]
+transform = Transform3D(-9.999999, -4.3711393e-07, 7.5710346e-07, -3.7229522e-09, 8.681468, 4.9630747, -8.742199e-07, 4.9630747, -8.681468, -8.909233, -72.94503, -57.94347)

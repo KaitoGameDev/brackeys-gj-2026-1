@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbuv3wsbxxbva"]
+
+[ext_resource type="PackedScene" uid="uid://djh5ipeckli08" path="res://assets/synty_models/forest/SM_Plant_Bush_03.fbx" id="1_wlf77"]
+[ext_resource type="Texture2D" uid="uid://7av54147da66" path="res://assets/synty_models/forest/PolygonNature_01.png" id="2_m7wxr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvvt0"]
+albedo_color = Color(0.84313726, 1, 0.57254905, 1)
+albedo_texture = ExtResource("2_m7wxr")
+
+[node name="SM_Plant_Bush_03" instance=ExtResource("1_wlf77")]
+
+[node name="SM_Plant_Bush_03" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jvvt0")

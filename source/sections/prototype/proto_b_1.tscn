@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdphkxwfbo68"]
+[gd_scene load_steps=5 format=3 uid="uid://cdphkxwfbo68"]
+
+[ext_resource type="PackedScene" uid="uid://dbuv3wsbxxbva" path="res://source/props/forest/sm_plant_bush_03.tscn" id="1_al66w"]
+[ext_resource type="PackedScene" uid="uid://cafscxjxgqy35" path="res://source/props/forest/sm_plant_bush_01.tscn" id="3_4iwcf"]
+[ext_resource type="PackedScene" uid="uid://dpgyocg3q842w" path="res://source/props/forest/sm_plant_bush_02.tscn" id="3_8du50"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax22t"]
-albedo_color = Color(0, 0.34117648, 1, 1)
+albedo_color = Color(2.5509298e-06, 0.5714641, 0.24784881, 1)
 
 [node name="ProtoA1" type="Node3D"]
 
@@ -19,3 +23,21 @@ radius = 0.1
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, 1.5)
 pixel_size = 0.01
 text = "B1"
+
+[node name="SM_Plant_Bush_08" parent="." instance=ExtResource("1_al66w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3791224, -0.07909924, -1.2897497)
+
+[node name="SM_Plant_Bush_07" parent="." instance=ExtResource("1_al66w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0404304, -0.07909924, 1.8072248)
+
+[node name="SM_Plant_Bush_03" parent="." instance=ExtResource("3_8du50")]
+transform = Transform3D(0.38144153, 0, 0.92439294, 0, 1, 0, -0.92439294, 0, 0.38144153, 1.0565126, -0.12705636, -0.067453444)
+
+[node name="SM_Plant_Bush_05" parent="." instance=ExtResource("3_8du50")]
+transform = Transform3D(0.38144153, 0, 0.92439294, 0, 1, 0, -0.92439294, 0, 0.38144153, 0.28479195, -0.16902733, 2.3418982)
+
+[node name="SM_Plant_Bush_04" parent="." instance=ExtResource("3_8du50")]
+transform = Transform3D(0.38144153, 0, 0.92439294, 0, 1, 0, -0.92439294, 0, 0.38144153, -1.235748, -0.12705636, 0.16439748)
+
+[node name="SM_Plant_Bush_02" parent="." instance=ExtResource("3_4iwcf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9283272, 0.049999952, -1.3182832)
