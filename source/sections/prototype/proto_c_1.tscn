@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://egp4qiunr7we"]
+[gd_scene load_steps=3 format=3 uid="uid://egp4qiunr7we"]
+
+[ext_resource type="PackedScene" uid="uid://dsf10vwd7ffyk" path="res://assets/synty_models/nightmare/gate.glb" id="1_f2ndt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax22t"]
-albedo_color = Color(0.80784315, 0.34117648, 0, 1)
+transparency = 1
+albedo_color = Color(0.80784315, 0.34117648, 0, 0.5529412)
 
 [node name="ProtoA1" type="Node3D"]
 
 [node name="Floor" type="CSGBox3D" parent="."]
+visible = false
 material_override = SubResource("StandardMaterial3D_ax22t")
 use_collision = true
 collision_layer = 512
@@ -19,3 +23,9 @@ radius = 0.1
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, 1.5)
 pixel_size = 0.01
 text = "C1"
+
+[node name="gate2" parent="." instance=ExtResource("1_f2ndt")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, 0.46421546)
+
+[node name="gate8" parent="." instance=ExtResource("1_f2ndt")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, -1.0357845)
