@@ -1,15 +1,35 @@
-[gd_scene load_steps=8 format=3 uid="uid://52b8d2sfi07d"]
+[gd_scene load_steps=16 format=3 uid="uid://52b8d2sfi07d"]
 
-[ext_resource type="ArrayMesh" path="res://assets/synty_models/dungeon/SM_Env_Tiles_01.res" id="1_sdroo"]
-[ext_resource type="ArrayMesh" path="res://assets/synty_models/dungeon/SM_Env_Wall_Trim_Edge_01.res" id="2_j8p23"]
-[ext_resource type="ArrayMesh" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_Coner_Outer_01.res" id="3_n8d8v"]
+[ext_resource type="ArrayMesh" uid="uid://cwshth0e6v8kv" path="res://assets/synty_models/dungeon/SM_Env_Tiles_01.res" id="1_sdroo"]
+[ext_resource type="ArrayMesh" uid="uid://cf7iwm65a42u6" path="res://assets/synty_models/dungeon/SM_Env_Wall_Trim_Edge_01.res" id="2_j8p23"]
+[ext_resource type="ArrayMesh" uid="uid://cxcnc2qxyyttf" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_Coner_Outer_01.res" id="3_n8d8v"]
 [ext_resource type="ArrayMesh" uid="uid://s06ovcm181je" path="res://assets/synty_models/dungeon/SM_Env_Wall_01.res" id="4_3gw2s"]
 [ext_resource type="ArrayMesh" uid="uid://w58vvtk2mtnw" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_Coner_Inner_01.res" id="5_3gw2s"]
 [ext_resource type="ArrayMesh" uid="uid://cph5ahqfdd2st" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_01.res" id="6_d1acn"]
+[ext_resource type="ArrayMesh" path="res://assets/synty_models/dungeon/SM_Env_Wall_Window_02.res" id="7_4bf1m"]
+[ext_resource type="Texture2D" uid="uid://bdk6ydic40ers" path="res://assets/synty_models/dungeon/Dungeons_Texture_03.png" id="8_db7jo"]
+[ext_resource type="ArrayMesh" uid="uid://cryjkve8mk6oh" path="res://assets/synty_models/dungeon/SM_Prop_Rug_01.res" id="9_db7jo"]
+[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="9_qt7nj"]
+[ext_resource type="ArrayMesh" uid="uid://c1nmfodkddk4n" path="res://assets/synty_models/dungeon/SM_Prop_Wall_Banner_06.res" id="10_r3vi0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax22t"]
 transparency = 1
 albedo_color = Color(1, 1, 0, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3vi0"]
+albedo_texture = ExtResource("8_db7jo")
+
+[sub_resource type="PrismMesh" id="PrismMesh_4bf1m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db7jo"]
+transparency = 1
+diffuse_mode = 3
+albedo_color = Color(1.353256, 1.3480214, 1.2380934, 0.019607844)
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.37736815, 0.37736815, 0.37736815, 1)
+disable_receive_shadows = true
+grow_amount = 0.471
 
 [node name="ProtoA1" type="Node3D"]
 
@@ -29,54 +49,141 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 pixel_size = 0.01
 text = "A1"
 
-[node name="SmEnvTiles01" type="MeshInstance3D" parent="."]
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="SmEnvTiles01" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(0.400689, 0, 0, 0, 0.25, 0, 0, 0, 0.400689, -1.0003018, 0.0022714846, -1.9975804)
 mesh = ExtResource("1_sdroo")
+skeleton = NodePath("../..")
 
-[node name="SmEnvTiles02" type="MeshInstance3D" parent="."]
+[node name="SmEnvTiles02" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(0.400689, 0, 0, 0, 0.25, 0, 0, 0, 0.400689, -1.0003018, 0.0022714846, 0.008268118)
 mesh = ExtResource("1_sdroo")
+skeleton = NodePath("../..")
 
-[node name="SmEnvWallTrimEdge03" type="MeshInstance3D" parent="."]
+[node name="SmEnvWallTrimEdge03" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.98040485, 0, 0.0034633875)
 mesh = ExtResource("2_j8p23")
+skeleton = NodePath("../..")
 
-[node name="SmEnvWallTrimEdge05" type="MeshInstance3D" parent="."]
+[node name="SmEnvWallTrimEdge05" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-1.7528267e-08, 0, -0.401, 0, 0.401, 0, 0.401, 0, -1.7528267e-08, 0.95605505, 0, -1.9983478)
 mesh = ExtResource("2_j8p23")
+skeleton = NodePath("../..")
 
-[node name="SmEnvWallTrimEdge04" type="MeshInstance3D" parent="."]
+[node name="SmEnvWallTrimEdge04" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.9809917, 0, 2.0057192)
+visible = false
 mesh = ExtResource("2_j8p23")
+skeleton = NodePath("../..")
 
-[node name="SmEnvWallEndConerOuter01" type="MeshInstance3D" parent="."]
+[node name="SmEnvWallEndConerOuter01" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-1.752827e-08, 0, -0.40100008, 0, 0.40100005, 0, 0.40100008, 0, -1.752827e-08, 0.87959605, 0, 0.042765915)
 mesh = ExtResource("3_n8d8v")
+skeleton = NodePath("../..")
 
-[node name="SmEnvWall01" type="MeshInstance3D" parent="."]
+[node name="SmEnvWall01" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-1.7528267e-08, 0, -0.401, 0, 0.401, 0, 0.401, 0, -1.7528267e-08, 0.93095225, 4.7683716e-07, -1.953244)
 mesh = ExtResource("4_3gw2s")
+skeleton = NodePath("../..")
 
-[node name="SmEnvWall02" type="MeshInstance3D" parent="."]
+[node name="SmEnvWallEndConerOuter02" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1.752827e-08, 0, -0.40100008, 0, 0.40100005, 0, 0.40100008, 0, -1.752827e-08, 0.87959605, 2, 0.042765915)
+mesh = ExtResource("3_n8d8v")
+skeleton = NodePath("../..")
+
+[node name="SmEnvWall06" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1.7528267e-08, 0, -0.401, 0, 0.401, 0, 0.401, 0, -1.7528267e-08, 0.93095225, 2.0000005, -1.953244)
+mesh = ExtResource("4_3gw2s")
+skeleton = NodePath("../..")
+
+[node name="SmEnvWall02" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.9583879, 4.7683716e-07, 0.046187997)
 mesh = ExtResource("4_3gw2s")
+skeleton = NodePath("../..")
 
-[node name="SmEnvWall03" type="MeshInstance3D" parent="."]
+[node name="SmEnvWall03" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.9583879, 4.7683716e-07, 1.9466134)
+visible = false
 mesh = ExtResource("4_3gw2s")
+skeleton = NodePath("../..")
 
-[node name="SmEnvWallTrimEdge06" type="MeshInstance3D" parent="."]
+[node name="SmEnvWallTrimEdge06" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-0.40099996, 0, -3.505653e-08, 0, 0.401, 0, 3.505653e-08, 0, -0.40099996, 0.9977921, 0, 1.9958388)
 mesh = ExtResource("2_j8p23")
+skeleton = NodePath("../..")
 
-[node name="SmEnvWall04" type="MeshInstance3D" parent="."]
+[node name="SmEnvWall04" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-0.40099996, 0, -3.505653e-08, 0, 0.401, 0, 3.505653e-08, 0, -0.40099996, 0.94823, 4.7683716e-07, 1.9564939)
 mesh = ExtResource("4_3gw2s")
+skeleton = NodePath("../..")
 
-[node name="SmEnvWallEndConerInner01" type="MeshInstance3D" parent="."]
+[node name="SmEnvWall05" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-0.40099996, 0, -3.505653e-08, 0, 0.401, 0, 3.505653e-08, 0, -0.40099996, 1.04823, 2.0000005, 1.9564939)
+mesh = ExtResource("4_3gw2s")
+skeleton = NodePath("../..")
+
+[node name="SmEnvWall07" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1.7528265e-08, 0, 0.40099996, 0, 0.401, 0, -0.40099996, 0, -1.7528265e-08, -0.95176995, 2.0000005, 1.9564939)
+mesh = ExtResource("4_3gw2s")
+skeleton = NodePath("../..")
+
+[node name="SmEnvWall08" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1.7528265e-08, 0, 0.40099996, 0, 0.401, 0, -0.40099996, 0, -1.7528265e-08, -0.95176995, 2.0000005, -0.043506145)
+mesh = ExtResource("4_3gw2s")
+skeleton = NodePath("../..")
+
+[node name="SmEnvWallEndConerInner01" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-1.7528265e-08, 0, -0.40099996, 0, 0.401, 0, 0.40099996, 0, -1.7528265e-08, -0.7582654, 0, 1.8079278)
 mesh = ExtResource("5_3gw2s")
+skeleton = NodePath("../..")
 
-[node name="SmEnvWallEnd01" type="MeshInstance3D" parent="."]
+[node name="SmEnvWallEndConerInner02" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1.7528265e-08, 0, -0.40099996, 0, 0.401, 0, 0.40099996, 0, -1.7528265e-08, -0.7582654, 2, 1.8079278)
+mesh = ExtResource("5_3gw2s")
+skeleton = NodePath("../..")
+
+[node name="SmEnvWallEnd01" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-0.40100002, 0, 3.5056534e-08, 0, 0.401, 0, -3.5056534e-08, 0, -0.40100002, 0.87179554, 0, 1.9425838)
 mesh = ExtResource("6_d1acn")
+skeleton = NodePath("../..")
+
+[node name="SmEnvWallEnd02" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-0.40100002, 0, 3.5056534e-08, 0, 0.401, 0, -3.5056534e-08, 0, -0.40100002, 0.87179554, 2, 1.9425838)
+mesh = ExtResource("6_d1acn")
+skeleton = NodePath("../..")
+
+[node name="SmEnvWallWindow02" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1.7528265e-08, 0, 0.40099996, 0, 0.401, 0, -0.40099996, 0, -1.7528265e-08, -0.958, 0, 1.914)
+mesh = ExtResource("7_4bf1m")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_r3vi0")
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(7.680555e-09, -3.2766082, -0.480657, -3.353646e-08, 2.2943056, -0.6864494, 0.92, 1.1098811e-07, -2.1010186e-08, -0.80000013, 0.80000013, 0.9)
+mesh = SubResource("PrismMesh_4bf1m")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_db7jo")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Props"]
+transform = Transform3D(-3.3484866e-08, 0.64278764, -0.76604444, 2.8097137e-08, 0.76604444, 0.64278764, 1, 1.776357e-15, -4.3711385e-08, -1.4, 1.3, 0.90000004)
+light_color = Color(1, 1, 0.85882354, 1)
+light_energy = 2.0
+light_indirect_energy = 0.0
+light_specular = 5.0
+shadow_enabled = true
+
+[node name="SmPropRug01" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(3.027466e-08, 0, -0.401, 0, 0.401, 0, 0.401, 0, 3.027466e-08, -0.06830969, 0, -1.023723)
+mesh = ExtResource("9_db7jo")
+skeleton = NodePath("../..")
+
+[node name="KeyItem" parent="Props" instance=ExtResource("9_qt7nj")]
+transform = Transform3D(0.3461886, -0.24240386, -0.9063078, 0.57357645, 0.81915206, 0, 0.7424039, -0.51983684, 0.42261824, -0.1, 0.4, 0.9)
+
+[node name="SmPropWallBanner06" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(0.401, 0, 0, 0, 0.401, 0, 0, 0, 0.401, 0, 3.8500001, 1.818)
+mesh = ExtResource("10_r3vi0")
+skeleton = NodePath("../..")
