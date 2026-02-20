@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0owgkwrisbf7"]
+[gd_scene load_steps=3 format=3 uid="uid://d0owgkwrisbf7"]
 
 [ext_resource type="PackedScene" uid="uid://dcc1thb5d1bl8" path="res://source/room/room.tscn" id="1_nevys"]
+[ext_resource type="PackedScene" uid="uid://rr2wjguw6a1w" path="res://source/main/hud.tscn" id="2_n3iyj"]
 
 [node name="Main" type="Node"]
 
 [node name="Room" parent="." instance=ExtResource("1_nevys")]
+
+[node name="HUD" parent="." instance=ExtResource("2_n3iyj")]
