@@ -13,7 +13,7 @@ func add_char_to_buffer(character: String):
 		return
 
 	buffer.append(character)
-	buffer = buffer.slice(0, buffer_size)
+	buffer = buffer.slice(maxi(0, buffer.size() - 5), buffer.size())
 	
 	if buffer.size() < buffer_size:
 		return
