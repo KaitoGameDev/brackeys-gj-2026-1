@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 EventBusSingleton="*res://source/event_bus/event_bus.gd"
 CursorControllerSingleton="*res://source/controllers/cursor_controller.tscn"
+AudioControllerSingleton="*res://source/controllers/audio_controller.tscn"
 
 [display]
 

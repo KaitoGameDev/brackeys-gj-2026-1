@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dcc1thb5d1bl8"]
+[gd_scene load_steps=31 format=3 uid="uid://dcc1thb5d1bl8"]
 
 [ext_resource type="Script" uid="uid://bxwqxnnxepbuy" path="res://source/room/center_room.gd" id="1_5xmys"]
 [ext_resource type="PackedScene" uid="uid://52b8d2sfi07d" path="res://source/sections/prototype/proto_a_1.tscn" id="1_a5ckb"]
@@ -19,13 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://wtbyiy60vg7s" path="res://source/sections/prototype/proto_d_2.tscn" id="11_k10tv"]
 [ext_resource type="PackedScene" uid="uid://84fdswhbv20g" path="res://source/sections/prototype/proto_d_3.tscn" id="12_ija0u"]
 [ext_resource type="PackedScene" uid="uid://btowpe3pof064" path="res://source/sections/prototype/proto_d_4.tscn" id="13_2dm64"]
-[ext_resource type="Script" uid="uid://dcdf17ej5j6k7" path="res://source/controllers/audio_controller.gd" id="14_8ckvx"]
 [ext_resource type="Environment" uid="uid://cpl5u1cnqljxf" path="res://source/sections/environments/forest_environment.tres" id="14_kcdtn"]
-[ext_resource type="AudioStream" uid="uid://d1o2nm3mxqsgn" path="res://assets/audio/dungeon_loop.mp3" id="15_hvm5k"]
 [ext_resource type="Environment" uid="uid://kssk2vr2adhf" path="res://source/sections/environments/nightmare_environment.tres" id="15_jfsvp"]
-[ext_resource type="AudioStream" uid="uid://0gx8rb2sh576" path="res://assets/audio/forest_loop.mp3" id="16_k10tv"]
 [ext_resource type="Environment" uid="uid://b06pmujrdb7hn" path="res://source/sections/environments/apartment_environment.tres" id="16_sjnex"]
-[ext_resource type="AudioStream" uid="uid://bqhn7pfvmllvn" path="res://assets/audio/nightmare_loop.mp3" id="17_8asue"]
 [ext_resource type="Environment" uid="uid://cr1kbmy0vvjeo" path="res://source/sections/environments/dungeon_environment.tres" id="18_erm4m"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="20_t1ay8"]
 [ext_resource type="PackedScene" uid="uid://bm2tl2lfjxjwr" path="res://source/room/particles/fog.tscn" id="24_2dm64"]
@@ -46,18 +42,6 @@ size = Vector2(2, 6.03)
 script = ExtResource("1_tlaby")
 sections = Array[PackedScene]([ExtResource("2_uon0k"), ExtResource("3_vxkmb"), ExtResource("4_ockle"), ExtResource("5_p1a1p"), ExtResource("6_sgtef"), ExtResource("7_t1ay8"), ExtResource("8_8ckvx"), ExtResource("9_e3gco"), ExtResource("10_hvm5k"), ExtResource("11_k10tv"), ExtResource("12_ija0u"), ExtResource("13_2dm64")])
 environments = Array[Resource]([ExtResource("14_kcdtn"), ExtResource("15_jfsvp"), ExtResource("16_sjnex")])
-
-[node name="Controllers" type="Node" parent="."]
-
-[node name="AudioController" type="Node" parent="Controllers"]
-script = ExtResource("14_8ckvx")
-bgms = Array[AudioStream]([ExtResource("15_hvm5k"), ExtResource("16_k10tv"), ExtResource("17_8asue")])
-
-[node name="BGM_Player_1" type="AudioStreamPlayer" parent="Controllers/AudioController"]
-bus = &"BGM_1"
-
-[node name="BGM_Player_2" type="AudioStreamPlayer" parent="Controllers/AudioController"]
-bus = &"BGM_2"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("18_erm4m")

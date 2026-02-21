@@ -19,6 +19,8 @@ func _ready() -> void:
 	credits_btn.pressed.connect(_on_credits_btn_pressed)
 	back_btn.pressed.connect(_on_back_btn_pressed)
 	
+	EventBusSingleton.send_event(GameInitiatedEvent.new())
+	
 func _process(delta: float) -> void:
 	world_environment.environment.sky_rotation.y += delta * 0.025
 		

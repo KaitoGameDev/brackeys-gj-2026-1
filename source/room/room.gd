@@ -12,7 +12,7 @@ var _current_hall := 0
 func _ready() -> void:
 	for hall in center.get_children():
 		_halls.push_back(hall)
-		
+	EventBusSingleton.send_event(GameStartedEvent.new())
 	EventBusSingleton.on_event.connect(_on_event)
 	
 func _on_event(event: Object) -> void:
