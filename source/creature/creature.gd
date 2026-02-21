@@ -15,7 +15,7 @@ func _on_event(event: Object) -> void:
 	if event is MoveToNextSpotEvent: return _reset_sound(event)
 	
 func _reset_sound(event: MoveToNextSpotEvent) -> void:
-	time_seg = event.next_puzzle_time
+	time_seg = event.next_puzzle_limit_time
 	if tween != null:
 		tween.stop()
 		tween = null
