@@ -1,8 +1,10 @@
 class_name Room extends Node3D
 
 @export var sections: Array[PackedScene] = []
+@export var environments: Array[Resource] = []
 
 @onready var center: Node3D = $Center
+@onready var world_environment: WorldEnvironment = $WorldEnvironment
 
 var _halls: Array[Node3D] = []
 var _current_hall := 0
@@ -19,6 +21,8 @@ func _on_event(event: Object) -> void:
 	
 func _on_move_to_next_spot() -> void:
 	if _current_hall == 3:
+		var env = environments.pop_front()
+		world_environment.environment = env
 		EventBusSingleton.send_event(PlayerChangedFloorEvent.new())
 	
 func _on_playern_movement_end() -> void:

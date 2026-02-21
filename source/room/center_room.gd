@@ -2,7 +2,7 @@ class_name CenterRoom extends Node3D
 
 @export var player_pivot: Node3D
 
-var spots: Array[Node3D] = []
+var sections: Array[Node3D] = []
 
 func _ready() -> void:
 	EventBusSingleton.on_event.connect(_on_event)
@@ -10,15 +10,14 @@ func _ready() -> void:
 
 func _load_spots() -> void:
 	for section in get_children():
-		var spot: Node3D = section.get_child(0).get_node("player_spot") 
-		spots.push_back(spot)
-	spots.pop_front()
+		sections.push_back(section)
 
 func _on_event(event: Object) -> void:
 	if event is MoveToNextSpotEvent: return _move_to_next_spot()
 
 func _on_movement_end() -> void:
 	EventBusSingleton.send_event(PlayerEndMovementEvent.new())
+	sections[0].position.y = 0
 
 func _move_to_next_spot() -> void:
 	var tween := create_tween()

@@ -1,37 +1,209 @@
-[gd_scene load_steps=6 format=3 uid="uid://cf6eu6dtek55k"]
+[gd_scene load_steps=24 format=3 uid="uid://cf6eu6dtek55k"]
 
+[ext_resource type="Script" uid="uid://77owmcbgervm" path="res://source/main/main_menu.gd" id="1_4nh4e"]
 [ext_resource type="ArrayMesh" uid="uid://k11hqv6cp3ns" path="res://assets/synty_models/dungeon/SM_Env_Wall_Round_01.res" id="1_c3q6h"]
 [ext_resource type="ArrayMesh" uid="uid://bmrl8qs28duk8" path="res://assets/synty_models/dungeon/SM_Env_DoorDouble_Round_01.res" id="2_4nh4e"]
+[ext_resource type="Texture2D" uid="uid://b20dlknta4jxa" path="res://assets/materials/Skyboxes/BlueSkySkybox.png" id="2_011lv"]
+[ext_resource type="Texture2D" uid="uid://dg47dyuamjqbc" path="res://assets/synty_models/dungeon/Dungeons_Texture_02.png" id="2_ki7g3"]
 [ext_resource type="ArrayMesh" uid="uid://3a0kim1myxq6" path="res://assets/synty_models/dungeon/SM_Env_DoorDouble_Round_02.res" id="3_ki7g3"]
 [ext_resource type="ArrayMesh" uid="uid://dsf840t1sbjxl" path="res://assets/synty_models/dungeon/SM_Env_Door_Frame_Round_02.res" id="4_87fqi"]
 [ext_resource type="PackedScene" uid="uid://bpctyjxcdnqvq" path="res://assets/synty_models/forest/SM_Rock_Cluster_Large_01.fbx" id="5_011lv"]
+[ext_resource type="Texture2D" uid="uid://b82nnjklpk30q" path="res://assets/synty_models/dungeon/Dungeons_Texture_04.png" id="8_87fqi"]
+[ext_resource type="FontFile" uid="uid://bqopgw3npg7ys" path="res://assets/fonts/New_Rocker/NewRocker-Regular.ttf" id="10_cy8uc"]
+[ext_resource type="StyleBox" uid="uid://bf4p7kdtnkahm" path="res://resources/ui/normal_main_btn.tres" id="11_2acnq"]
+[ext_resource type="StyleBox" uid="uid://d0w1d2ob7w2j" path="res://resources/ui/hove_main_btn.tres" id="11_fahrr"]
 
-[node name="Tower" type="MeshInstance3D"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cy8uc"]
+panorama = ExtResource("2_011lv")
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_fahrr"]
+sky_material = SubResource("PanoramaSkyMaterial_cy8uc")
+
+[sub_resource type="Environment" id="Environment_ki7g3"]
+background_mode = 2
+sky = SubResource("Sky_fahrr")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87fqi"]
+albedo_texture = ExtResource("2_ki7g3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_011lv"]
+albedo_texture = ExtResource("2_ki7g3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cy8uc"]
+albedo_texture = ExtResource("2_ki7g3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fahrr"]
+albedo_texture = ExtResource("2_ki7g3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2acnq"]
+albedo_texture = ExtResource("2_ki7g3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cf4k3"]
+albedo_texture = ExtResource("2_ki7g3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdd2v"]
+albedo_texture = ExtResource("8_87fqi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ki7g3"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_4nh4e")
+
+[node name="Tower" type="MeshInstance3D" parent="."]
 gi_mode = 2
 
-[node name="SmEnvWallRound01" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.4679759, 0, 0, 0, 2.5653422, 0, 0, 0, 2.5268772, 0, 0, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Tower"]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Tower"]
+environment = SubResource("Environment_ki7g3")
+
+[node name="SmEnvWallRound01" type="MeshInstance3D" parent="Tower"]
+transform = Transform3D(3.147334, 0, 0, 0, 2.5653422, 0, 0, 0, 3.222449, 0, 0, 1.751482)
+material_override = SubResource("StandardMaterial3D_87fqi")
 mesh = ExtResource("1_c3q6h")
 
-[node name="SmEnvWallRound02" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.94198567, 0, 2.335575, 0, 2.5653422, 0, -2.281133, 0, 0.9644673, 0, 12.645185, 0)
+[node name="SmEnvWallRound04" type="MeshInstance3D" parent="Tower"]
+transform = Transform3D(3.147334, 0, 0, 0, 2.5653422, 0, 0, 0, 3.222449, 0, 12.41062, 1.751482)
+material_override = SubResource("StandardMaterial3D_011lv")
 mesh = ExtResource("1_c3q6h")
 
-[node name="SmEnvWallRound03" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.94198567, 0, 2.335575, 0, 2.5653422, 0, -2.281133, 0, 0.9644673, 0, 25.197325, 0)
+[node name="SmEnvWallRound05" type="MeshInstance3D" parent="Tower"]
+transform = Transform3D(3.147334, 0, 0, 0, 2.5653422, 0, 0, 0, 3.222449, 0, 24.959627, 1.751482)
+material_override = SubResource("StandardMaterial3D_cy8uc")
 mesh = ExtResource("1_c3q6h")
 
-[node name="SmEnvDoorDoubleRound01" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3423121, 0.19840467, -6.5378895)
+[node name="DoorRight" type="MeshInstance3D" parent="Tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3423121, 0.19840467, -6.68618)
+material_override = SubResource("StandardMaterial3D_fahrr")
 mesh = ExtResource("2_4nh4e")
 
-[node name="SmEnvDoorDoubleRound02" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2975395, 0.19840467, -6.5378895)
+[node name="DoorLeft" type="MeshInstance3D" parent="Tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2975395, 0.19840467, -6.68618)
+material_override = SubResource("StandardMaterial3D_2acnq")
 mesh = ExtResource("3_ki7g3")
 
-[node name="SmEnvDoorFrameRound03" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19840467, -6.334858)
+[node name="SmEnvDoorFrameRound03" type="MeshInstance3D" parent="Tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19840467, -6.4831486)
+material_override = SubResource("StandardMaterial3D_cf4k3")
 mesh = ExtResource("4_87fqi")
 
-[node name="SM_Rock_Cluster_Large_01" parent="." instance=ExtResource("5_011lv")]
+[node name="SM_Rock_Cluster_Large_01" parent="Tower" instance=ExtResource("5_011lv")]
 transform = Transform3D(-9.999999, -4.3711393e-07, 7.5710346e-07, -3.7229522e-09, 8.681468, 4.9630747, -8.742199e-07, 4.9630747, -8.681468, -8.909233, -72.94503, -57.94347)
+
+[node name="SM_Rock_Cluster_Large_01" parent="Tower/SM_Rock_Cluster_Large_01" index="0"]
+material_override = SubResource("StandardMaterial3D_pdd2v")
+
+[node name="CameraPivot" type="Node3D" parent="Tower"]
+
+[node name="Camera3D" type="Camera3D" parent="Tower/CameraPivot"]
+transform = Transform3D(-1, 1.5180808e-08, 8.609463e-08, 0, 0.9848078, -0.1736482, -8.742278e-08, -0.1736482, -0.9848078, 0, 2, -16)
+
+[node name="Credits" type="Label3D" parent="Tower"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.03869295, 16.158037, 10.012292)
+pixel_size = 0.01
+text = "Developed By
+
+Zcyon 
+&
+ KaitoGameDev
+
+Brackeys Game Jam
+2026.1"
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Tower"]
+transform = Transform3D(-2.914023, -0.0054474096, 0.027859839, -0.006953862, 3.4643333, -0.029196877, -0.08104695, -0.10138206, -0.9991854, 0, 1.3025234, -6.226247)
+material_override = SubResource("StandardMaterial3D_ki7g3")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Tower/CSGSphere3D"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999999, 0, 0.0025112033, -0.15427017)
+operation = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackBtn" type="Button" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0234375
+anchor_top = 0.053703703
+anchor_right = 0.18697916
+anchor_bottom = 0.1425926
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("10_cy8uc")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("11_2acnq")
+theme_override_styles/pressed = ExtResource("11_fahrr")
+theme_override_styles/hover = ExtResource("11_fahrr")
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23958333
+anchor_top = 0.07685185
+anchor_right = 0.76145834
+anchor_bottom = 0.3
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("10_cy8uc")
+theme_override_font_sizes/font_size = 96
+text = "The Kraepelin 
+Chambers"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Container" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36927083
+anchor_top = 0.7824074
+anchor_right = 0.63958335
+anchor_bottom = 0.9675926
+theme_override_constants/separation = 16
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StartGameBtn" type="Button" parent="Control/Container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("10_cy8uc")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = ExtResource("11_2acnq")
+theme_override_styles/pressed = ExtResource("11_fahrr")
+theme_override_styles/hover = ExtResource("11_fahrr")
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="CreditsBtn" type="Button" parent="Control/Container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("10_cy8uc")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("11_2acnq")
+theme_override_styles/pressed = ExtResource("11_fahrr")
+theme_override_styles/hover = ExtResource("11_fahrr")
+text = "Credits"
+metadata/_edit_use_anchors_ = true
+
+[editable path="Tower/SM_Rock_Cluster_Large_01"]
