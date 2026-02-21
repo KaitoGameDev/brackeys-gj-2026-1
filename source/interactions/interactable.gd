@@ -4,7 +4,7 @@ extends Node3D
 @export var detector: Area3D
 @export var hover_label: String
 
-var _is_over_item = false
+var _is_over_item := false
 
 func _ready() -> void:
 	detector.mouse_entered.connect(_on_mouse_entered)
