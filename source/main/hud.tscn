@@ -48,3 +48,26 @@ text = "Chamber - 1"
 horizontal_alignment = 2
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="FadeOutPanel" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.19607843, 0.19607843, 0.19607843, 0)
+
+[node name="CursorIndicatorText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5078125
+anchor_top = 0.59074074
+anchor_right = 0.5776042
+anchor_bottom = 0.6287037
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_nfmv3")
+theme_override_font_sizes/font_size = 32
+metadata/_edit_use_anchors_ = true

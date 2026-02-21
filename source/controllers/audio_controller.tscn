@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://chxqfy05juqus"]
+[gd_scene load_steps=8 format=3 uid="uid://chxqfy05juqus"]
 
 [ext_resource type="Script" uid="uid://dcdf17ej5j6k7" path="res://source/controllers/audio_controller.gd" id="1_j63rd"]
 [ext_resource type="AudioStream" uid="uid://d1o2nm3mxqsgn" path="res://assets/audio/dungeon_loop.mp3" id="2_kdu1e"]
@@ -6,15 +6,20 @@
 [ext_resource type="AudioStream" uid="uid://bqhn7pfvmllvn" path="res://assets/audio/nightmare_loop.mp3" id="4_0bxy6"]
 [ext_resource type="AudioStream" uid="uid://dur4y3n0ka24y" path="res://assets/audio/main_menu_loop.mp3" id="5_4b0v4"]
 [ext_resource type="AudioStream" uid="uid://b2i6pls2k4d30" path="res://assets/audio/main_menu_waves_loop.mp3" id="6_0bxy6"]
+[ext_resource type="AudioStream" uid="uid://ueuq7jb00vhi" path="res://assets/audio/chimes_a.wav" id="7_l3rrg"]
 
 [node name="AudioController" type="Node"]
 script = ExtResource("1_j63rd")
 bgms = Array[AudioStream]([ExtResource("2_kdu1e"), ExtResource("3_4b0v4"), ExtResource("4_0bxy6")])
 main_bgm = ExtResource("5_4b0v4")
 main_sfx = ExtResource("6_0bxy6")
+puzzle_sfx = ExtResource("7_l3rrg")
 
 [node name="BGM_1" type="AudioStreamPlayer" parent="."]
 bus = &"BGM_1"
 
 [node name="BGM_2" type="AudioStreamPlayer" parent="."]
 bus = &"BGM_2"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"

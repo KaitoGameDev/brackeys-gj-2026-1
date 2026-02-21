@@ -29,7 +29,7 @@ func _reset_sound() -> void:
 		func(value):
 			AudioServer.set_bus_volume_db(bus_index, value),
 		-60.0,
-		0.0,
+		-10.0,
 		time_seg
 	)
 	tween.finished.connect(

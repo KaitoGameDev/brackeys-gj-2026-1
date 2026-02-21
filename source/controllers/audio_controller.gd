@@ -4,6 +4,9 @@ class_name AudioController extends Node
 @export var main_bgm: AudioStream
 @export var main_sfx: AudioStream
 
+@export var puzzle_sfx: AudioStream 
+
+@onready var sfx_player: AudioStreamPlayer = $SFX
 @onready var bgm_players: Array[AudioStreamPlayer] = [$BGM_1, $BGM_2]
 
 var _current_player_index := 0
@@ -12,6 +15,7 @@ func _ready() -> void:
 	EventBusSingleton.on_event.connect(_on_event)
 	
 func _on_event(event: Object) -> void:
+	if event is PuzzleSolvedEvent: return _on_puzzle_solved()
 	if event is GameInitiatedEvent: return _game_initiated()
 	if event is GameStartedEvent: return _started_game()
 	if event is PlayerChangedFloorEvent: return _on_player_changed_floor()
@@ -63,3 +67,8 @@ func mount_next() -> void:
 			bgm_players[_current_player_index].stop()
 			_current_player_index = _next_player
 	)
+
+
+func _on_puzzle_solved() -> void:
+	sfx_player.stream = puzzle_sfx
+	sfx_player.play()
