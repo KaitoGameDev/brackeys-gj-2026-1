@@ -10,8 +10,10 @@ height = 0.3
 radius = 0.10888672
 height = 0.3154297
 
-[node name="KeyItem" type="Node3D"]
+[node name="KeyItem" type="Node3D" node_paths=PackedStringArray("detector")]
 script = ExtResource("1_3gwuh")
+detector = NodePath("Detector")
+hover_label = "Take"
 
 [node name="Item" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_8ky8m")
