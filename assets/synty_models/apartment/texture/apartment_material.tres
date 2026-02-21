@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dppe0c821d6ii"]
+
+[ext_resource type="Texture2D" uid="uid://dx0vfpd8b68nq" path="res://assets/synty_models/apartment/texture/PolygonTown_Texture_01_B.png" id="1_wva5e"]
+
+[resource]
+albedo_texture = ExtResource("1_wva5e")

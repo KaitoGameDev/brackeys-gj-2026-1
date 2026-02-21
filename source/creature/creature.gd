@@ -38,4 +38,3 @@ func _reset_sound(event: MoveToNextSpotEvent) -> void:
 			stream_player.play()
 			EventBusSingleton.send_event(GameOverEvent.new())
 	)
-

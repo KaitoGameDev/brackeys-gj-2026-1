@@ -6,7 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://s06ovcm181je" path="res://assets/synty_models/dungeon/SM_Env_Wall_01.res" id="4_3gw2s"]
 [ext_resource type="ArrayMesh" uid="uid://w58vvtk2mtnw" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_Coner_Inner_01.res" id="5_3gw2s"]
 [ext_resource type="ArrayMesh" uid="uid://cph5ahqfdd2st" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_01.res" id="6_d1acn"]
-[ext_resource type="ArrayMesh" path="res://assets/synty_models/dungeon/SM_Env_Wall_Window_02.res" id="7_4bf1m"]
+[ext_resource type="ArrayMesh" uid="uid://cwskh46awv1ee" path="res://assets/synty_models/dungeon/SM_Env_Wall_Window_02.res" id="7_4bf1m"]
 [ext_resource type="Texture2D" uid="uid://bdk6ydic40ers" path="res://assets/synty_models/dungeon/Dungeons_Texture_03.png" id="8_db7jo"]
 [ext_resource type="ArrayMesh" uid="uid://cryjkve8mk6oh" path="res://assets/synty_models/dungeon/SM_Prop_Rug_01.res" id="9_db7jo"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="9_qt7nj"]

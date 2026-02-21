@@ -1,6 +1,7 @@
 class_name KeyItem extends Interactable
 
 @export var next_puzzle_limit_time: float = 20.0
+@export var open_door_number: int = 0
 
 func _on_interact(): 
 	var cursor_event := ChangeCursorEvent.new()
