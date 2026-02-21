@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0hastrpd58kk"]
+
+[ext_resource type="PackedScene" uid="uid://co3rqr2lkb4aw" path="res://assets/synty_models/forest/SM_Tree_PolyPine_02.fbx" id="1_e44wg"]
+[ext_resource type="Texture2D" uid="uid://7av54147da66" path="res://assets/synty_models/forest/PolygonNature_01.png" id="2_3r7u5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmouy"]
+albedo_color = Color(0.4409689, 0.60298425, 0.49015522, 1)
+albedo_texture = ExtResource("2_3r7u5")
+
+[node name="SM_Tree_PolyPine_02" instance=ExtResource("1_e44wg")]
+
+[node name="SM_Tree_PolyPine_02" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xmouy")

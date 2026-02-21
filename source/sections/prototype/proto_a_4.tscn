@@ -8,7 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://w58vvtk2mtnw" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_Coner_Inner_01.res" id="5_8rmvq"]
 [ext_resource type="ArrayMesh" uid="uid://cph5ahqfdd2st" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_01.res" id="6_1c7f5"]
 [ext_resource type="Script" uid="uid://b7fbqr2otlmjf" path="res://source/puzzles/torch_puzzle.gd" id="7_8rmvq"]
-[ext_resource type="Texture2D" uid="uid://b66buw2w46qqe" path="res://assets/sprites/dungeon_stairs.png" id="7_dloe3"]
+[ext_resource type="Texture2D" uid="uid://b66buw2w46qqe" path="res://assets/sprites/dungeon/dungeon_stairs.png" id="7_dloe3"]
 [ext_resource type="Script" uid="uid://4vld0spg5bvh" path="res://source/interactions/color_torch.gd" id="9_t7jor"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="10_6sf74"]
 

@@ -1,19 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1rfnxjgqxfcv"]
+[gd_scene load_steps=11 format=3 uid="uid://d1rfnxjgqxfcv"]
 
 [ext_resource type="PackedScene" uid="uid://dbuv3wsbxxbva" path="res://source/props/forest/sm_plant_bush_03.tscn" id="1_7lsph"]
 [ext_resource type="PackedScene" uid="uid://dpgyocg3q842w" path="res://source/props/forest/sm_plant_bush_02.tscn" id="2_sxlwx"]
 [ext_resource type="PackedScene" uid="uid://cafscxjxgqy35" path="res://source/props/forest/sm_plant_bush_01.tscn" id="3_jenmm"]
+[ext_resource type="PackedScene" uid="uid://c0hastrpd58kk" path="res://source/props/forest/sm_tree_poly_pine_02.tscn" id="4_q2tyf"]
+[ext_resource type="Texture2D" uid="uid://dm62lrb6sa24e" path="res://assets/sprites/forest/ground-GreenLeavesWhiteFlowers.png" id="5_3vlc6"]
+[ext_resource type="Texture2D" uid="uid://do43qnpmulnff" path="res://assets/sprites/forest/ground-DryForestPineNeedle.png" id="6_xwbnd"]
+[ext_resource type="Texture2D" uid="uid://clvigr4e5ca5y" path="res://assets/sprites/forest/ground-DryForestPineNeedle_Normal.tga" id="7_jfk3k"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fs332"]
-albedo_color = Color(0, 0.57254905, 0.24705882, 1)
+[sub_resource type="PlaneMesh" id="PlaneMesh_ey4e3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cujbt"]
+transparency = 1
+albedo_color = Color(0.3106173, 0.31061706, 0.31061706, 1)
+albedo_texture = ExtResource("5_3vlc6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_amieo"]
+albedo_color = Color(0.5850624, 0.5850619, 0.5850621, 1)
+albedo_texture = ExtResource("6_xwbnd")
+normal_enabled = true
+normal_texture = ExtResource("7_jfk3k")
+uv1_scale = Vector3(8, 4.5, 7)
 
 [node name="ProtoA3" type="Node3D"]
-
-[node name="Floor" type="CSGBox3D" parent="."]
-material_override = SubResource("StandardMaterial3D_fs332")
-use_collision = true
-collision_layer = 512
-size = Vector3(2, 0.1, 4)
 
 [node name="player_spot" type="CSGSphere3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
@@ -24,20 +33,90 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 pixel_size = 0.01
 text = "B3"
 
-[node name="SM_Plant_Bush_08" parent="." instance=ExtResource("1_7lsph")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3791224, -0.07909924, -1.2897497)
+[node name="Props" type="Node3D" parent="."]
 
-[node name="SM_Plant_Bush_07" parent="." instance=ExtResource("1_7lsph")]
+[node name="SM_Plant_Bush_08" parent="Props" instance=ExtResource("1_7lsph")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.3791224, -0.07909924, -1.2897497)
+visible = false
+
+[node name="SM_Plant_Bush_07" parent="Props" instance=ExtResource("1_7lsph")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0404304, -0.07909924, 1.8072248)
+visible = false
 
-[node name="SM_Plant_Bush_03" parent="." instance=ExtResource("2_sxlwx")]
-transform = Transform3D(0.38144153, 0, 0.92439294, 0, 1, 0, -0.92439294, 0, 0.38144153, 1.0565126, -0.12705636, -0.067453444)
+[node name="SM_Plant_Bush_03" parent="Props" instance=ExtResource("2_sxlwx")]
+transform = Transform3D(0.19072077, 0, 0.46219647, 0, 0.5, 0, -0.46219647, 0, 0.19072077, 1.0565126, -0.12705636, -0.16745344)
+visible = false
 
-[node name="SM_Plant_Bush_05" parent="." instance=ExtResource("2_sxlwx")]
+[node name="SM_Plant_Bush_05" parent="Props" instance=ExtResource("2_sxlwx")]
 transform = Transform3D(0.38144153, 0, 0.92439294, 0, 1, 0, -0.92439294, 0, 0.38144153, 0.28479195, -0.16902733, 2.3418982)
+visible = false
 
-[node name="SM_Plant_Bush_04" parent="." instance=ExtResource("2_sxlwx")]
-transform = Transform3D(0.38144153, 0, 0.92439294, 0, 1, 0, -0.92439294, 0, 0.38144153, -1.235748, -0.12705636, 0.16439748)
+[node name="SM_Plant_Bush_02" parent="Props" instance=ExtResource("3_jenmm")]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, -0.9283272, 0.049999952, -0.81828314)
+visible = false
 
-[node name="SM_Plant_Bush_02" parent="." instance=ExtResource("3_jenmm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9283272, 0.049999952, -1.3182832)
+[node name="SM_Tree_PolyPine_02" parent="Props" instance=ExtResource("4_q2tyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41529927, -1.0522342, 0.6)
+
+[node name="SM_Tree_PolyPine_03" parent="Props" instance=ExtResource("4_q2tyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6152993, -0.5522342, 2)
+
+[node name="SM_Tree_PolyPine_07" parent="Props" instance=ExtResource("4_q2tyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7847007, -1.1522342, 2)
+
+[node name="SM_Tree_PolyPine_04" parent="Props" instance=ExtResource("4_q2tyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8152993, -0.75223416, -1.6)
+
+[node name="SM_Tree_PolyPine_05" parent="Props" instance=ExtResource("4_q2tyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9847008, -1.0522342, -1.3)
+
+[node name="SM_Tree_PolyPine_06" parent="Props" instance=ExtResource("4_q2tyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5847008, -0.35223415, -2.9802322e-08)
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.3711392e-08, 1.0000001, 0, -1.0000001, -4.3711392e-08, 0, 0, 0, 1, -0.99999994, 1, -1)
+mesh = SubResource("PlaneMesh_ey4e3")
+surface_material_override/0 = SubResource("StandardMaterial3D_cujbt")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.3711392e-08, 1.0000001, 0, -1.0000001, -4.3711392e-08, 0, 0, 0, 1, -0.99999994, 1, 1)
+mesh = SubResource("PlaneMesh_ey4e3")
+surface_material_override/0 = SubResource("StandardMaterial3D_cujbt")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.9106857e-15, -4.3711392e-08, 1, -1.0000001, -4.3711392e-08, 0, 4.3711392e-08, -1.0000001, -4.371139e-08, 2.3841858e-07, 1, 2)
+mesh = SubResource("PlaneMesh_ey4e3")
+surface_material_override/0 = SubResource("StandardMaterial3D_cujbt")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(4.3711392e-08, -1.0000001, -1.509958e-07, -1.0000001, -4.3711392e-08, 0, -6.600237e-15, 1.5099582e-07, -1, 1, 1, -1)
+mesh = SubResource("PlaneMesh_ey4e3")
+surface_material_override/0 = SubResource("StandardMaterial3D_cujbt")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.3711392e-08, 1.0000001, 0, -1.0000001, -4.3711392e-08, 0, 0, 0, 1, -0.99999994, 3, -1)
+mesh = SubResource("PlaneMesh_ey4e3")
+surface_material_override/0 = SubResource("StandardMaterial3D_cujbt")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.3711392e-08, 1.0000001, 0, -1.0000001, -4.3711392e-08, 0, 0, 0, 1, -0.99999994, 3, 1)
+mesh = SubResource("PlaneMesh_ey4e3")
+surface_material_override/0 = SubResource("StandardMaterial3D_cujbt")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.9106857e-15, -4.3711392e-08, 1, -1.0000001, -4.3711392e-08, 0, 4.3711392e-08, -1.0000001, -4.371139e-08, 2.3841858e-07, 3, 2)
+mesh = SubResource("PlaneMesh_ey4e3")
+surface_material_override/0 = SubResource("StandardMaterial3D_cujbt")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(4.3711392e-08, -1.0000001, -1.509958e-07, -1.0000001, -4.3711392e-08, 0, -6.600237e-15, 1.5099582e-07, -1, 1, 3, -1)
+mesh = SubResource("PlaneMesh_ey4e3")
+surface_material_override/0 = SubResource("StandardMaterial3D_cujbt")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_amieo")
+use_collision = true
+collision_layer = 512
+size = Vector3(2, 0.1, 4)
