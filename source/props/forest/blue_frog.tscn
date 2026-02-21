@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbfy61e5brdr8"]
+
+[ext_resource type="Texture2D" uid="uid://djxs0dkltnhh4" path="res://assets/sprites/forest/ToxicFrogBlueBlue_Sheet.png" id="1_0phxo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erm4m"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chjcp"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mocen"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcdtn"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfsvp"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjnex"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqv4g"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki7eb"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e7ghu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erm4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chjcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mocen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcdtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfsvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjnex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqv4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki7eb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Frog" type="Node3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 2
+double_sided = false
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_e7ghu")
+frame_progress = 0.17335379

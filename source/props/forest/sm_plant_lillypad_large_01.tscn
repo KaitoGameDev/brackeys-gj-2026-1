@@ -1,0 +1,188 @@
+[gd_scene load_steps=12 format=3 uid="uid://b3o2kw6vxjfa6"]
+
+[ext_resource type="PackedScene" uid="uid://c1lhx12hcvvm0" path="res://assets/synty_models/forest/SM_Plant_Lillypad_Large_01.fbx" id="1_gp0p7"]
+[ext_resource type="Script" uid="uid://ub42hqxtlwj2" path="res://source/puzzles/frog_puzzle.gd" id="2_ja3x6"]
+[ext_resource type="Texture2D" uid="uid://7av54147da66" path="res://assets/synty_models/forest/PolygonNature_01.png" id="2_pnqjb"]
+[ext_resource type="Script" uid="uid://o5s84ihah4dt" path="res://source/interactions/lillypad.gd" id="4_ja3x6"]
+[ext_resource type="PackedScene" uid="uid://cbfy61e5brdr8" path="res://source/props/forest/blue_frog.tscn" id="5_2i5oo"]
+[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="6_i4jmu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ja3x6"]
+albedo_color = Color(0.39039257, 0.5516958, 0.36900353, 1)
+albedo_texture = ExtResource("2_pnqjb")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2i5oo"]
+size = Vector3(0.8, 0.2, 0.90000004)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ja3x6"]
+size = Vector3(0.6, 0.2, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i4jmu"]
+size = Vector3(1, 0.3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nktfv"]
+size = Vector3(0.6, 0.3, 0.6)
+
+[node name="LillyPads" instance=ExtResource("1_gp0p7")]
+
+[node name="SM_Plant_Lillypad_Large_01" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ja3x6")
+
+[node name="FrogPuzzle" type="Node3D" parent="." index="2" node_paths=PackedStringArray("reward_container")]
+unique_name_in_owner = true
+script = ExtResource("2_ja3x6")
+valid_code = "DACBA"
+reward_container = NodePath("../RewardContainer")
+
+[node name="LillyA" type="Node3D" parent="FrogPuzzle" index="0" node_paths=PackedStringArray("pointer", "pointer_target", "detector")]
+script = ExtResource("4_ja3x6")
+pointer = NodePath("../../Frog")
+pointer_target = NodePath("TargetA")
+character = "A"
+detector = NodePath("Area3D")
+hover_label = "Hop"
+
+[node name="Area3D" type="Area3D" parent="FrogPuzzle/LillyA" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrogPuzzle/LillyA/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999994, 0.049999982, 0.15000002)
+shape = SubResource("BoxShape3D_2i5oo")
+
+[node name="TargetA" type="Node3D" parent="FrogPuzzle/LillyA" index="1"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.1, 0.234, 0.1)
+
+[node name="Label" type="Label3D" parent="FrogPuzzle/LillyA" index="2"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.1, 0.2, 0.1)
+pixel_size = 0.01
+billboard = 2
+text = "A"
+
+[node name="LillyB" type="Node3D" parent="FrogPuzzle" index="1" node_paths=PackedStringArray("pointer", "pointer_target", "detector")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, -0.2)
+script = ExtResource("4_ja3x6")
+pointer = NodePath("../../Frog")
+pointer_target = NodePath("TargetB")
+character = "B"
+detector = NodePath("Area3D")
+hover_label = "Hop"
+
+[node name="Area3D" type="Area3D" parent="FrogPuzzle/LillyB" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrogPuzzle/LillyB/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999994, 0.049999982, 0.15000002)
+shape = SubResource("BoxShape3D_2i5oo")
+
+[node name="TargetB" type="Node3D" parent="FrogPuzzle/LillyB" index="1"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.2, 0.234, 0.2)
+
+[node name="Label" type="Label3D" parent="FrogPuzzle/LillyB" index="2"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.20000005, 0.2, 0.2)
+pixel_size = 0.01
+billboard = 2
+text = "B"
+
+[node name="LillyC" type="Node3D" parent="FrogPuzzle" index="2" node_paths=PackedStringArray("pointer", "pointer_target", "detector")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59999996, 0, 0.6)
+script = ExtResource("4_ja3x6")
+pointer = NodePath("../../Frog")
+pointer_target = NodePath("TargetC")
+character = "C"
+detector = NodePath("Area3D")
+hover_label = "Hop"
+
+[node name="Area3D" type="Area3D" parent="FrogPuzzle/LillyC" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrogPuzzle/LillyC/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999964, 0.05000002, 0.14999998)
+shape = SubResource("BoxShape3D_ja3x6")
+
+[node name="TargetC" type="Node3D" parent="FrogPuzzle/LillyC" index="1"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.1, 0.234, 0.2)
+
+[node name="Label" type="Label3D" parent="FrogPuzzle/LillyC" index="2"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.100000024, 0.2, 0.19999999)
+pixel_size = 0.01
+billboard = 2
+text = "C"
+
+[node name="LillyD" type="Node3D" parent="FrogPuzzle" index="3" node_paths=PackedStringArray("pointer", "pointer_target", "detector")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000001, 0, 0.50000006)
+script = ExtResource("4_ja3x6")
+pointer = NodePath("../../Frog")
+pointer_target = NodePath("TargetD")
+character = "D"
+detector = NodePath("Area3D")
+hover_label = "Hop"
+
+[node name="Area3D" type="Area3D" parent="FrogPuzzle/LillyD" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrogPuzzle/LillyD/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100000024, -2.2351742e-08, 0.15000004)
+shape = SubResource("BoxShape3D_2i5oo")
+
+[node name="TargetD" type="Node3D" parent="FrogPuzzle/LillyD" index="1"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.2, 0.234, 0.1)
+
+[node name="Label" type="Label3D" parent="FrogPuzzle/LillyD" index="2"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.20000005, 0.2, 0.099999964)
+pixel_size = 0.01
+billboard = 2
+text = "D"
+
+[node name="LillyE" type="Node3D" parent="FrogPuzzle" index="4" node_paths=PackedStringArray("pointer", "pointer_target", "detector")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0000001, 0, -0.39999998)
+script = ExtResource("4_ja3x6")
+pointer = NodePath("../../Frog")
+pointer_target = NodePath("TargetE")
+character = "E"
+detector = NodePath("Area3D")
+hover_label = "Hop"
+
+[node name="Area3D" type="Area3D" parent="FrogPuzzle/LillyE" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrogPuzzle/LillyE/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100000024, 0.099999964, 0.15000002)
+shape = SubResource("BoxShape3D_i4jmu")
+
+[node name="TargetE" type="Node3D" parent="FrogPuzzle/LillyE" index="1"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.1, 0.234, 0.1)
+
+[node name="Label" type="Label3D" parent="FrogPuzzle/LillyE" index="2"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.100000024, 0.2, 0.099999964)
+pixel_size = 0.01
+billboard = 2
+text = "E"
+
+[node name="LillyF" type="Node3D" parent="FrogPuzzle" index="5" node_paths=PackedStringArray("pointer", "pointer_target", "detector")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20000005, 0, -0.9)
+script = ExtResource("4_ja3x6")
+pointer = NodePath("../../Frog")
+pointer_target = NodePath("TargetF")
+character = "F"
+detector = NodePath("Area3D")
+hover_label = "F"
+
+[node name="Area3D" type="Area3D" parent="FrogPuzzle/LillyF" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrogPuzzle/LillyF/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999964, 0.099999994, 0.14999998)
+shape = SubResource("BoxShape3D_nktfv")
+
+[node name="TargetF" type="Node3D" parent="FrogPuzzle/LillyF" index="1"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.1, 0.234, 0.2)
+
+[node name="Label" type="Label3D" parent="FrogPuzzle/LillyF" index="2"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.100000024, 0.2, 0.19999999)
+pixel_size = 0.01
+billboard = 2
+text = "F"
+
+[node name="Frog" parent="." index="3" instance=ExtResource("5_2i5oo")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.1375565, 0.23441531, 0.1369206)
+
+[node name="RewardContainer" type="Node3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.320617, 0)
+visible = false
+
+[node name="KeyItem" parent="RewardContainer" index="0" instance=ExtResource("6_i4jmu")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
