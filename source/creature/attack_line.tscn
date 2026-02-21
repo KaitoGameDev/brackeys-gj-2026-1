@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmxclf0j2uakq"]
+
+[ext_resource type="PackedScene" uid="uid://cd77x4tcmsy3c" path="res://source/creature/attack.tscn" id="1_2jbcs"]
+[ext_resource type="Script" uid="uid://dwhbco81xfxhu" path="res://source/creature/attack_line.gd" id="1_o83ng"]
+
+[node name="AttackLine" type="Node3D"]
+script = ExtResource("1_o83ng")
+
+[node name="CreatureAttack" parent="." instance=ExtResource("1_2jbcs")]
+velocity = 0.0
+
+[node name="CreatureAttack2" parent="." instance=ExtResource("1_2jbcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4422234, 0, 0)
+velocity = 0.0
+
+[node name="CreatureAttack4" parent="." instance=ExtResource("1_2jbcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.869969, 0, 0)
+velocity = 0.0
+
+[node name="CreatureAttack5" parent="." instance=ExtResource("1_2jbcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4020754, 0, 0)
+velocity = 0.0
+
+[node name="CreatureAttack7" parent="." instance=ExtResource("1_2jbcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8052273, 0, 0)
+velocity = 0.0

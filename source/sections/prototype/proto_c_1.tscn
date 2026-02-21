@@ -1,50 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://egp4qiunr7we"]
+[gd_scene load_steps=7 format=3 uid="uid://egp4qiunr7we"]
 
 [ext_resource type="PackedScene" uid="uid://dsf10vwd7ffyk" path="res://assets/synty_models/nightmare/gate.glb" id="1_f2ndt"]
 [ext_resource type="PackedScene" uid="uid://duthhvo5avtow" path="res://source/creature/puzzle_1.tscn" id="2_vnlv3"]
-[ext_resource type="Script" uid="uid://b3c2xvep35fky" path="res://source/creature/attack.gd" id="3_4fqp5"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="3_cy1gt"]
-[ext_resource type="Texture2D" uid="uid://b8yk564tv2xfd" path="res://assets/sprites/creature/creature_attack_a.png" id="4_4olmp"]
-[ext_resource type="Texture2D" uid="uid://dpuuvkaf38chm" path="res://assets/sprites/creature/creature_attack_b.png" id="5_t43m7"]
+[ext_resource type="PackedScene" uid="uid://cd77x4tcmsy3c" path="res://source/creature/attack.tscn" id="3_wd0yx"]
 [ext_resource type="PackedScene" uid="uid://cbj12sjnq5onk" path="res://source/creature/creature.tscn" id="6_y3oph"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax22t"]
 transparency = 1
 albedo_color = Color(0.80784315, 0.34117648, 0, 0.5529412)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_2f2ft"]
-radius = 0.14945282
-
-[sub_resource type="PackedScene" id="PackedScene_rwfwd"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("CreatureAttack", "script", "detector", "hover_label", "Node3D", "Sprite3D", "texture_filter", "texture", "Area", "Area3D", "CollisionShape3D", "transform", "shape"),
-"node_count": 4,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 4, 0, -1, 3, 1, 0, 1073741826, 1, 3, 2, 0, 0, 0, 5, 5, -1, 2, 6, 3, 7, 4, 0, 0, 0, 9, 8, -1, 0, 0, 2, 0, 10, 10, -1, 2, 11, 5, 12, 6, 0),
-"variants": [ExtResource("3_4fqp5"), NodePath("Area"), "Evade!", 0, ExtResource("4_4olmp"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020186365, 0.007882595, 0), SubResource("SphereShape3D_2f2ft")],
-"version": 3
-}
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_1i5a1"]
-radius = 0.14945282
-
-[sub_resource type="PackedScene" id="PackedScene_7fji1"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("CreatureAttack", "script", "detector", "hover_label", "Node3D", "Sprite3D", "texture_filter", "texture", "Area", "Area3D", "CollisionShape3D", "transform", "shape"),
-"node_count": 4,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 4, 0, -1, 3, 1, 0, 1073741826, 1, 3, 2, 0, 0, 0, 5, 5, -1, 2, 6, 3, 7, 4, 0, 0, 0, 9, 8, -1, 0, 0, 2, 0, 10, 10, -1, 2, 11, 5, 12, 6, 0),
-"variants": [ExtResource("3_4fqp5"), NodePath("Area"), "Evade!", 0, ExtResource("5_t43m7"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020186365, 0.007882595, 0), SubResource("SphereShape3D_1i5a1")],
-"version": 3
-}
 
 [node name="ProtoA1" type="Node3D"]
 
@@ -55,29 +19,16 @@ use_collision = true
 collision_layer = 512
 size = Vector3(2, 0.1, 4)
 
-[node name="player_spot" type="CSGSphere3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
-radius = 0.1
-
-[node name="Label" type="Label3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, 1.5)
-pixel_size = 0.01
-text = "C1"
-
 [node name="gate2" parent="." instance=ExtResource("1_f2ndt")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, 0.46421546)
 
 [node name="gate8" parent="." instance=ExtResource("1_f2ndt")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, -1.0357845)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.9972966, 0, -0.07348198, 0, 1, 0, 0.07348198, 0, -0.9972966, 0, 0.7956131, -1.7652429)
-fov = 57.600983
-
 [node name="Puzzle1" parent="." node_paths=PackedStringArray("key_item", "creature") instance=ExtResource("2_vnlv3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60812074, 0.8999939)
 key_item = NodePath("../KeyItem")
-attacks = Array[PackedScene]([SubResource("PackedScene_rwfwd"), SubResource("PackedScene_7fji1")])
+attack_scene = ExtResource("3_wd0yx")
 creature = NodePath("../Creature")
 
 [node name="Creature" parent="." instance=ExtResource("6_y3oph")]

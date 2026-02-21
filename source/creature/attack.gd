@@ -1,6 +1,9 @@
 class_name Attack extends Interactable
 
+@export var sprites: Array[Texture2D] = []
 @export var velocity : float = 0.01
+
+@onready var sprite: Sprite3D = $Sprite3D
 
 signal on_eliminated
 
@@ -14,9 +17,11 @@ func _physics_process(delta: float) -> void:
 	
 func _ready() -> void:
 	super._ready()
-	position.y = randf_range(0.5, 1)
-	position.x = randf_range(-0.5, 1)
-	get_tree().create_timer(5.0).timeout.connect(_hit_player)
+	sprite.texture = sprites.pick_random()
+	if velocity != 0.0:
+		position.y = randf_range(0.5, 1)
+		position.x = randf_range(-0.5, 1.5)
+		get_tree().create_timer(5.0).timeout.connect(_hit_player)
 	
 	
 func _hit_player() -> void:

@@ -1,6 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://t3d0efu0iffw"]
+[gd_scene load_steps=8 format=3 uid="uid://t3d0efu0iffw"]
 
 [ext_resource type="PackedScene" uid="uid://dsf10vwd7ffyk" path="res://assets/synty_models/nightmare/gate.glb" id="1_mpwix"]
+[ext_resource type="PackedScene" uid="uid://btsg7j3kew2p5" path="res://source/creature/puzzle_2.tscn" id="2_mnnko"]
+[ext_resource type="Script" uid="uid://coh84kba7h224" path="res://source/creature/puzzle_2.gd" id="3_q4dv5"]
+[ext_resource type="PackedScene" uid="uid://cmxclf0j2uakq" path="res://source/creature/attack_line.tscn" id="4_ktu22"]
+[ext_resource type="PackedScene" uid="uid://cbj12sjnq5onk" path="res://source/creature/creature.tscn" id="5_2iwfj"]
+[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="6_kh7nw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vaude"]
 albedo_color = Color(0.80784315, 0.34117648, 0, 1)
@@ -28,3 +33,17 @@ transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0
 
 [node name="gate8" parent="." instance=ExtResource("1_mpwix")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, -1.0357845)
+
+[node name="Puzzle2" parent="." node_paths=PackedStringArray("key_item", "creature") instance=ExtResource("2_mnnko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45630527, 0.9631702)
+script = ExtResource("3_q4dv5")
+key_item = NodePath("../KeyItem")
+attacks = ExtResource("4_ktu22")
+creature = NodePath("../Creature")
+
+[node name="Creature" parent="." instance=ExtResource("5_2iwfj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.723123, 1.028316)
+
+[node name="KeyItem" parent="." instance=ExtResource("6_kh7nw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012388825, 0.56350327, 0.93317837)
+visible = false
