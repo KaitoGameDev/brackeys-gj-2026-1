@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dcc1thb5d1bl8"]
+[gd_scene load_steps=29 format=3 uid="uid://dcc1thb5d1bl8"]
 
 [ext_resource type="Script" uid="uid://bxwqxnnxepbuy" path="res://source/room/center_room.gd" id="1_5xmys"]
 [ext_resource type="PackedScene" uid="uid://52b8d2sfi07d" path="res://source/sections/prototype/proto_a_1.tscn" id="1_a5ckb"]
@@ -23,7 +23,6 @@
 [ext_resource type="Environment" uid="uid://kssk2vr2adhf" path="res://source/sections/environments/nightmare_environment.tres" id="15_jfsvp"]
 [ext_resource type="Environment" uid="uid://b06pmujrdb7hn" path="res://source/sections/environments/apartment_environment.tres" id="16_sjnex"]
 [ext_resource type="Environment" uid="uid://cr1kbmy0vvjeo" path="res://source/sections/environments/dungeon_environment.tres" id="18_erm4m"]
-[ext_resource type="PackedScene" uid="uid://bm2tl2lfjxjwr" path="res://source/room/particles/fog.tscn" id="24_2dm64"]
 [ext_resource type="PackedScene" uid="uid://cbj12sjnq5onk" path="res://source/creature/creature.tscn" id="24_k10tv"]
 [ext_resource type="PackedScene" uid="uid://dsbvt2nfklkcf" path="res://source/creature/sanity_filter.tscn" id="25_ija0u"]
 
@@ -92,9 +91,6 @@ input_back = "ui_down"
 
 [node name="Creature" parent="player_pivot" instance=ExtResource("24_k10tv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8523662, 0.63756645, -1.7538409)
-
-[node name="Fog" parent="player_pivot" instance=ExtResource("24_2dm64")]
-transform = Transform3D(0.77102476, 0.6368052, 0, -0.6368052, 0.77102476, 0, 0, 0, 1, 0.018877983, 0, 2)
 
 [node name="Walls" type="Node3D" parent="."]
 visible = false
