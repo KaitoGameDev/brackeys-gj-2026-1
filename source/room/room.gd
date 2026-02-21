@@ -30,7 +30,7 @@ func _on_playern_movement_end() -> void:
 	
 	var old_section : Node3D = _halls[_current_hall].get_child(0)
 	var section = sections.pop_front().instantiate()
-	_halls[_current_hall].add_child(section)
+	_halls[_current_hall].add_child.call_deferred(section)
 	section.position = old_section.position
 	old_section.queue_free.call_deferred()
 	_current_hall += 1
