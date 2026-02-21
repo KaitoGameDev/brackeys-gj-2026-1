@@ -28,7 +28,7 @@ func _on_mouse_exited() -> void:
 	EventBusSingleton.send_event(cursor_event)
 	
 func _process(_delta: float) -> void:
-	if Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT) and _is_over_item:
+	if Input.is_action_just_pressed("interact") and _is_over_item:
 		_on_interact()
 		
 func _on_interact():

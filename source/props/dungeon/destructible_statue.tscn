@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8kiodmen5jps"]
+
+[ext_resource type="Script" uid="uid://d187rkvtymr6n" path="res://source/interactions/destructible_statue.gd" id="1_gjg6q"]
+[ext_resource type="ArrayMesh" uid="uid://chfu0aovu388s" path="res://assets/synty_models/dungeon/SM_Env_Statue_04.res" id="1_q8igw"]
+[ext_resource type="ArrayMesh" uid="uid://4jxj0jelwllq" path="res://assets/synty_models/dungeon/SM_Env_Pillar_Broken_02.res" id="2_ts8jk"]
+[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="4_kkmtb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gjg6q"]
+size = Vector3(1.6, 3, 1.1)
+
+[node name="DestructibleStatue" type="Node3D" node_paths=PackedStringArray("statue_object", "rubble_object", "detector")]
+script = ExtResource("1_gjg6q")
+statue_object = NodePath("Statue")
+rubble_object = NodePath("Rubble")
+detector = NodePath("Statue/Area3D")
+hover_label = "Hit"
+
+[node name="Statue" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.802, 0, 0, 0, 0.802, 0, 0, 0, 0.802, 0, 0, 0)
+mesh = ExtResource("1_q8igw")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Statue"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Statue/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.574e-08, 1.4962595, 0.050000012)
+shape = SubResource("BoxShape3D_gjg6q")
+
+[node name="Rubble" type="Node3D" parent="."]
+visible = false
+
+[node name="BrokenPillar" type="MeshInstance3D" parent="Rubble"]
+transform = Transform3D(0.801, 0, 0, 0, 0.801, 0, 0, 0, 0.801, 0, 0, 0)
+mesh = ExtResource("2_ts8jk")
+skeleton = NodePath("../..")
+
+[node name="KeyItem" parent="Rubble" instance=ExtResource("4_kkmtb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8000001, 0)

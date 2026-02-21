@@ -15,4 +15,4 @@ func _on_interact():
 		item_container.add_child(item_ref)
 		
 		var container_tween = get_tree().create_tween()
-		container_tween.tween_property(item_container, "position:y", 1.0, 2.0)
+		container_tween.tween_property(item_container, "position:y", 2.0, 2.0)
