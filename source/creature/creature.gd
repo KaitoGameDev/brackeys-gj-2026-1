@@ -9,7 +9,6 @@ class_name Creature extends Node3D
 var tween: Tween
 
 func _ready() -> void:
-	_reset_sound()
 	EventBusSingleton.on_event.connect(_on_event)
 	
 func _on_event(event: Object) -> void:

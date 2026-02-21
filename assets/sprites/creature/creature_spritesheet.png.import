@@ -2,28 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csmvgnp8bleaw"
-path.s3tc="res://.godot/imported/ghost_creature.png-c5698373f12c68508acf89c43893f588.s3tc.ctex"
+uid="uid://dhv6i7cr7lle6"
+path="res://.godot/imported/creature_spritesheet.png-97b62331a0bfe7f5174ade4f0e00f311.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ghost_creature.png"
-dest_files=["res://.godot/imported/ghost_creature.png-c5698373f12c68508acf89c43893f588.s3tc.ctex"]
+source_file="res://assets/sprites/creature/creature_spritesheet.png"
+dest_files=["res://.godot/imported/creature_spritesheet.png-97b62331a0bfe7f5174ade4f0e00f311.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
