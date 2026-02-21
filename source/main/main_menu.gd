@@ -1,13 +1,14 @@
 class_name MainMenu extends Node3D
 
-@onready var start_game_btn : Button = $Control/StartGameBtn
-@onready var credits_btn : Button = $Control/CreditsBtn
+@onready var start_game_btn : Button = $Control/Container/StartGameBtn
+@onready var credits_btn : Button = $Control/Container/CreditsBtn
 @onready var back_btn : Button = $Control/BackBtn
 @onready var camera_pivot: Node3D = $Tower/CameraPivot
 @onready var camera: Camera3D = $Tower/CameraPivot/Camera3D
-
+@onready var title: Label = $Control/Title
 @onready var door_right := $Tower/DoorRight
 @onready var door_left := $Tower/DoorLeft
+@onready var world_environment: WorldEnvironment = $Tower/WorldEnvironment
 
 var normal_camera_position := Vector3(0, 2.0, -16.0)
 var credits_camera_position := Vector3(0, 16.0, -16.0)
@@ -18,10 +19,14 @@ func _ready() -> void:
 	credits_btn.pressed.connect(_on_credits_btn_pressed)
 	back_btn.pressed.connect(_on_back_btn_pressed)
 	
-	
+func _process(delta: float) -> void:
+	world_environment.environment.sky_rotation.y += delta * 0.025
+		
 func _on_start_btn_pressed() -> void:
 	start_game_btn.visible = false
 	credits_btn.visible = false
+	title.visible = false
+	
 	var tween := create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(door_right, 'rotation_degrees:y', 120, 0.5)

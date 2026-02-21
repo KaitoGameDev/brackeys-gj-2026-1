@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="brackeys-gj-2026-1"
-run/main_scene="uid://d0owgkwrisbf7"
+run/main_scene="uid://cf6eu6dtek55k"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 EventBusSingleton="*res://source/event_bus/event_bus.gd"
+CursorControllerSingleton="*res://source/controllers/cursor_controller.tscn"
 
 [display]
 
@@ -29,6 +30,7 @@ window/stretch/mode="viewport"
 
 folder_colors={
 "res://assets/": "yellow",
+"res://resources/": "green",
 "res://source/": "purple"
 }
 
