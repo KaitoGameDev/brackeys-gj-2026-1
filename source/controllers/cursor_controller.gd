@@ -1,4 +1,4 @@
-class_name CursorController extends Node3D
+class_name CursorController extends Node
 
 var cursors : Array[Resource] = [
 	load('res://resources/cursors/normal.png'),
