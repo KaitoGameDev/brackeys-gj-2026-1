@@ -1,6 +1,48 @@
-[gd_scene load_steps=2 format=3 uid="uid://5xp668ddmpup"]
+[gd_scene load_steps=3 format=3 uid="uid://5xp668ddmpup"]
 
 [ext_resource type="Script" uid="uid://chtnbnjuas1rd" path="res://source/creature/puzzle_3.gd" id="1_vx4sd"]
+[ext_resource type="FontFile" uid="uid://bqopgw3npg7ys" path="res://assets/fonts/New_Rocker/NewRocker-Regular.ttf" id="2_uydab"]
 
 [node name="puzzle3" type="Node3D"]
 script = ExtResource("1_vx4sd")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Control"]
+visible = false
+self_modulate = Color(0.47058824, 0.32156864, 0.21176471, 0.5176471)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19791667
+anchor_top = 0.70555556
+anchor_right = 0.8052083
+anchor_bottom = 0.9314815
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Messages" type="RichTextLabel" parent="Control/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("2_uydab")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[shake]You Fool!, that was fake
+HAHAHAHA[/shake]"
+horizontal_alignment = 1
+vertical_alignment = 1
