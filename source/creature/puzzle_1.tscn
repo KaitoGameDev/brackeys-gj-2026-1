@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://duthhvo5avtow"]
+
+[ext_resource type="Script" uid="uid://cjd7ka6kmy7bt" path="res://source/creature/puzzle_1.gd" id="1_megbp"]
+
+[node name="Puzzle1" type="Node3D"]
+script = ExtResource("1_megbp")

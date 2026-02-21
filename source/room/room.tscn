@@ -98,6 +98,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8523662, 0.63756645, -1.75
 transform = Transform3D(0.77102476, 0.6368052, 0, -0.6368052, 0.77102476, 0, 0, 0, 1, 0.018877983, 0, 2)
 
 [node name="Walls" type="Node3D" parent="."]
+visible = false
 
 [node name="InnerWall1" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, -0.9447796, 0.7586132, -0.02290368)

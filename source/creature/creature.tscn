@@ -51,4 +51,5 @@ bus = &"Creature"
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_sm6sn")
+autoplay = "default"
 frame_progress = 0.34549603
