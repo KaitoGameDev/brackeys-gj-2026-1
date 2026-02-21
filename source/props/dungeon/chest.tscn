@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyitoaohx0in3"]
+
+[ext_resource type="ArrayMesh" uid="uid://c5pmjqw6lsv2n" path="res://assets/synty_models/dungeon/SM_Prop_Chest_03.res" id="1_e02gx"]
+[ext_resource type="Script" uid="uid://4ayp0b4x5gkr" path="res://source/interactions/chest.gd" id="2_qmfo4"]
+[ext_resource type="ArrayMesh" uid="uid://b3fmbpa6orgby" path="res://assets/synty_models/dungeon/SM_Prop_Chest_03_Lid.res" id="2_sk3hc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sk3hc"]
+size = Vector3(1.4, 1, 1)
+
+[node name="Chest" type="MeshInstance3D" node_paths=PackedStringArray("chest_lid_object", "item_container", "detector")]
+transform = Transform3D(0.40100002, 0, 0, 0, 0.401, 0, 0, 0, 0.40100002, 0, 0, 0)
+mesh = ExtResource("1_e02gx")
+skeleton = NodePath("../Walls")
+script = ExtResource("2_qmfo4")
+chest_lid_object = NodePath("ChestLid")
+item_container = NodePath("ItemContainer")
+detector = NodePath("Area3D")
+hover_label = "Open"
+
+[node name="ChestLid" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 0.4000001, -0.3)
+mesh = ExtResource("2_sk3hc")
+skeleton = NodePath("../..")
+
+[node name="ItemContainer" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000005, 0, 0, 0, 1.0000002, 5.5740003e-08, 0.5039653, 0)
+shape = SubResource("BoxShape3D_sk3hc")

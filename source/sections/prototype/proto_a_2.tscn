@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://lyrwr44mckqk"]
+[gd_scene load_steps=11 format=3 uid="uid://lyrwr44mckqk"]
 
 [ext_resource type="ArrayMesh" uid="uid://cwshth0e6v8kv" path="res://assets/synty_models/dungeon/SM_Env_Tiles_01.res" id="1_uan7b"]
 [ext_resource type="ArrayMesh" uid="uid://cf7iwm65a42u6" path="res://assets/synty_models/dungeon/SM_Env_Wall_Trim_Edge_01.res" id="2_urkvx"]
@@ -6,8 +6,9 @@
 [ext_resource type="ArrayMesh" uid="uid://s06ovcm181je" path="res://assets/synty_models/dungeon/SM_Env_Wall_01.res" id="4_ucikb"]
 [ext_resource type="ArrayMesh" uid="uid://w58vvtk2mtnw" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_Coner_Inner_01.res" id="5_5kj3j"]
 [ext_resource type="ArrayMesh" uid="uid://cph5ahqfdd2st" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_01.res" id="6_urkvx"]
-[ext_resource type="ArrayMesh" uid="uid://c5pmjqw6lsv2n" path="res://assets/synty_models/dungeon/SM_Prop_Chest_03.res" id="7_ucikb"]
-[ext_resource type="ArrayMesh" uid="uid://b3fmbpa6orgby" path="res://assets/synty_models/dungeon/SM_Prop_Chest_03_Lid.res" id="8_5kj3j"]
+[ext_resource type="PackedScene" uid="uid://cyitoaohx0in3" path="res://source/props/dungeon/chest.tscn" id="7_nf8w6"]
+[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="8_5kj3j"]
+[ext_resource type="PackedScene" uid="uid://6rdcmumeb37k" path="res://source/props/dungeon/torch.tscn" id="8_ucikb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vaude"]
 albedo_color = Color(1, 1, 0, 1)
@@ -144,37 +145,18 @@ transform = Transform3D(-0.40100002, 0, 3.5056534e-08, 0, 0.401, 0, -3.5056534e-
 mesh = ExtResource("6_urkvx")
 skeleton = NodePath("../..")
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(-0.86602545, 0, -0.49999994, 0, 1, 0, 0.49999994, 0, -0.86602545, -0.6279157, 1.2811999, -0.2671514)
-light_color = Color(1, 0.5788655, 0.34784958, 1)
-shadow_enabled = true
+[node name="Chest01" parent="." instance=ExtResource("7_nf8w6")]
+transform = Transform3D(-0.3472762, 0, -0.20050004, 0, 0.401, 0, 0.20050004, 0, -0.3472762, 0.3, 0, 0.100000024)
 
-[node name="SmPropChest03" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.34727618, 0, -0.20050003, 0, 0.401, 0, 0.20050003, 0, -0.34727618, 0.3, 0, 0.100000024)
-mesh = ExtResource("7_ucikb")
-skeleton = NodePath("../Walls")
+[node name="Chest02" parent="." instance=ExtResource("7_nf8w6")]
+transform = Transform3D(-0.32848004, 0, 0.23000416, 0, 0.40100005, 0, -0.23000416, 0, -0.32848004, -0.39999998, 0, 0.100000024)
 
-[node name="SmPropChest03Lid" type="MeshInstance3D" parent="SmPropChest03"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.3)
-mesh = ExtResource("8_5kj3j")
-skeleton = NodePath("../..")
+[node name="Chest03" parent="." instance=ExtResource("7_nf8w6")]
+transform = Transform3D(-0.34727624, 0, 0.20050003, 0, 0.40100005, 0, -0.20050003, 0, -0.34727624, -0.3, 0, 1.3)
 
-[node name="SmPropChest04" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.32848, 0, 0.23000413, 0, 0.401, 0, -0.23000413, 0, -0.32848, -0.39999998, 0, 1.0999999)
-mesh = ExtResource("7_ucikb")
-skeleton = NodePath("../Walls")
+[node name="Chest04" parent="." instance=ExtResource("7_nf8w6")]
+transform = Transform3D(-0.38733625, 0, -0.10378645, 0, 0.40100005, 0, 0.10378645, 0, -0.38733625, 0.39999998, 0, 1.3)
+item = ExtResource("8_5kj3j")
 
-[node name="SmPropChest03Lid" type="MeshInstance3D" parent="SmPropChest04"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.3)
-mesh = ExtResource("8_5kj3j")
-skeleton = NodePath("../..")
-
-[node name="SmPropChest05" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.32848, 0, 0.23000413, 0, 0.401, 0, -0.23000413, 0, -0.32848, -0.39999998, 0, 0.099999964)
-mesh = ExtResource("7_ucikb")
-skeleton = NodePath("../Walls")
-
-[node name="SmPropChest03Lid" type="MeshInstance3D" parent="SmPropChest05"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.3)
-mesh = ExtResource("8_5kj3j")
-skeleton = NodePath("../..")
+[node name="Torch" parent="." instance=ExtResource("8_ucikb")]
+transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.8000001, 1.1, -0.2698126)
