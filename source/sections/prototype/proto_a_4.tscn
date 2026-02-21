@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bltbuvvsiddny"]
+[gd_scene load_steps=13 format=3 uid="uid://bltbuvvsiddny"]
 
 [ext_resource type="ArrayMesh" uid="uid://cwshth0e6v8kv" path="res://assets/synty_models/dungeon/SM_Env_Tiles_01.res" id="1_gei7q"]
 [ext_resource type="ArrayMesh" uid="uid://cf7iwm65a42u6" path="res://assets/synty_models/dungeon/SM_Env_Wall_Trim_Edge_01.res" id="2_1c7f5"]
@@ -6,9 +6,25 @@
 [ext_resource type="ArrayMesh" uid="uid://s06ovcm181je" path="res://assets/synty_models/dungeon/SM_Env_Wall_01.res" id="4_puc3t"]
 [ext_resource type="ArrayMesh" uid="uid://w58vvtk2mtnw" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_Coner_Inner_01.res" id="5_8rmvq"]
 [ext_resource type="ArrayMesh" uid="uid://cph5ahqfdd2st" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_01.res" id="6_1c7f5"]
+[ext_resource type="Texture2D" uid="uid://b66buw2w46qqe" path="res://assets/sprites/dungeon_stairs.png" id="7_dloe3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqhre"]
 albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_puc3t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rmvq"]
+albedo_color = Color(2.0325725, 2.0325725, 2.0325725, 1)
+albedo_texture = ExtResource("7_dloe3")
+emission = Color(0.14064777, 0.14064777, 0.14064777, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t7jor"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6sf74"]
+cull_mode = 1
+disable_ambient_light = true
+albedo_color = Color(0, 0, 0, 1)
+disable_receive_shadows = true
 
 [node name="ProtoA4" type="Node3D"]
 
@@ -70,11 +86,6 @@ transform = Transform3D(0.400689, 0, 0, 0, 0.25, 0, 0, 0, 0.400689, -1.0003018, 
 mesh = ExtResource("1_gei7q")
 skeleton = NodePath("../..")
 
-[node name="SmEnvWallTrimEdge03" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.98040485, 0, 0.0034633875)
-mesh = ExtResource("2_1c7f5")
-skeleton = NodePath("../..")
-
 [node name="SmEnvWallTrimEdge07" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.98040485, 0, 2.0034633)
 mesh = ExtResource("2_1c7f5")
@@ -111,18 +122,8 @@ transform = Transform3D(-1.7528267e-08, 0, -0.401, 0, 0.401, 0, 0.401, 0, -1.752
 mesh = ExtResource("4_puc3t")
 skeleton = NodePath("../..")
 
-[node name="SmEnvWall10" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-1.7528267e-08, 0, -0.401, 0, 0.401, 0, 0.401, 0, -1.7528267e-08, 0.93095225, 4.7683716e-07, 0.04675603)
-mesh = ExtResource("4_puc3t")
-skeleton = NodePath("../..")
-
 [node name="SmEnvWall11" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-1.7528267e-08, 0, -0.401, 0, 0.401, 0, 0.401, 0, -1.7528267e-08, 0.93095225, 2.0000005, 0.04675603)
-mesh = ExtResource("4_puc3t")
-skeleton = NodePath("../..")
-
-[node name="SmEnvWall02" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.9583879, 4.7683716e-07, 0.046187997)
 mesh = ExtResource("4_puc3t")
 skeleton = NodePath("../..")
 
@@ -157,6 +158,16 @@ transform = Transform3D(-1.7528265e-08, 0, 0.40099996, 0, 0.401, 0, -0.40099996,
 mesh = ExtResource("4_puc3t")
 skeleton = NodePath("../..")
 
+[node name="SmEnvWallTrimEdge09" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.98040485, 0, 0.0034632683)
+mesh = ExtResource("2_1c7f5")
+skeleton = NodePath("../..")
+
+[node name="SmEnvWall10" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1.7528265e-08, 0, 0.40099996, 0, 0.401, 0, -0.40099996, 0, -1.7528265e-08, -0.95176995, 4.7683716e-07, -0.043506145)
+mesh = ExtResource("4_puc3t")
+skeleton = NodePath("../..")
+
 [node name="SmEnvWall08" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-1.7528265e-08, 0, 0.40099996, 0, 0.401, 0, -0.40099996, 0, -1.7528265e-08, -0.95176995, 2.0000005, -0.043506145)
 mesh = ExtResource("4_puc3t")
@@ -181,3 +192,14 @@ skeleton = NodePath("../..")
 transform = Transform3D(-0.40100002, 0, 3.5056534e-08, 0, 0.401, 0, -3.5056534e-08, 0, -0.40100002, 0.87179554, 2, 1.9425838)
 mesh = ExtResource("6_1c7f5")
 skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.826325e-07, 0.8682417, -2.954424, 7.237833e-08, 4.9240394, 0.5209451, 2.2499995, -2.2887245e-07, 2.230528e-07, 1.1761082, 1.0999999, 0.9779893)
+mesh = SubResource("QuadMesh_puc3t")
+surface_material_override/0 = SubResource("StandardMaterial3D_8rmvq")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.6424266e-07, -0.48749998, 1.7484555e-07, 0, -2.1309301e-08, -4, 3.5, 3.6805226e-08, -1.3200472e-14, 1.1761075, 1, 0.97798884)
+cast_shadow = 2
+mesh = SubResource("BoxMesh_t7jor")
+surface_material_override/0 = SubResource("StandardMaterial3D_6sf74")
