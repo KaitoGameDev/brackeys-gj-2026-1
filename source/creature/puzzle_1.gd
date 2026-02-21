@@ -20,7 +20,7 @@ func _on_event(event: Object) -> void:
 func _handle_player_movement() -> void:
 	_moves += 1
 	if _moves == 4:
-		_start_puzzle()
+		get_tree().create_timer(2.0).timeout.connect(_start_puzzle)
 		
 func _start_puzzle() -> void:
 	if should_stop:
