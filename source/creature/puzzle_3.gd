@@ -38,7 +38,6 @@ func _start_puzzle() -> void:
 	
 func _validate_attacks() -> void:
 	_eliminated_attacks += 1
-	print(_eliminated_attacks)
 	if _eliminated_attacks == 10:
 		should_stop = true
 		key_item.visible = true
@@ -49,6 +48,9 @@ func _validate_attacks() -> void:
 	
 func _on_hit_projection(was_fake: bool) -> void:
 	_cancelled_hit = true
+	var cursor_event := ChangeCursorEvent.new()
+	cursor_event.cursor_type = ChangeCursorEvent.CursorType.NORMAL
+	EventBusSingleton.send_event(cursor_event)
 	timer.timeout.disconnect(_show_fail_message)
 	for projection in current_attacks:
 		projection.queue_free.call_deferred()
