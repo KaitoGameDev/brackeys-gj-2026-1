@@ -12,5 +12,6 @@ func _on_event(event: Object) -> void:
 	
 	
 func _on_player_move(event: MoveToNextSpotEvent) -> void:
+	print(event.open_door_number)
 	if event.open_door_number == door_number:
 		door_animator.play('open')

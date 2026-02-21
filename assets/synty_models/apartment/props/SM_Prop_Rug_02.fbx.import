@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cimvlokt6by32"
-path="res://.godot/imported/SM_Prop_CeilingLight_06.fbx-8cf27aad5ab1a944b295632ca0335757.scn"
+uid="uid://m2ga1vaegm0c"
+path="res://.godot/imported/SM_Prop_Rug_02.fbx-19aff601719c84a06b0c2f021a23ef58.scn"
 
 [deps]
 
-source_file="res://assets/synty_models/apartment/SM_Prop_CeilingLight_06.fbx"
-dest_files=["res://.godot/imported/SM_Prop_CeilingLight_06.fbx-8cf27aad5ab1a944b295632ca0335757.scn"]
+source_file="res://assets/synty_models/apartment/props/SM_Prop_Rug_02.fbx"
+dest_files=["res://.godot/imported/SM_Prop_Rug_02.fbx-19aff601719c84a06b0c2f021a23ef58.scn"]
 
 [params]
 
@@ -39,7 +39,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"lambert10": {
+"lambert1": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://assets/synty_models/apartment/texture/apartment_material.tres",
 "use_external/path": "uid://dppe0c821d6ii"

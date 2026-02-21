@@ -1,31 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://cegbj2epl8bwf"]
+[gd_scene load_steps=18 format=3 uid="uid://cegbj2epl8bwf"]
 
 [ext_resource type="Script" uid="uid://bnw4r416u8ciy" path="res://source/sections/prototype/apartment.gd" id="1_6d8ac"]
 [ext_resource type="PackedScene" uid="uid://bs404hrfjwv2k" path="res://assets/synty_models/apartment/SM_Bld_House_InteriorWall_Door_01.fbx" id="1_f51kj"]
 [ext_resource type="PackedScene" uid="uid://ba0xypa55n68t" path="res://assets/synty_models/apartment/SM_Bld_House_InteriorWall_01.fbx" id="2_lsnb3"]
-[ext_resource type="PackedScene" uid="uid://m2ga1vaegm0c" path="res://assets/synty_models/apartment/SM_Prop_Rug_02.fbx" id="3_8tieq"]
+[ext_resource type="PackedScene" uid="uid://m2ga1vaegm0c" path="res://assets/synty_models/apartment/props/SM_Prop_Rug_02.fbx" id="3_8tieq"]
 [ext_resource type="PackedScene" uid="uid://e4vjfy1bqjg" path="res://assets/synty_models/apartment/characters/SK_Character_Daughter_01.fbx" id="4_fmnw5"]
 [ext_resource type="AnimationLibrary" uid="uid://etugn58016li" path="res://assets/animations/clap.fbx" id="5_4npjt"]
-[ext_resource type="PackedScene" uid="uid://cimvlokt6by32" path="res://assets/synty_models/apartment/SM_Prop_CeilingLight_06.fbx" id="7_glx5p"]
+[ext_resource type="PackedScene" uid="uid://cimvlokt6by32" path="res://assets/synty_models/apartment/props/SM_Prop_CeilingLight_06.fbx" id="7_glx5p"]
+[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="8_h82ff"]
+[ext_resource type="PackedScene" uid="uid://c6e8pbemba6ox" path="res://assets/synty_models/apartment/props/SM_Prop_Art_02.fbx" id="9_jfe0j"]
+[ext_resource type="PackedScene" uid="uid://b0w27gtryxrbu" path="res://assets/synty_models/apartment/props/SM_Prop_Art_03.fbx" id="10_pkt5a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax22t"]
 albedo_color = Color(0.27442613, 0.35170674, 0.41054896, 1)
-
-[sub_resource type="Animation" id="Animation_4npjt"]
-resource_name = "open"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SM_Bld_House_InteriorWall_Door_01/SM_Bld_House_InteriorWall_Door_02:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -1.7453293, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_6d8ac"]
 length = 0.001
@@ -40,6 +27,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4npjt"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_Bld_House_InteriorWall_Door_01/SM_Bld_House_InteriorWall_Door_02:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -2.0943952, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6d8ac"]
@@ -118,6 +121,7 @@ albedo_color = Color(0.39498678, 0.3949867, 0.3949867, 1)
 
 [node name="Apartment1" type="Node3D" node_paths=PackedStringArray("door_animator")]
 script = ExtResource("1_6d8ac")
+door_number = 1
 door_animator = NodePath("SM_Bld_House_InteriorWall_Door_01/AnimationPlayer2")
 
 [node name="Floor" type="CSGBox3D" parent="."]
@@ -126,18 +130,17 @@ use_collision = true
 collision_layer = 512
 size = Vector3(2, 0.1, 4)
 
-[node name="player_spot" type="CSGSphere3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
-radius = 0.1
-
-[node name="Grettings" type="Label3D" parent="."]
-transform = Transform3D(-0.9878464, 0, 0.15543447, 0, 1, 0, -0.15543447, 0, -0.9878464, -0.269246, 0.89289534, 0.91718554)
-pixel_size = 0.0025
+[node name="Message" type="Label3D" parent="."]
+transform = Transform3D(-0.9143672, 0, 0.40488622, 0, 1, 0, -0.40488622, 0, -0.9143672, -0.41909915, 0.69323266, 0.71654963)
+pixel_size = 0.0055
 text = "I'm so proud
 of you"
 
 [node name="SM_Bld_House_InteriorWall_Door_01" parent="." instance=ExtResource("1_f51kj")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0, 2)
+
+[node name="SM_Bld_House_InteriorWall_Door_01" parent="SM_Bld_House_InteriorWall_Door_01" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.049767017, 0)
 
 [node name="SM_Bld_House_InteriorWall_Door_02" parent="SM_Bld_House_InteriorWall_Door_01/SM_Bld_House_InteriorWall_Door_01" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7439499, 0.011907291, 0.07011467)
@@ -148,25 +151,25 @@ libraries = {
 }
 
 [node name="SM_Bld_House_InteriorWall_01" parent="." instance=ExtResource("2_lsnb3")]
-transform = Transform3D(1.7881394e-08, 0, 1, 0, 1, 0, -0.6, 0, 2.9802322e-08, 1, 0, -0.5)
+transform = Transform3D(1.7881394e-08, 0, 1, 0, 1, 0, -0.6, 0, 2.9802322e-08, 1, 0.049767017, -0.5)
 
 [node name="SM_Bld_House_InteriorWall_06" parent="." instance=ExtResource("2_lsnb3")]
-transform = Transform3D(4.5708717e-08, 0, 1, 0, 1, 0, -1.53373, 0, 2.9802322e-08, 1, 2.8102465, 1.8531523)
+transform = Transform3D(4.5708717e-08, 0, 1, 0, 1, 0, -1.53373, 0, 2.9802322e-08, 1, 2.8600135, 1.8531523)
 
 [node name="SM_Bld_House_InteriorWall_02" parent="." instance=ExtResource("2_lsnb3")]
-transform = Transform3D(1.0022038e-07, 0, -1, 0, 1, 0, 1.681419, 0, 5.9604645e-08, -1, 0, -2.000129)
+transform = Transform3D(1.0022038e-07, 0, -1, 0, 1, 0, 1.681419, 0, 5.9604645e-08, -1, 0.049767017, -2.000129)
 
 [node name="SM_Bld_House_InteriorWall_05" parent="." instance=ExtResource("2_lsnb3")]
-transform = Transform3D(1.0022038e-07, 0, -1, 0, 1, 0, 1.681419, 0, 5.9604645e-08, -1, 2.8059506, -2.000129)
+transform = Transform3D(1.0022038e-07, 0, -1, 0, 1, 0, 1.681419, 0, 5.9604645e-08, -1, 2.8557177, -2.000129)
 
 [node name="SM_Bld_House_InteriorWall_03" parent="." instance=ExtResource("2_lsnb3")]
-transform = Transform3D(0.8651499, 0, 1.03316026e-07, 0, 1, 0, -8.938385e-08, 0, 0.99999994, -1.1, 0, 2)
+transform = Transform3D(0.8651499, 0, 1.03316026e-07, 0, 1, 0, -8.938385e-08, 0, 0.99999994, -1.1, 0.049767017, 2)
 
 [node name="SM_Bld_House_InteriorWall_04" parent="." instance=ExtResource("2_lsnb3")]
-transform = Transform3D(0.8651499, 0, 1.03316026e-07, 0, 1, 0, -8.938385e-08, 0, 0.99999994, -1.1, 2.8037024, 2)
+transform = Transform3D(0.8651499, 0, 1.03316026e-07, 0, 1, 0, -8.938385e-08, 0, 0.99999994, -1.1, 2.8534694, 2)
 
 [node name="SM_Prop_Rug_02" parent="." instance=ExtResource("3_8tieq")]
-transform = Transform3D(0, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 0, -0.054062128, 0.1, 0.8200443)
+transform = Transform3D(0, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 0, -0.054062128, 0.1, 0.79022527)
 
 [node name="SK_Character_Daughter_01" parent="." instance=ExtResource("4_fmnw5")]
 transform = Transform3D(-0.9403715, 0, 0.34014982, 0, 1, 0, -0.34014982, 0, -0.9403715, -0.33278984, 0.1454099, 1.2858889)
@@ -335,6 +338,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4949865, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.395609, 0)
 radius = 0.045
 material = SubResource("StandardMaterial3D_glx5p")
+
+[node name="KeyItem" parent="." instance=ExtResource("8_h82ff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036638834, 0.6461028, -0.052260637)
+open_door_number = 1
+
+[node name="SM_Prop_Art_02" parent="." instance=ExtResource("9_jfe0j")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.9750439, 1.7569847, -0.66058064)
+
+[node name="SM_Prop_Art_03" parent="." instance=ExtResource("10_pkt5a")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.98882747, 1.6152467, 0.96794224)
 
 [editable path="SM_Bld_House_InteriorWall_Door_01"]
 [editable path="SK_Character_Daughter_01"]

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dct6piasla16o"
-path="res://.godot/imported/SM_Prop_Rug_01.fbx-388e9458bda9d66a7b5ac80a445cbdde.scn"
+path="res://.godot/imported/SM_Prop_Rug_01.fbx-49248714390969a2f5180b1392989b1d.scn"
 
 [deps]
 
-source_file="res://assets/synty_models/apartment/SM_Prop_Rug_01.fbx"
-dest_files=["res://.godot/imported/SM_Prop_Rug_01.fbx-388e9458bda9d66a7b5ac80a445cbdde.scn"]
+source_file="res://assets/synty_models/apartment/props/SM_Prop_Rug_01.fbx"
+dest_files=["res://.godot/imported/SM_Prop_Rug_01.fbx-49248714390969a2f5180b1392989b1d.scn"]
 
 [params]
 

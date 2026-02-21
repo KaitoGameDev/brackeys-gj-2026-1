@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bs7skfpajuh5a"
-path="res://.godot/imported/SM_Prop_Rug_03.fbx-212a1898dec9472491a73c522b419491.scn"
+uid="uid://c6e8pbemba6ox"
+path="res://.godot/imported/SM_Prop_Art_02.fbx-67c49394c27dc772c05a5103cbf47f0b.scn"
 
 [deps]
 
-source_file="res://assets/synty_models/apartment/SM_Prop_Rug_03.fbx"
-dest_files=["res://.godot/imported/SM_Prop_Rug_03.fbx-212a1898dec9472491a73c522b419491.scn"]
+source_file="res://assets/synty_models/apartment/props/SM_Prop_Art_02.fbx"
+dest_files=["res://.godot/imported/SM_Prop_Art_02.fbx-67c49394c27dc772c05a5103cbf47f0b.scn"]
 
 [params]
 
@@ -37,7 +37,15 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"lambert1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/synty_models/apartment/texture/apartment_material.tres",
+"use_external/path": "uid://dppe0c821d6ii"
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

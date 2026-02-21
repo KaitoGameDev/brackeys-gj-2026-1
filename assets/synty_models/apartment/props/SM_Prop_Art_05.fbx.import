@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://m2ga1vaegm0c"
-path="res://.godot/imported/SM_Prop_Rug_02.fbx-63d66b324c3dee49abb02254a074d81e.scn"
+uid="uid://c8glln5bsi6lc"
+path="res://.godot/imported/SM_Prop_Art_05.fbx-9a2a01dfec3086878583c73eb7623905.scn"
 
 [deps]
 
-source_file="res://assets/synty_models/apartment/SM_Prop_Rug_02.fbx"
-dest_files=["res://.godot/imported/SM_Prop_Rug_02.fbx-63d66b324c3dee49abb02254a074d81e.scn"]
+source_file="res://assets/synty_models/apartment/props/SM_Prop_Art_05.fbx"
+dest_files=["res://.godot/imported/SM_Prop_Art_05.fbx-9a2a01dfec3086878583c73eb7623905.scn"]
 
 [params]
 
