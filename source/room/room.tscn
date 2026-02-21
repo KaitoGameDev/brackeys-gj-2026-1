@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dcc1thb5d1bl8"]
+[gd_scene load_steps=30 format=3 uid="uid://dcc1thb5d1bl8"]
 
 [ext_resource type="Script" uid="uid://bxwqxnnxepbuy" path="res://source/room/center_room.gd" id="1_5xmys"]
 [ext_resource type="PackedScene" uid="uid://52b8d2sfi07d" path="res://source/sections/prototype/proto_a_1.tscn" id="1_a5ckb"]
@@ -23,7 +23,6 @@
 [ext_resource type="Environment" uid="uid://kssk2vr2adhf" path="res://source/sections/environments/nightmare_environment.tres" id="15_jfsvp"]
 [ext_resource type="Environment" uid="uid://b06pmujrdb7hn" path="res://source/sections/environments/apartment_environment.tres" id="16_sjnex"]
 [ext_resource type="Environment" uid="uid://cr1kbmy0vvjeo" path="res://source/sections/environments/dungeon_environment.tres" id="18_erm4m"]
-[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="20_t1ay8"]
 [ext_resource type="PackedScene" uid="uid://bm2tl2lfjxjwr" path="res://source/room/particles/fog.tscn" id="24_2dm64"]
 [ext_resource type="PackedScene" uid="uid://cbj12sjnq5onk" path="res://source/creature/creature.tscn" id="24_k10tv"]
 [ext_resource type="PackedScene" uid="uid://dsbvt2nfklkcf" path="res://source/creature/sanity_filter.tscn" id="25_ija0u"]
@@ -131,36 +130,6 @@ mesh = SubResource("PlaneMesh_uon0k")
 [node name="InnerWall4" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.9106853e-15, -4.3711385e-08, -1, -0.9999999, -4.3711385e-08, 0, -4.3711385e-08, 0.9999999, -4.371139e-08, 0.020195782, 0.7586132, 0.97290695)
 mesh = SubResource("PlaneMesh_uon0k")
-
-[node name="KeyItem" parent="." instance=ExtResource("20_t1ay8")]
-transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, -2.1031384, 0.2999997, 0.95888937)
-
-[node name="KeyItem5" parent="." instance=ExtResource("20_t1ay8")]
-transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, -2.1031384, 0.2999997, 1.83084)
-
-[node name="KeyItem6" parent="." instance=ExtResource("20_t1ay8")]
-transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, -1.768204, 0.2999997, 1.3474871)
-
-[node name="KeyItem7" parent="." instance=ExtResource("20_t1ay8")]
-transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, 1.8058078, 0.2999997, 1.3474871)
-
-[node name="KeyItem8" parent="." instance=ExtResource("20_t1ay8")]
-transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, -1.2426236, 0.9432254, -2.569032)
-
-[node name="KeyItem2" parent="." instance=ExtResource("20_t1ay8")]
-transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, 1.5390034, 0.2999997, 2.0761197)
-
-[node name="KeyItem3" parent="." instance=ExtResource("20_t1ay8")]
-transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, 2.1765103, 0.2999997, -1.9872549)
-
-[node name="KeyItem10" parent="." instance=ExtResource("20_t1ay8")]
-transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, 1.7815065, 0.2999997, -1.3227164)
-
-[node name="KeyItem4" parent="." instance=ExtResource("20_t1ay8")]
-transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, -1.9369516, 0.2999997, -1.9872549)
-
-[node name="KeyItem9" parent="." instance=ExtResource("20_t1ay8")]
-transform = Transform3D(0.7714469, -0.6362937, 0, 0.6362937, 0.7714469, 0, 0, 0, 1, -0.23445415, 0.3000002, -2.344275)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
