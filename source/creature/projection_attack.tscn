@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://da0vk0j1i1xay"]
+
+[ext_resource type="Script" uid="uid://bd30a3be2sqt5" path="res://source/creature/projection_attack.gd" id="1_fwrng"]
+[ext_resource type="Texture2D" uid="uid://dhv6i7cr7lle6" path="res://assets/sprites/creature/creature_spritesheet.png" id="2_hkqwv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jf6w"]
+atlas = ExtResource("2_hkqwv")
+region = Rect2(0, 0, 85, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr48w"]
+atlas = ExtResource("2_hkqwv")
+region = Rect2(85, 0, 85, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x06jj"]
+atlas = ExtResource("2_hkqwv")
+region = Rect2(170, 0, 85, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djt4f"]
+atlas = ExtResource("2_hkqwv")
+region = Rect2(255, 0, 85, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxt6o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jf6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr48w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x06jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djt4f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hkqwv"]
+radius = 0.3359375
+height = 1.25
+
+[node name="ProjectionAttack" type="Node3D" node_paths=PackedStringArray("detector")]
+script = ExtResource("1_fwrng")
+detector = NodePath("Area3D")
+hover_label = "Hit!"
+
+[node name="Sprite" type="AnimatedSprite3D" parent="."]
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_mxt6o")
+autoplay = "default"
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.029110938, 0)
+shape = SubResource("CapsuleShape3D_hkqwv")

@@ -32,7 +32,7 @@ attack_scene = ExtResource("3_wd0yx")
 creature = NodePath("../Creature")
 
 [node name="Creature" parent="." instance=ExtResource("6_y3oph")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60812074, 1.0121388)
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 0.60812074, 1.0121388)
 
 [node name="KeyItem" parent="." instance=ExtResource("3_cy1gt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002230212, 0.7074541, 0.4867592)

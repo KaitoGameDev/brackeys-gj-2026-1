@@ -23,11 +23,6 @@ size = Vector3(2, 0.1, 4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
 radius = 0.1
 
-[node name="Label" type="Label3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, 1.5)
-pixel_size = 0.01
-text = "C2"
-
 [node name="gate2" parent="." instance=ExtResource("1_mpwix")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, 0.46421546)
 
@@ -42,7 +37,7 @@ attacks = ExtResource("4_ktu22")
 creature = NodePath("../Creature")
 
 [node name="Creature" parent="." instance=ExtResource("5_2iwfj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.723123, 1.028316)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.723123, 1.028316)
 
 [node name="KeyItem" parent="." instance=ExtResource("6_kh7nw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012388825, 0.56350327, 0.93317837)

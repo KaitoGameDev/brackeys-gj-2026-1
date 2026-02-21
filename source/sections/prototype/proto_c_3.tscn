@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1d542srjm7p5"]
+[gd_scene load_steps=6 format=3 uid="uid://b1d542srjm7p5"]
 
 [ext_resource type="PackedScene" uid="uid://dsf10vwd7ffyk" path="res://assets/synty_models/nightmare/gate.glb" id="1_texqg"]
+[ext_resource type="PackedScene" uid="uid://5xp668ddmpup" path="res://source/creature/puzzle_3.tscn" id="2_cweh7"]
+[ext_resource type="PackedScene" uid="uid://da0vk0j1i1xay" path="res://source/creature/projection_attack.tscn" id="3_mwqqw"]
+[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="4_84nbs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fs332"]
 albedo_color = Color(0.80784315, 0.34117648, 0, 1)
@@ -28,3 +31,14 @@ transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0
 
 [node name="gate8" parent="." instance=ExtResource("1_texqg")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, -1.0357845)
+
+[node name="puzzle3" parent="." node_paths=PackedStringArray("key_item") instance=ExtResource("2_cweh7")]
+key_item = NodePath("../KeyItem")
+attack = ExtResource("3_mwqqw")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.465039, -1.4820164)
+
+[node name="KeyItem" parent="." instance=ExtResource("4_84nbs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4585511, 1.1908035)
+visible = false
