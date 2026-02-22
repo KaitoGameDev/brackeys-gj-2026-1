@@ -17,6 +17,7 @@ var sfxs: Dictionary[String, AudioStream] = {
 	"hit_monster": preload("res://assets/audio/sfxs/hit_monster.wav"),
 	"spawn_attack": preload("res://assets/audio/sfxs/spawn_attack.wav"),
 	"monster_talk": preload("res://assets/audio/sfxs/monster_talk.wav"),
+	"footsteps": preload("res://assets/audio/sfxs/footsteps.wav"),
 }
 
 
@@ -31,10 +32,18 @@ func _ready() -> void:
 	EventBusSingleton.on_event.connect(_on_event)
 	
 func _on_event(event: Object) -> void:
+	if event is RestartBgmEvent: return _on_restart(event)
 	if event is PlaySfxEvent: return _play_sfx_event(event)
 	if event is GameInitiatedEvent: return _game_initiated()
 	if event is GameStartedEvent: return _started_game()
 	if event is PlayerChangedFloorEvent: return _on_player_changed_floor()
+	
+func _on_restart(event: RestartBgmEvent) -> void:
+	_bgm_index = 0
+	if event.main_menu:
+		_game_initiated()
+	else:
+		_started_game()
 	
 func _play_sfx_event(event: PlaySfxEvent) -> void:
 	_current_sfx_player_index += 1

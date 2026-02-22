@@ -20,6 +20,7 @@ func _on_movement_end() -> void:
 	sections[0].position.y = 0
 
 func _move_to_next_spot() -> void:
+	EventBusSingleton.send_event(PlaySfxEvent.create('footsteps', 2.0))
 	var tween := create_tween()
 	tween.tween_property(player_pivot, 'rotation_degrees:y', player_pivot.rotation_degrees.y + 90, 2.0)
 	tween.finished.connect(_on_movement_end)

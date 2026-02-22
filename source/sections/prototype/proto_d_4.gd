@@ -6,4 +6,7 @@ func _ready() -> void:
 	key_item.touched.connect(_on_touched)
 	
 func _on_touched() -> void:
+	var event := RestartBgmEvent.new()
+	event.main_menu = true
+	EventBusSingleton.send_event(event)
 	get_tree().change_scene_to_file('res://source/main/main_menu.tscn')
