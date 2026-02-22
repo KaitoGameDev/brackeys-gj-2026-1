@@ -23,7 +23,7 @@ func _ready() -> void:
 		position.x = randf_range(-0.5, 1.5)
 
 func activate() -> void:
-	get_tree().create_timer(5.0).timeout.connect(_hit_player)
+	get_tree().create_timer(6.0).timeout.connect(_hit_player)
 	
 	
 func _hit_player() -> void:

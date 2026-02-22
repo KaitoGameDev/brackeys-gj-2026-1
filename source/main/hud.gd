@@ -20,6 +20,9 @@ func _on_event(event: Object) -> void:
 	
 func _render_floor_counter() -> void:
 	var floor_count : int = _moves / 4
+	
+	if floor_count > GlobalElements.floor_names.size() - 1: return
+	
 	floor_name_label.text = GlobalElements.floor_names[floor_count]
 	floor_counter_label.text = 'Chamber - {0}'.format([_moves + 1])
 	
