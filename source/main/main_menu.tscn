@@ -105,7 +105,7 @@ material_override = SubResource("StandardMaterial3D_pdd2v")
 transform = Transform3D(-1, 1.5180808e-08, 8.609463e-08, 0, 0.9848078, -0.1736482, -8.742278e-08, -0.1736482, -0.9848078, 0, 2, -16)
 
 [node name="Credits" type="Label3D" parent="Tower"]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.03869295, 16.158037, 10.012292)
+transform = Transform3D(0.99403363, 0, -0.10907508, 0, 1, 0, 0.10907508, 0, 0.99403363, -1.9119635, 16.158037, 10.012292)
 pixel_size = 0.01
 text = "Developed By
 
@@ -115,6 +115,20 @@ Zcyon
 
 Brackeys Game Jam
 2026.1"
+
+[node name="Credits2" type="Label3D" parent="Tower"]
+transform = Transform3D(0.98426974, 0, 0.17667246, 0, 1, 0, -0.17667246, 0, 0.98426974, 2.292057, 16.158037, 10.012292)
+pixel_size = 0.01
+text = "External Assets
+
+-SynstyStore-
+
+Music
+
+-stimpee -
+-TakaTDM -
+-Illyushinist -
+-GundamBlunt -"
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Tower"]
 transform = Transform3D(-2.914023, -0.0054474096, 0.027859839, -0.006953862, 3.4643333, -0.029196877, -0.08104695, -0.10138206, -0.9991854, 0, 1.3025234, -6.226247)
