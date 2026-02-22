@@ -36,7 +36,7 @@ func _start_puzzle() -> void:
 	
 func _validate_attacks() -> void:
 	_eliminated_attacks += 1
-	if _eliminated_attacks == 28:
+	if _eliminated_attacks == 30:
 		creature.disappear()
 		key_item.visible = true
 		should_stop = true
@@ -47,7 +47,7 @@ func _validate_attacks() -> void:
 	
 func _spawn_attack() -> void:
 	var attack : AttackLine = attacks.instantiate()
-	attack.velocity = -0.30
+	attack.velocity = -0.25
 	attack.position = position
 	attack.position.y = y_positions.pick_random()
 	for sub_attack in attack.get_children():
