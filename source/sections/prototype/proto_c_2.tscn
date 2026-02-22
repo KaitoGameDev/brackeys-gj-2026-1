@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://t3d0efu0iffw"]
+[gd_scene load_steps=11 format=3 uid="uid://t3d0efu0iffw"]
 
 [ext_resource type="PackedScene" uid="uid://dsf10vwd7ffyk" path="res://assets/synty_models/nightmare/gate.glb" id="1_mpwix"]
 [ext_resource type="PackedScene" uid="uid://btsg7j3kew2p5" path="res://source/creature/puzzle_2.tscn" id="2_mnnko"]
@@ -10,6 +10,11 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vaude"]
 albedo_color = Color(0.80784315, 0.34117648, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hgad1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40l7c"]
+albedo_color = Color(0, 0, 0, 1)
 
 [node name="ProtoA2" type="Node3D"]
 
@@ -64,6 +69,20 @@ transform = Transform3D(-8.742278e-08, -1.65, -2.9802322e-08, 2, -7.212379e-08, 
 
 [node name="gate14" parent="Walls" instance=ExtResource("1_mpwix")]
 transform = Transform3D(-8.742278e-08, -1.65, -2.9802322e-08, 2, -7.212379e-08, -8.742278e-08, 8.742278e-08, -2.458692e-08, 2, -0.23416069, 0, 1.9642156)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1.25, 1.0808136, 1.012538, -0.768313)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_hgad1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_40l7c")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1.25, 1.0808136, 3.012538, -0.768313)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_hgad1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_40l7c")
 
 [node name="Props" type="Node3D" parent="."]
 
