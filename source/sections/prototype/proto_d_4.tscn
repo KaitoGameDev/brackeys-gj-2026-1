@@ -1,11 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://btowpe3pof064"]
+[gd_scene load_steps=16 format=3 uid="uid://btowpe3pof064"]
 
 [ext_resource type="Script" uid="uid://b2wehh4amixph" path="res://source/sections/prototype/proto_d_4.gd" id="1_1jp8w"]
 [ext_resource type="PackedScene" uid="uid://ba0xypa55n68t" path="res://assets/synty_models/apartment/SM_Bld_House_InteriorWall_01.fbx" id="1_hvawa"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="2_auu0n"]
+[ext_resource type="PackedScene" uid="uid://cimvlokt6by32" path="res://assets/synty_models/apartment/props/SM_Prop_CeilingLight_06.fbx" id="4_dmxya"]
+[ext_resource type="PackedScene" uid="uid://c3a3yy424vf3d" path="res://assets/synty_models/apartment/props/SM_Prop_Art_09.fbx" id="5_iolxi"]
+[ext_resource type="PackedScene" uid="uid://c4yve43lyo8m7" path="res://assets/synty_models/apartment/props/SM_Prop_Art_08.fbx" id="6_gnn4f"]
+[ext_resource type="PackedScene" uid="uid://bq3e88djsh3fb" path="res://assets/synty_models/apartment/props/SM_Prop_Art_07.fbx" id="7_gnn4f"]
+[ext_resource type="PackedScene" uid="uid://mhj75ogulwlr" path="res://assets/synty_models/apartment/props/SM_Prop_Art_06.fbx" id="8_nhvj7"]
+[ext_resource type="PackedScene" uid="uid://bq4n6tayoo55b" path="res://assets/synty_models/apartment/props/SM_Prop_PotPlant_01.fbx" id="9_j67ek"]
+[ext_resource type="PackedScene" uid="uid://dc7uug3docq2v" path="res://assets/synty_models/apartment/props/SM_Prop_PotPlant_02.fbx" id="10_bb2o7"]
+[ext_resource type="PackedScene" uid="uid://dgj1xb5yv6c54" path="res://assets/synty_models/apartment/props/SM_Prop_PotPlant_03.fbx" id="11_7k2j5"]
+[ext_resource type="PackedScene" uid="uid://gyjb4g71kkq" path="res://assets/synty_models/apartment/props/SM_Prop_PotPlant_04.fbx" id="12_o1c2d"]
+[ext_resource type="PackedScene" uid="uid://y1dhorv8cisq" path="res://assets/synty_models/apartment/props/SM_Prop_PotPlant_05.fbx" id="13_1dfd4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqhre"]
 albedo_color = Color(0.6392157, 0.70980394, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aju67"]
+albedo_color = Color(0.39498678, 0.3949867, 0.3949867, 1)
 
 [node name="ProtoA4" type="Node3D"]
 script = ExtResource("1_1jp8w")
@@ -44,3 +57,45 @@ transform = Transform3D(0.8651499, 0, 1.03316026e-07, 0, 1, 0, -8.938385e-08, 0,
 
 [node name="KeyItem" parent="." instance=ExtResource("2_auu0n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013797939, 0.8801425, 0.81690264)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.09636697, 0.9953459, 0, -0.9953459, -0.09636697, 0, 4.170275, 0.02050668)
+light_color = Color(1, 1, 0.89411765, 1)
+light_energy = 2.391
+spot_range = 4.832872
+spot_angle = 39.041176
+
+[node name="SM_Prop_CeilingLight_06" parent="." instance=ExtResource("4_dmxya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4949865, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.395609, 0)
+radius = 0.045
+material = SubResource("StandardMaterial3D_aju67")
+
+[node name="SM_Prop_Art_09" parent="." instance=ExtResource("5_iolxi")]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 0.9857099, 1.5900645, -1.0062547)
+
+[node name="SM_Prop_Art_08" parent="." instance=ExtResource("6_gnn4f")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.9441389, 1.4296037, 0.5984838)
+
+[node name="SM_Prop_Art_07" parent="." instance=ExtResource("7_gnn4f")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.9757197, 1.093727, -0.41074014)
+
+[node name="SM_Prop_Art_06" parent="." instance=ExtResource("8_nhvj7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.9679416, 1.5974077, 0.78004)
+
+[node name="SM_Prop_PotPlant_01" parent="." instance=ExtResource("9_j67ek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8093233, 0.049999952, 1.5344701)
+
+[node name="SM_Prop_PotPlant_02" parent="." instance=ExtResource("10_bb2o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8214679, 0.049999952, 1.6183748)
+
+[node name="SM_Prop_PotPlant_03" parent="." instance=ExtResource("11_7k2j5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3255787, 0.049999952, 1.5321689)
+
+[node name="SM_Prop_PotPlant_04" parent="." instance=ExtResource("12_o1c2d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8215432, 0.049999952, -0.15767527)
+
+[node name="SM_Prop_PotPlant_05" parent="." instance=ExtResource("13_1dfd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9110769, 0.049999952, -0.5848367)

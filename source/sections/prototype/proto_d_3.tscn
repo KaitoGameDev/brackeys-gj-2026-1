@@ -1,11 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://84fdswhbv20g"]
+[gd_scene load_steps=18 format=3 uid="uid://84fdswhbv20g"]
 
 [ext_resource type="Material" uid="uid://bi0okhwpmv6jf" path="res://resources/proto_d_1_floor.tres" id="1_6y5ae"]
 [ext_resource type="PackedScene" uid="uid://bs404hrfjwv2k" path="res://assets/synty_models/apartment/SM_Bld_House_InteriorWall_Door_01.fbx" id="1_guhy1"]
+[ext_resource type="Script" uid="uid://bnw4r416u8ciy" path="res://source/sections/prototype/apartment.gd" id="1_t8kd2"]
 [ext_resource type="PackedScene" uid="uid://ba0xypa55n68t" path="res://assets/synty_models/apartment/SM_Bld_House_InteriorWall_01.fbx" id="2_jn5he"]
 [ext_resource type="PackedScene" uid="uid://bfdca3alnxbnk" path="res://assets/synty_models/apartment/characters/SK_Character_SchoolBoy_01.fbx" id="3_5y6uy"]
 [ext_resource type="AnimationLibrary" uid="uid://etugn58016li" path="res://assets/animations/clap.fbx" id="4_6y5ae"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="6_568gf"]
+[ext_resource type="PackedScene" uid="uid://cimvlokt6by32" path="res://assets/synty_models/apartment/props/SM_Prop_CeilingLight_06.fbx" id="7_6igbp"]
+[ext_resource type="PackedScene" uid="uid://gyjb4g71kkq" path="res://assets/synty_models/apartment/props/SM_Prop_PotPlant_04.fbx" id="8_bupl3"]
+[ext_resource type="PackedScene" uid="uid://bq4n6tayoo55b" path="res://assets/synty_models/apartment/props/SM_Prop_PotPlant_01.fbx" id="9_t8kd2"]
+[ext_resource type="PackedScene" uid="uid://c4yve43lyo8m7" path="res://assets/synty_models/apartment/props/SM_Prop_Art_08.fbx" id="10_ls3se"]
 
 [sub_resource type="Animation" id="Animation_6d8ac"]
 length = 0.001
@@ -109,7 +114,13 @@ _data = {
 &"Take 001": SubResource("Animation_a3lm3")
 }
 
-[node name="ProtoA3" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xekxx"]
+albedo_color = Color(0.39498678, 0.3949867, 0.3949867, 1)
+
+[node name="ProtoA3" type="Node3D" node_paths=PackedStringArray("door_animator")]
+script = ExtResource("1_t8kd2")
+door_number = 3
+door_animator = NodePath("SM_Bld_House_InteriorWall_Door_01/AnimationPlayer2")
 
 [node name="Floor" type="CSGBox3D" parent="."]
 material_override = ExtResource("1_6y5ae")
@@ -306,6 +317,31 @@ autoplay = "clap/mixamo_com"
 
 [node name="KeyItem" parent="." instance=ExtResource("6_568gf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08435327, 0.56599957, 0.8257971)
+open_door_number = 3
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.09636697, 0.9953459, 0, -0.9953459, -0.09636697, 0, 4.170275, 0.02050668)
+light_color = Color(1, 1, 0.89411765, 1)
+light_energy = 2.391
+spot_range = 4.832872
+spot_angle = 39.041176
+
+[node name="SM_Prop_CeilingLight_06" parent="." instance=ExtResource("7_6igbp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4949865, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.395609, 0)
+radius = 0.045
+material = SubResource("StandardMaterial3D_xekxx")
+
+[node name="SM_Prop_PotPlant_04" parent="." instance=ExtResource("8_bupl3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82080376, 0.049999833, 1.6731784)
+
+[node name="SM_Prop_PotPlant_01" parent="." instance=ExtResource("9_t8kd2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5160825, 0.049999952, 1.7388666)
+
+[node name="SM_Prop_Art_08" parent="." instance=ExtResource("10_ls3se")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.9618987, 1.4497731, -0.7787285)
 
 [editable path="SM_Bld_House_InteriorWall_Door_01"]
 [editable path="SK_Character_SchoolBoy_01"]
