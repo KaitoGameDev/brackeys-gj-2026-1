@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3o2kw6vxjfa6"]
+[gd_scene load_steps=12 format=3 uid="uid://cosiwva1rro0y"]
 
 [ext_resource type="PackedScene" uid="uid://c1lhx12hcvvm0" path="res://assets/synty_models/forest/SM_Plant_Lillypad_Large_01.fbx" id="1_gp0p7"]
 [ext_resource type="Script" uid="uid://ub42hqxtlwj2" path="res://source/puzzles/frog_puzzle.gd" id="2_ja3x6"]
 [ext_resource type="Texture2D" uid="uid://7av54147da66" path="res://assets/synty_models/forest/PolygonNature_01.png" id="2_pnqjb"]
 [ext_resource type="Script" uid="uid://o5s84ihah4dt" path="res://source/interactions/lillypad.gd" id="4_ja3x6"]
-[ext_resource type="PackedScene" uid="uid://cbfy61e5brdr8" path="res://source/props/forest/blue_frog.tscn" id="5_2i5oo"]
+[ext_resource type="PackedScene" path="res://source/props/forest/blue_frog.tscn" id="5_2i5oo"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="6_i4jmu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ja3x6"]

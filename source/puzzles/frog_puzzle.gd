@@ -19,5 +19,6 @@ func add_char_to_buffer(character: String):
 		return
 	
 	if "".join(buffer) == valid_code:
+		EventBusSingleton.send_event(PlaySfxEvent.create('solved_puzzle'))
 		has_been_resolved = true
 		reward_container.visible = true

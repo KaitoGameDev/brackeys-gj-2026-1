@@ -9,6 +9,11 @@ var sfxs: Dictionary[String, AudioStream] = {
 	"solved_puzzle": preload("res://assets/audio/sfxs/solved_puzzle.wav"),
 	"hit_statue_1": preload("res://assets/audio/sfxs/hit_statue_1.wav"),
 	"hit_statue_2": preload("res://assets/audio/sfxs/hit_statue_2.wav"),
+	"digging": preload("res://assets/audio/sfxs/digging.wav"),
+	"hop": preload("res://assets/audio/sfxs/hop.wav"),
+	"cut": preload("res://assets/audio/sfxs/cut.wav"),
+	"empty_bucket": preload("res://assets/audio/sfxs/empty_bucket.wav"),
+	"pickup_food": preload("res://assets/audio/sfxs/pickup_food.wav"),
 }
 
 @export var puzzle_sfx: AudioStream 

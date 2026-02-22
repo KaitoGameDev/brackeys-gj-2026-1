@@ -7,6 +7,7 @@ extends Interactable
 @export var character: String
 
 func _on_interact():
+	EventBusSingleton.send_event(PlaySfxEvent.create('hop'))
 	frog_puzzle.add_char_to_buffer(character)
 	
 	var pointer_tween = get_tree().create_tween()

@@ -13,17 +13,21 @@ var has_been_resolved: bool = false
 func add_item(weight: int):
 	if has_been_resolved:
 		return
+	
+	EventBusSingleton.send_event(PlaySfxEvent.create('pickup_food'))
 		
 	current_weight += weight
 	refresh_label()
 	
 	if current_weight == required_weight:
+		EventBusSingleton.send_event(PlaySfxEvent.create('solved_puzzle'))
 		has_been_resolved = true
 		reward_container.visible = true
 		bucket_container.visible = false
 		
 
 func empty_bucket():
+	EventBusSingleton.send_event(PlaySfxEvent.create('empty_bucket'))
 	for obj in fruit_objects:
 		obj.visible = true
 	current_weight = 0

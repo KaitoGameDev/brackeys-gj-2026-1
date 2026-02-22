@@ -21,5 +21,6 @@ func validate():
 				non_required_torches += 1
 	
 	if non_required_torches <= 0 and required_torches == 3:
+		EventBusSingleton.send_event(PlaySfxEvent.create('solved_puzzle'))
 		has_been_resolved = true
 		reward_container.visible = true

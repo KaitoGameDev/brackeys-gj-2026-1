@@ -8,11 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://do43qnpmulnff" path="res://assets/sprites/forest/ground-DryForestPineNeedle.png" id="6_hf86s"]
 [ext_resource type="Texture2D" uid="uid://clvigr4e5ca5y" path="res://assets/sprites/forest/ground-DryForestPineNeedle_Normal.tga" id="7_5teb0"]
 [ext_resource type="Script" uid="uid://ddk5bbodyncwu" path="res://source/puzzles/fruit_puzzle.gd" id="8_5teb0"]
-[ext_resource type="PackedScene" uid="uid://dlx4k20sro20h" path="res://source/props/forest/bucket.tscn" id="8_hf86s"]
+[ext_resource type="PackedScene" path="res://source/props/forest/bucket.tscn" id="8_hf86s"]
 [ext_resource type="Texture2D" uid="uid://bbypin30nkm0g" path="res://assets/sprites/forest/fc435.png" id="9_5teb0"]
-[ext_resource type="Script" uid="uid://cb6stg5j1kh08" path="res://source/interactions/bucket.gd" id="10_vha7p"]
+[ext_resource type="Script" path="res://source/interactions/bucket.gd" id="10_vha7p"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="11_04jqx"]
-[ext_resource type="Script" uid="uid://dd10y5ne5p767" path="res://source/interactions/fruit.gd" id="11_6k0ft"]
+[ext_resource type="Script" path="res://source/interactions/fruit.gd" id="11_6k0ft"]
 [ext_resource type="Texture2D" uid="uid://bot3w1slxoc1r" path="res://assets/sprites/forest/fc276.png" id="13_dq5dp"]
 [ext_resource type="Texture2D" uid="uid://bclhfevmtwv4w" path="res://assets/sprites/forest/fc443.png" id="14_u3gyo"]
 [ext_resource type="Texture2D" uid="uid://2obc247hqf57" path="res://assets/sprites/forest/fc515.png" id="15_t6ecj"]
@@ -176,6 +176,7 @@ hover_label = "Add to bucket"
 [node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13333333, 0)
 billboard = 2
+texture_filter = 0
 texture = ExtResource("9_5teb0")
 
 [node name="Area3D" type="Area3D" parent="FruitPuzzle/Fruit"]
@@ -193,6 +194,7 @@ hover_label = "Add to bucket"
 
 [node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit2"]
 billboard = 2
+texture_filter = 0
 texture = ExtResource("13_dq5dp")
 
 [node name="Area3D" type="Area3D" parent="FruitPuzzle/Fruit2"]
@@ -210,6 +212,7 @@ hover_label = "Add to bucket"
 
 [node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit3"]
 billboard = 2
+texture_filter = 0
 texture = ExtResource("14_u3gyo")
 
 [node name="Area3D" type="Area3D" parent="FruitPuzzle/Fruit3"]
@@ -227,6 +230,7 @@ hover_label = "Add to bucket"
 
 [node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit4"]
 billboard = 2
+texture_filter = 0
 texture = ExtResource("15_t6ecj")
 
 [node name="Area3D" type="Area3D" parent="FruitPuzzle/Fruit4"]
@@ -244,6 +248,7 @@ hover_label = "Add to bucket"
 
 [node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit5"]
 billboard = 2
+texture_filter = 0
 texture = ExtResource("16_864cb")
 
 [node name="Area3D" type="Area3D" parent="FruitPuzzle/Fruit5"]

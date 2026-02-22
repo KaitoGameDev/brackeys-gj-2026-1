@@ -13,6 +13,7 @@ func add_to_counter(amount: int):
 		
 	counter += amount
 	if counter >= min_flower_amount:
+		EventBusSingleton.send_event(PlaySfxEvent.create('solved_puzzle'))
 		has_been_resolved = true
 		item_container.visible = true
 	
