@@ -1,3 +1,10 @@
 [gd_resource type="Environment" format=3 uid="uid://kssk2vr2adhf"]
 
 [resource]
+background_mode = 1
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 4.5
+fog_depth_curve = 0.29730234
+fog_depth_begin = 1.0

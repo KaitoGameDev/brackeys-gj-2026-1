@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://egp4qiunr7we"]
+[gd_scene load_steps=8 format=3 uid="uid://egp4qiunr7we"]
 
 [ext_resource type="PackedScene" uid="uid://dsf10vwd7ffyk" path="res://assets/synty_models/nightmare/gate.glb" id="1_f2ndt"]
 [ext_resource type="PackedScene" uid="uid://duthhvo5avtow" path="res://source/creature/puzzle_1.tscn" id="2_vnlv3"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="3_cy1gt"]
 [ext_resource type="PackedScene" uid="uid://cd77x4tcmsy3c" path="res://source/creature/attack.tscn" id="3_wd0yx"]
 [ext_resource type="PackedScene" uid="uid://cbj12sjnq5onk" path="res://source/creature/creature.tscn" id="6_y3oph"]
+[ext_resource type="Texture2D" uid="uid://dheg011fdc7kv" path="res://assets/sprites/nightmare/factorytileset.png" id="7_t43m7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax22t"]
 transparency = 1
@@ -18,12 +19,6 @@ material_override = SubResource("StandardMaterial3D_ax22t")
 use_collision = true
 collision_layer = 512
 size = Vector3(2, 0.1, 4)
-
-[node name="gate2" parent="." instance=ExtResource("1_f2ndt")]
-transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, 0.46421546)
-
-[node name="gate8" parent="." instance=ExtResource("1_f2ndt")]
-transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, -1.0357845)
 
 [node name="Puzzle1" parent="." node_paths=PackedStringArray("key_item", "creature") instance=ExtResource("2_vnlv3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60812074, 0.8999939)
@@ -40,3 +35,71 @@ visible = false
 
 [node name="target" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6282485, -1.467555)
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="gate2" parent="Walls" instance=ExtResource("1_f2ndt")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, 0.46421546)
+
+[node name="gate8" parent="Walls" instance=ExtResource("1_f2ndt")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, -1.0357845)
+
+[node name="gate9" parent="Walls" instance=ExtResource("1_f2ndt")]
+transform = Transform3D(-8.742278e-08, 8.742278e-08, -2, 2, 3.821371e-15, -8.742278e-08, 0, -2, -8.742278e-08, -1.0341607, 0, -1.0357845)
+
+[node name="gate10" parent="Walls" instance=ExtResource("1_f2ndt")]
+transform = Transform3D(-8.742278e-08, 8.742278e-08, -2, 2, 3.821371e-15, -8.742278e-08, 0, -2, -8.742278e-08, -1.0341607, 2, -1.0357845)
+
+[node name="gate11" parent="Walls" instance=ExtResource("1_f2ndt")]
+transform = Transform3D(-8.742278e-08, 8.742278e-08, -2, 2, 3.821371e-15, -8.742278e-08, 0, -2, -8.742278e-08, -1.0341607, 2, 0.46421552)
+
+[node name="gate12" parent="Walls" instance=ExtResource("1_f2ndt")]
+transform = Transform3D(-8.742278e-08, 8.742278e-08, -2, 2, 3.821371e-15, -8.742278e-08, 0, -2, -8.742278e-08, -1.0341607, 2.2351742e-08, 0.46421552)
+
+[node name="gate13" parent="Walls" instance=ExtResource("1_f2ndt")]
+transform = Transform3D(-8.742278e-08, -1.65, -2.9802322e-08, 2, -7.212379e-08, -8.742278e-08, 8.742278e-08, -2.458692e-08, 2, -0.23416069, 2, 1.9642156)
+
+[node name="gate14" parent="Walls" instance=ExtResource("1_f2ndt")]
+transform = Transform3D(-8.742278e-08, -1.65, -2.9802322e-08, 2, -7.212379e-08, -8.742278e-08, 8.742278e-08, -2.458692e-08, 2, -0.23416069, 0, 1.9642156)
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Props"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1, 4.2023816, 2.5000002)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("7_t43m7")
+region_enabled = true
+region_rect = Rect2(54, 48, 4, 60)
+
+[node name="Sprite3D3" type="Sprite3D" parent="Props"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.5942476, 2, 2.322514)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("7_t43m7")
+region_enabled = true
+region_rect = Rect2(54, 48, 4, 60)
+
+[node name="Sprite3D4" type="Sprite3D" parent="Props"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -2.5075047, 2.2133696, 1.1235168)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("7_t43m7")
+region_enabled = true
+region_rect = Rect2(54, 48, 4, 60)
+
+[node name="Sprite3D2" type="Sprite3D" parent="Props"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.6000001, -3.4, 0.39999998)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("7_t43m7")
+region_enabled = true
+region_rect = Rect2(54, 48, 4, 60)
+
+[node name="Sprite3D5" type="Sprite3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 0.5, 2.8)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("7_t43m7")
+region_enabled = true
+region_rect = Rect2(112, 32, 112, 32)

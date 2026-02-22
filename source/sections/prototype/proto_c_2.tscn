@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://t3d0efu0iffw"]
+[gd_scene load_steps=9 format=3 uid="uid://t3d0efu0iffw"]
 
 [ext_resource type="PackedScene" uid="uid://dsf10vwd7ffyk" path="res://assets/synty_models/nightmare/gate.glb" id="1_mpwix"]
 [ext_resource type="PackedScene" uid="uid://btsg7j3kew2p5" path="res://source/creature/puzzle_2.tscn" id="2_mnnko"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmxclf0j2uakq" path="res://source/creature/attack_line.tscn" id="4_ktu22"]
 [ext_resource type="PackedScene" uid="uid://cbj12sjnq5onk" path="res://source/creature/creature.tscn" id="5_2iwfj"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="6_kh7nw"]
+[ext_resource type="Texture2D" uid="uid://dheg011fdc7kv" path="res://assets/sprites/nightmare/factorytileset.png" id="7_hgad1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vaude"]
 albedo_color = Color(0.80784315, 0.34117648, 0, 1)
@@ -23,12 +24,6 @@ size = Vector3(2, 0.1, 4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
 radius = 0.1
 
-[node name="gate2" parent="." instance=ExtResource("1_mpwix")]
-transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, 0.46421546)
-
-[node name="gate8" parent="." instance=ExtResource("1_mpwix")]
-transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, -1.0357845)
-
 [node name="Puzzle2" parent="." node_paths=PackedStringArray("key_item", "creature") instance=ExtResource("2_mnnko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45630527, 0.9631702)
 script = ExtResource("3_q4dv5")
@@ -42,3 +37,71 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 [node name="KeyItem" parent="." instance=ExtResource("6_kh7nw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012388825, 0.56350327, 0.93317837)
 visible = false
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="gate2" parent="Walls" instance=ExtResource("1_mpwix")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, 0.46421546)
+
+[node name="gate8" parent="Walls" instance=ExtResource("1_mpwix")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, -1.0357845)
+
+[node name="gate9" parent="Walls" instance=ExtResource("1_mpwix")]
+transform = Transform3D(-8.742278e-08, 8.742278e-08, -2, 2, 3.821371e-15, -8.742278e-08, 0, -2, -8.742278e-08, -1.0341607, 0, -1.0357845)
+
+[node name="gate10" parent="Walls" instance=ExtResource("1_mpwix")]
+transform = Transform3D(-8.742278e-08, 8.742278e-08, -2, 2, 3.821371e-15, -8.742278e-08, 0, -2, -8.742278e-08, -1.0341607, 2, -1.0357845)
+
+[node name="gate11" parent="Walls" instance=ExtResource("1_mpwix")]
+transform = Transform3D(-8.742278e-08, 8.742278e-08, -2, 2, 3.821371e-15, -8.742278e-08, 0, -2, -8.742278e-08, -1.0341607, 2, 0.46421552)
+
+[node name="gate12" parent="Walls" instance=ExtResource("1_mpwix")]
+transform = Transform3D(-8.742278e-08, 8.742278e-08, -2, 2, 3.821371e-15, -8.742278e-08, 0, -2, -8.742278e-08, -1.0341607, 2.2351742e-08, 0.46421552)
+
+[node name="gate13" parent="Walls" instance=ExtResource("1_mpwix")]
+transform = Transform3D(-8.742278e-08, -1.65, -2.9802322e-08, 2, -7.212379e-08, -8.742278e-08, 8.742278e-08, -2.458692e-08, 2, -0.23416069, 2, 1.9642156)
+
+[node name="gate14" parent="Walls" instance=ExtResource("1_mpwix")]
+transform = Transform3D(-8.742278e-08, -1.65, -2.9802322e-08, 2, -7.212379e-08, -8.742278e-08, 8.742278e-08, -2.458692e-08, 2, -0.23416069, 0, 1.9642156)
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Props"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1, 4.2023816, 2.5000002)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("7_hgad1")
+region_enabled = true
+region_rect = Rect2(54, 48, 4, 60)
+
+[node name="Sprite3D3" type="Sprite3D" parent="Props"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.5942476, 2, 2.322514)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("7_hgad1")
+region_enabled = true
+region_rect = Rect2(54, 48, 4, 60)
+
+[node name="Sprite3D4" type="Sprite3D" parent="Props"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -2.5075047, 2.2133696, 1.1235168)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("7_hgad1")
+region_enabled = true
+region_rect = Rect2(54, 48, 4, 60)
+
+[node name="Sprite3D2" type="Sprite3D" parent="Props"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.6000001, -3.4, 0.39999998)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("7_hgad1")
+region_enabled = true
+region_rect = Rect2(54, 48, 4, 60)
+
+[node name="Sprite3D5" type="Sprite3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 0.5, 2.8)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("7_hgad1")
+region_enabled = true
+region_rect = Rect2(112, 32, 112, 32)
