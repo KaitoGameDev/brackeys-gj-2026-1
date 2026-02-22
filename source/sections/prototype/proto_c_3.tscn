@@ -14,6 +14,7 @@ albedo_color = Color(0.80784315, 0.34117648, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkhkr"]
 specular_mode = 2
 albedo_color = Color(0, 0, 0, 1)
+disable_receive_shadows = true
 
 [node name="ProtoA3" type="Node3D"]
 
@@ -70,14 +71,14 @@ transform = Transform3D(-8.742278e-08, -1.65, -2.9802322e-08, 2, -7.212379e-08, 
 transform = Transform3D(-8.742278e-08, -1.65, -2.9802322e-08, 2, -7.212379e-08, -8.742278e-08, 8.742278e-08, -2.458692e-08, 2, -0.23416069, 0, 1.9642156)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1.25, 1.0808136, 1.012538, -0.768313)
+transform = Transform3D(7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 1.0808136, 1.012538, -0.968313)
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_0iwf6")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_vkhkr")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1.25, 1.0808136, 3.012538, -0.768313)
+transform = Transform3D(7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 1.0808136, 3.012538, -0.968313)
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_0iwf6")
 skeleton = NodePath("../..")
