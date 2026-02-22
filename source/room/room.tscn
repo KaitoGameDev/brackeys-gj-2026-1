@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dcc1thb5d1bl8"]
+[gd_scene load_steps=30 format=3 uid="uid://dcc1thb5d1bl8"]
 
 [ext_resource type="Script" uid="uid://bxwqxnnxepbuy" path="res://source/room/center_room.gd" id="1_5xmys"]
 [ext_resource type="PackedScene" uid="uid://52b8d2sfi07d" path="res://source/sections/prototype/proto_a_1.tscn" id="1_a5ckb"]
@@ -23,6 +23,7 @@
 [ext_resource type="Environment" uid="uid://kssk2vr2adhf" path="res://source/sections/environments/nightmare_environment.tres" id="15_jfsvp"]
 [ext_resource type="Environment" uid="uid://b06pmujrdb7hn" path="res://source/sections/environments/apartment_environment.tres" id="16_sjnex"]
 [ext_resource type="Environment" uid="uid://cr1kbmy0vvjeo" path="res://source/sections/environments/dungeon_environment.tres" id="18_erm4m"]
+[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="20_t1ay8"]
 [ext_resource type="PackedScene" uid="uid://cbj12sjnq5onk" path="res://source/creature/creature.tscn" id="24_k10tv"]
 [ext_resource type="PackedScene" uid="uid://dsbvt2nfklkcf" path="res://source/creature/sanity_filter.tscn" id="25_ija0u"]
 
@@ -139,3 +140,15 @@ mouse_filter = 2
 [node name="SanityFilter" parent="Control" instance=ExtResource("25_ija0u")]
 layout_mode = 1
 mouse_filter = 2
+
+[node name="KeyItem" parent="." instance=ExtResource("20_t1ay8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50083506, 0.9584123, -2.0709503)
+
+[node name="KeyItem2" parent="." instance=ExtResource("20_t1ay8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2946773, 0.9584123, 1.0614917)
+
+[node name="KeyItem3" parent="." instance=ExtResource("20_t1ay8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4751644, 0.9584123, 1.6517504)
+
+[node name="KeyItem4" parent="." instance=ExtResource("20_t1ay8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9702142, 0.9584123, -1.156058)
