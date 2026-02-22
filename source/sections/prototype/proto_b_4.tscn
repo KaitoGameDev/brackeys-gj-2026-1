@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dt2gdcuf063fs"]
+[gd_scene load_steps=23 format=3 uid="uid://dt2gdcuf063fs"]
 
 [ext_resource type="PackedScene" uid="uid://dbuv3wsbxxbva" path="res://source/props/forest/sm_plant_bush_03.tscn" id="1_g53ia"]
 [ext_resource type="PackedScene" uid="uid://dpgyocg3q842w" path="res://source/props/forest/sm_plant_bush_02.tscn" id="2_u6l3m"]
@@ -7,6 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://dm62lrb6sa24e" path="res://assets/sprites/forest/ground-GreenLeavesWhiteFlowers.png" id="5_m2a3k"]
 [ext_resource type="Texture2D" uid="uid://do43qnpmulnff" path="res://assets/sprites/forest/ground-DryForestPineNeedle.png" id="6_hf86s"]
 [ext_resource type="Texture2D" uid="uid://clvigr4e5ca5y" path="res://assets/sprites/forest/ground-DryForestPineNeedle_Normal.tga" id="7_5teb0"]
+[ext_resource type="Script" uid="uid://ddk5bbodyncwu" path="res://source/puzzles/fruit_puzzle.gd" id="8_5teb0"]
+[ext_resource type="PackedScene" uid="uid://dlx4k20sro20h" path="res://source/props/forest/bucket.tscn" id="8_hf86s"]
+[ext_resource type="Texture2D" uid="uid://bbypin30nkm0g" path="res://assets/sprites/forest/fc435.png" id="9_5teb0"]
+[ext_resource type="Script" uid="uid://cb6stg5j1kh08" path="res://source/interactions/bucket.gd" id="10_vha7p"]
+[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="11_04jqx"]
+[ext_resource type="Script" uid="uid://dd10y5ne5p767" path="res://source/interactions/fruit.gd" id="11_6k0ft"]
+[ext_resource type="Texture2D" uid="uid://bot3w1slxoc1r" path="res://assets/sprites/forest/fc276.png" id="13_dq5dp"]
+[ext_resource type="Texture2D" uid="uid://bclhfevmtwv4w" path="res://assets/sprites/forest/fc443.png" id="14_u3gyo"]
+[ext_resource type="Texture2D" uid="uid://2obc247hqf57" path="res://assets/sprites/forest/fc515.png" id="15_t6ecj"]
+[ext_resource type="Texture2D" uid="uid://clynmnmn0gsna" path="res://assets/sprites/forest/fc518.png" id="16_864cb"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_04jqx"]
 
@@ -21,6 +31,12 @@ albedo_texture = ExtResource("6_hf86s")
 normal_enabled = true
 normal_texture = ExtResource("7_5teb0")
 uv1_scale = Vector3(8, 4.5, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_niate"]
+size = Vector3(0.4, 1, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6k0ft"]
+size = Vector3(0.7, 0.6, 0.4)
 
 [node name="ProtoA4" type="Node3D"]
 
@@ -120,3 +136,122 @@ material_override = SubResource("StandardMaterial3D_6k0ft")
 use_collision = true
 collision_layer = 512
 size = Vector3(2, 0.1, 4)
+
+[node name="FruitPuzzle" type="Node3D" parent="." node_paths=PackedStringArray("label", "fruit_objects", "reward_container", "bucket_container")]
+unique_name_in_owner = true
+script = ExtResource("8_5teb0")
+label = NodePath("Bucket/Label")
+fruit_objects = [NodePath("Fruit"), NodePath("Fruit2"), NodePath("Fruit3"), NodePath("Fruit4"), NodePath("Fruit5")]
+reward_container = NodePath("RewardContainer")
+bucket_container = NodePath("Bucket")
+
+[node name="Bucket" parent="FruitPuzzle" node_paths=PackedStringArray("detector") instance=ExtResource("8_hf86s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00083088875, 0.5953776, 0.0061130524)
+script = ExtResource("10_vha7p")
+detector = NodePath("Area3D")
+hover_label = "Empty"
+
+[node name="Label" type="Label3D" parent="FruitPuzzle/Bucket"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.15972471, -0.095377624, 0.01678443)
+pixel_size = 0.01
+text = "0/15"
+font_size = 24
+horizontal_alignment = 0
+
+[node name="Area3D" type="Area3D" parent="FruitPuzzle/Bucket"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FruitPuzzle/Bucket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4901161e-08, 0.19999999, 1.4901161e-08)
+shape = SubResource("BoxShape3D_niate")
+
+[node name="Fruit" type="Node3D" parent="FruitPuzzle" node_paths=PackedStringArray("detector")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.85801756, 0.37211764, 0)
+script = ExtResource("11_6k0ft")
+weight = 5
+detector = NodePath("Area3D")
+hover_label = "Add"
+
+[node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13333333, 0)
+billboard = 2
+texture = ExtResource("9_5teb0")
+
+[node name="Area3D" type="Area3D" parent="FruitPuzzle/Fruit"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FruitPuzzle/Fruit/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05000019, 0, 9.934108e-09)
+shape = SubResource("BoxShape3D_6k0ft")
+
+[node name="Fruit2" type="Node3D" parent="FruitPuzzle" node_paths=PackedStringArray("detector")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.74198246, 0.21343666, 0)
+script = ExtResource("11_6k0ft")
+weight = 2
+detector = NodePath("Area3D")
+hover_label = "Add"
+
+[node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit2"]
+billboard = 2
+texture = ExtResource("13_dq5dp")
+
+[node name="Area3D" type="Area3D" parent="FruitPuzzle/Fruit2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FruitPuzzle/Fruit2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05000019, 0, 9.934108e-09)
+shape = SubResource("BoxShape3D_6k0ft")
+
+[node name="Fruit3" type="Node3D" parent="FruitPuzzle" node_paths=PackedStringArray("detector")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.55801755, 0.37211764, 0.9)
+script = ExtResource("11_6k0ft")
+weight = 8
+detector = NodePath("Area3D")
+hover_label = "Add"
+
+[node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit3"]
+billboard = 2
+texture = ExtResource("14_u3gyo")
+
+[node name="Area3D" type="Area3D" parent="FruitPuzzle/Fruit3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FruitPuzzle/Fruit3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05000019, 0, 9.934108e-09)
+shape = SubResource("BoxShape3D_6k0ft")
+
+[node name="Fruit4" type="Node3D" parent="FruitPuzzle" node_paths=PackedStringArray("detector")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.14198244, 0.17211765, -0.29999995)
+script = ExtResource("11_6k0ft")
+weight = 3
+detector = NodePath("Area3D")
+hover_label = "Add"
+
+[node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit4"]
+billboard = 2
+texture = ExtResource("15_t6ecj")
+
+[node name="Area3D" type="Area3D" parent="FruitPuzzle/Fruit4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FruitPuzzle/Fruit4/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05000019, 0, 9.934108e-09)
+shape = SubResource("BoxShape3D_6k0ft")
+
+[node name="Fruit5" type="Node3D" parent="FruitPuzzle" node_paths=PackedStringArray("detector")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.35801768, 0.17367482, -0.6)
+script = ExtResource("11_6k0ft")
+weight = 4
+detector = NodePath("Area3D")
+hover_label = "Add"
+
+[node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit5"]
+billboard = 2
+texture = ExtResource("16_864cb")
+
+[node name="Area3D" type="Area3D" parent="FruitPuzzle/Fruit5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FruitPuzzle/Fruit5/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05000019, 0, 9.934108e-09)
+shape = SubResource("BoxShape3D_6k0ft")
+
+[node name="RewardContainer" type="Node3D" parent="FruitPuzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+
+[node name="KeyItem" parent="FruitPuzzle/RewardContainer" instance=ExtResource("11_04jqx")]
