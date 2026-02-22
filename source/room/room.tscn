@@ -25,7 +25,8 @@
 [ext_resource type="Environment" uid="uid://cr1kbmy0vvjeo" path="res://source/sections/environments/dungeon_environment.tres" id="18_erm4m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skmkw"]
-albedo_color = Color(1, 0, 0, 1)
+transparency = 1
+albedo_color = Color(1, 0, 0, 0)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_uon0k"]
 resource_local_to_scene = true
