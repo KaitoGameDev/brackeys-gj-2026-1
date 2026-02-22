@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cbfy61e5brdr8" path="res://source/props/forest/blue_frog.tscn" id="8_r2co1"]
 [ext_resource type="Script" uid="uid://bjpurfykmfsp2" path="res://source/puzzles/guide_frog.gd" id="9_ru7pu"]
 [ext_resource type="PackedScene" uid="uid://bfsixam5hdyvi" path="res://source/props/forest/lilly_pad_large_wo_puzzle.tscn" id="10_ru7pu"]
-[ext_resource type="PackedScene" uid="uid://b3o2kw6vxjfa6" path="res://source/props/forest/sm_plant_lillypad_large_01.tscn" id="10_sjryf"]
+[ext_resource type="PackedScene" uid="uid://cosiwva1rro0y" path="res://source/props/forest/sm_plant_lillypad_large_01.tscn" id="10_sjryf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax22t"]
 albedo_color = Color(0.5850624, 0.5850619, 0.5850621, 1)
@@ -134,11 +134,13 @@ transform = Transform3D(4.3711392e-08, -1.0000001, -1.509958e-07, -1.0000001, -4
 mesh = SubResource("PlaneMesh_r2co1")
 surface_material_override/0 = SubResource("StandardMaterial3D_bhids")
 
-[node name="GuideFrog" parent="." node_paths=PackedStringArray("pointer", "targets") instance=ExtResource("8_r2co1")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.06492847, 0.14312002, 1.4298816)
+[node name="GuideFrog" type="Node3D" parent="." node_paths=PackedStringArray("pointer", "targets")]
 script = ExtResource("9_ru7pu")
-pointer = NodePath(".")
+pointer = NodePath("Frog")
 targets = [NodePath("../LillyPadsWithoutPuzzle/TargetD"), NodePath("../LillyPadsWithoutPuzzle/TargetA"), NodePath("../LillyPadsWithoutPuzzle/TargetC"), NodePath("../LillyPadsWithoutPuzzle/TargetB"), NodePath("../LillyPadsWithoutPuzzle/TargetA")]
+
+[node name="Frog" parent="GuideFrog" instance=ExtResource("8_r2co1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06492847, 0.14312002, 1.4298816)
 
 [node name="FrogPuzzle" parent="." instance=ExtResource("10_sjryf")]
 transform = Transform3D(0.401, 0, 0, 0, 0.401, 0, 0, 0, 0.401, -0.30000007, 0.045980223, -0.09999991)

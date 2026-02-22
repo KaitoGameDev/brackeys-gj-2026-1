@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ub42hqxtlwj2" path="res://source/puzzles/frog_puzzle.gd" id="2_ja3x6"]
 [ext_resource type="Texture2D" uid="uid://7av54147da66" path="res://assets/synty_models/forest/PolygonNature_01.png" id="2_pnqjb"]
 [ext_resource type="Script" uid="uid://o5s84ihah4dt" path="res://source/interactions/lillypad.gd" id="4_ja3x6"]
-[ext_resource type="PackedScene" path="res://source/props/forest/blue_frog.tscn" id="5_2i5oo"]
+[ext_resource type="PackedScene" uid="uid://cbfy61e5brdr8" path="res://source/props/forest/blue_frog.tscn" id="5_2i5oo"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="6_i4jmu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ja3x6"]
@@ -36,7 +36,7 @@ reward_container = NodePath("../RewardContainer")
 
 [node name="LillyA" type="Node3D" parent="FrogPuzzle" index="0" node_paths=PackedStringArray("pointer", "pointer_target", "detector")]
 script = ExtResource("4_ja3x6")
-pointer = NodePath("../../Frog")
+pointer = NodePath("../../Frog2")
 pointer_target = NodePath("TargetA")
 character = "A"
 detector = NodePath("Area3D")
@@ -60,7 +60,7 @@ text = "A"
 [node name="LillyB" type="Node3D" parent="FrogPuzzle" index="1" node_paths=PackedStringArray("pointer", "pointer_target", "detector")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, -0.2)
 script = ExtResource("4_ja3x6")
-pointer = NodePath("../../Frog")
+pointer = NodePath("../../Frog2")
 pointer_target = NodePath("TargetB")
 character = "B"
 detector = NodePath("Area3D")
@@ -84,7 +84,7 @@ text = "B"
 [node name="LillyC" type="Node3D" parent="FrogPuzzle" index="2" node_paths=PackedStringArray("pointer", "pointer_target", "detector")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59999996, 0, 0.6)
 script = ExtResource("4_ja3x6")
-pointer = NodePath("../../Frog")
+pointer = NodePath("../../Frog2")
 pointer_target = NodePath("TargetC")
 character = "C"
 detector = NodePath("Area3D")
@@ -108,7 +108,7 @@ text = "C"
 [node name="LillyD" type="Node3D" parent="FrogPuzzle" index="3" node_paths=PackedStringArray("pointer", "pointer_target", "detector")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000001, 0, 0.50000006)
 script = ExtResource("4_ja3x6")
-pointer = NodePath("../../Frog")
+pointer = NodePath("../../Frog2")
 pointer_target = NodePath("TargetD")
 character = "D"
 detector = NodePath("Area3D")
@@ -132,7 +132,7 @@ text = "D"
 [node name="LillyE" type="Node3D" parent="FrogPuzzle" index="4" node_paths=PackedStringArray("pointer", "pointer_target", "detector")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0000001, 0, -0.39999998)
 script = ExtResource("4_ja3x6")
-pointer = NodePath("../../Frog")
+pointer = NodePath("../../Frog2")
 pointer_target = NodePath("TargetE")
 character = "E"
 detector = NodePath("Area3D")
@@ -156,7 +156,7 @@ text = "E"
 [node name="LillyF" type="Node3D" parent="FrogPuzzle" index="5" node_paths=PackedStringArray("pointer", "pointer_target", "detector")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20000005, 0, -0.9)
 script = ExtResource("4_ja3x6")
-pointer = NodePath("../../Frog")
+pointer = NodePath("../../Frog2")
 pointer_target = NodePath("TargetF")
 character = "F"
 detector = NodePath("Area3D")
@@ -177,7 +177,7 @@ pixel_size = 0.01
 billboard = 2
 text = "F"
 
-[node name="Frog" parent="." index="3" instance=ExtResource("5_2i5oo")]
+[node name="Frog2" parent="." index="3" instance=ExtResource("5_2i5oo")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.1375565, 0.23441531, 0.1369206)
 
 [node name="RewardContainer" type="Node3D" parent="." index="4"]

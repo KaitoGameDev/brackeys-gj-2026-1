@@ -1,11 +1,11 @@
 extends Node3D
 
-@export var pointer: Node3D
+@export var pointer: Frog
 @export var targets: Array[Node3D]
 
 var current_index: int = 0
 
-const TWEEN_DURATION: float = 1.0
+const TWEEN_DURATION: float = 0.30
 const WAIT_DURATION: float = 1.0
 
 func _ready() -> void:
@@ -14,6 +14,7 @@ func _ready() -> void:
 func start_cycle() -> void:
 	var target = targets[current_index]
 	var tween = create_tween()
+	pointer.play_jump_anim()
 	tween.tween_property(pointer, "global_position", target.global_position, TWEEN_DURATION)
 	tween.tween_interval(WAIT_DURATION)
 	tween.finished.connect(_on_cycle_finished)

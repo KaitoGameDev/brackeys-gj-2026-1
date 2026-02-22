@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbfy61e5brdr8"]
+[gd_scene load_steps=19 format=3 uid="uid://cbfy61e5brdr8"]
 
 [ext_resource type="Texture2D" uid="uid://djxs0dkltnhh4" path="res://assets/sprites/forest/ToxicFrogBlueBlue_Sheet.png" id="1_0phxo"]
+[ext_resource type="Script" uid="uid://yschvqcixb1x" path="res://source/interactions/frog.gd" id="1_tiae3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_erm4m"]
 atlas = ExtResource("1_0phxo")
@@ -34,6 +35,34 @@ region = Rect2(288, 0, 48, 48)
 atlas = ExtResource("1_0phxo")
 region = Rect2(336, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0phxo"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiae3"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjjin"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvgi5"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l5bi"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vntga"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(240, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk3gm"]
+atlas = ExtResource("1_0phxo")
+region = Rect2(288, 48, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_e7ghu"]
 animations = [{
 "frames": [{
@@ -63,14 +92,45 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0phxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiae3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjjin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvgi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l5bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vntga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vk3gm")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 20.0
 }]
 
-[node name="Frog" type="Node3D"]
+[node name="Frog" type="Node3D" node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("1_tiae3")
+animated_sprite = NodePath("AnimatedSprite3D")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 billboard = 2
 double_sided = false
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_e7ghu")
-frame_progress = 0.17335379
+animation = &"jump"
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
