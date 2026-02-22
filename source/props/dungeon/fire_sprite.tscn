@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://bq4mt3isnwwmw"]
+
+[ext_resource type="Texture2D" uid="uid://d22n2xxw0r5xv" path="res://assets/sprites/dungeon/Group 4 - 5.png" id="1_2nomh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xqku"]
+atlas = ExtResource("1_2nomh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkalu"]
+atlas = ExtResource("1_2nomh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neduw"]
+atlas = ExtResource("1_2nomh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75a7f"]
+atlas = ExtResource("1_2nomh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdkh6"]
+atlas = ExtResource("1_2nomh")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3mu6"]
+atlas = ExtResource("1_2nomh")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cukvn"]
+atlas = ExtResource("1_2nomh")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmve6"]
+atlas = ExtResource("1_2nomh")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kv3wv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xqku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkalu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neduw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75a7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdkh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3mu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cukvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmve6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FireSprite" type="Node3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 2
+double_sided = false
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_kv3wv")
+autoplay = "default"
+frame_progress = 0.111552395

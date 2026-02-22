@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ewd3bdmrocri"]
+[gd_scene load_steps=10 format=3 uid="uid://ewd3bdmrocri"]
 
 [ext_resource type="ArrayMesh" uid="uid://cwshth0e6v8kv" path="res://assets/synty_models/dungeon/SM_Env_Tiles_01.res" id="1_qokkb"]
 [ext_resource type="ArrayMesh" uid="uid://cf7iwm65a42u6" path="res://assets/synty_models/dungeon/SM_Env_Wall_Trim_Edge_01.res" id="2_iiy03"]
@@ -7,6 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://w58vvtk2mtnw" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_Coner_Inner_01.res" id="5_h4rdo"]
 [ext_resource type="ArrayMesh" uid="uid://cph5ahqfdd2st" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_01.res" id="6_iiy03"]
 [ext_resource type="PackedScene" uid="uid://b8kiodmen5jps" path="res://source/props/dungeon/destructible_statue.tscn" id="7_5j64m"]
+[ext_resource type="PackedScene" uid="uid://6rdcmumeb37k" path="res://source/props/dungeon/torch.tscn" id="7_tppmx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fs332"]
 albedo_color = Color(1, 1, 0, 1)
@@ -147,16 +148,13 @@ skeleton = NodePath("../..")
 
 [node name="Props" type="Node3D" parent="."]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Props"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 1.2, 0)
-light_color = Color(1, 0.5788655, 0.34784958, 1)
-shadow_enabled = true
+[node name="Torch" parent="Props" instance=ExtResource("7_tppmx")]
+transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, -0.8000001, 1.1, -0.3)
+skeleton = NodePath("../..")
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Props"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6000001, 1.1999999, -0.90000004)
-light_color = Color(1, 0.5788655, 0.34784958, 1)
-shadow_enabled = true
+[node name="Torch2" parent="Props" instance=ExtResource("7_tppmx")]
+transform = Transform3D(5.2584802e-08, 0, -0.401, 0, 0.401, 0, 0.401, 0, 5.2584802e-08, 0.79999995, 1.1, -0.8)
+skeleton = NodePath("../..")
 
 [node name="DestructibleStatue" parent="." instance=ExtResource("7_5j64m")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 1.1)
-max_health = 5

@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://6rdcmumeb37k"]
+[gd_scene load_steps=3 format=3 uid="uid://6rdcmumeb37k"]
 
 [ext_resource type="ArrayMesh" uid="uid://bgbwsi7cs1mv3" path="res://assets/synty_models/dungeon/SM_Prop_Torch_Ornate_02.res" id="1_f35qb"]
+[ext_resource type="PackedScene" uid="uid://bq4mt3isnwwmw" path="res://source/props/dungeon/fire_sprite.tscn" id="2_hsx8g"]
 
 [node name="Torch" type="MeshInstance3D"]
 transform = Transform3D(-1.7528267e-08, 0, 0.401, 0, 0.401, 0, -0.401, 0, -1.7528267e-08, 0, 0, 0)
 mesh = ExtResource("1_f35qb")
+
+[node name="FireSprite" parent="." instance=ExtResource("2_hsx8g")]
+transform = Transform3D(1, 0, 1.7763568e-14, 0, 1, 0, -1.7763568e-14, 0, 1, -1.7169052e-08, 0.42292982, 0.39278227)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(-1.2468826, 0, 2.1596644, 0, 2.4937656, 0, -2.1596644, 0, -1.2468826, -0.0066365004, 0.4518702, 0.42913806)

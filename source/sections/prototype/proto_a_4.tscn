@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bltbuvvsiddny"]
+[gd_scene load_steps=15 format=3 uid="uid://bltbuvvsiddny"]
 
 [ext_resource type="ArrayMesh" uid="uid://cwshth0e6v8kv" path="res://assets/synty_models/dungeon/SM_Env_Tiles_01.res" id="1_gei7q"]
 [ext_resource type="ArrayMesh" uid="uid://d30ys17nd6anv" path="res://assets/synty_models/dungeon/SM_Prop_TorchStick_01.res" id="1_puc3t"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://b7fbqr2otlmjf" path="res://source/puzzles/torch_puzzle.gd" id="7_8rmvq"]
 [ext_resource type="Script" uid="uid://4vld0spg5bvh" path="res://source/interactions/color_torch.gd" id="9_t7jor"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="10_6sf74"]
+[ext_resource type="PackedScene" uid="uid://bq4mt3isnwwmw" path="res://source/props/dungeon/fire_sprite.tscn" id="10_68l0l"]
+[ext_resource type="PackedScene" uid="uid://dcr0mjt1vgbux" path="res://source/props/dungeon/fire_sprite_white.tscn" id="11_68l0l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqhre"]
 albedo_color = Color(1, 1, 0, 1)
@@ -178,6 +180,9 @@ visible = false
 light_color = Color(1, 0.5788655, 0.34784958, 1)
 shadow_enabled = true
 
+[node name="FireSprite" parent="TorchPuzzle/RedTorch01/OmniLight3D2" instance=ExtResource("10_68l0l")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, -0.04085344, 0)
+
 [node name="Area3D" type="Area3D" parent="TorchPuzzle/RedTorch01"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TorchPuzzle/RedTorch01/Area3D"]
@@ -190,14 +195,19 @@ mesh = ExtResource("1_puc3t")
 skeleton = NodePath("../..")
 script = ExtResource("9_t7jor")
 light_object = NodePath("OmniLight3D2")
+is_enabled = true
 detector = NodePath("Area3D")
 hover_label = "Toggle"
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="TorchPuzzle/GreenTorch01"]
 transform = Transform3D(-1.0900595e-07, 0, -2.4937656, 0, 2.4937656, 0, 2.4937656, 0, -1.0900595e-07, 0, 1.5657277, 0)
-visible = false
 light_color = Color(0, 0.8495677, 0.2597671, 1)
 shadow_enabled = true
+
+[node name="FireSpriteGreen" parent="TorchPuzzle/GreenTorch01/OmniLight3D2" instance=ExtResource("11_68l0l")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, -0.045662403, 0)
+modulate = Color(0.107677825, 0.8204173, 0, 1)
+frame_progress = 0.44344303
 
 [node name="Area3D" type="Area3D" parent="TorchPuzzle/GreenTorch01"]
 
@@ -221,6 +231,9 @@ visible = false
 light_color = Color(1, 0.5803922, 0.34901962, 1)
 shadow_enabled = true
 
+[node name="FireSprite2" parent="TorchPuzzle/RedTorch02/OmniLight3D2" instance=ExtResource("10_68l0l")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, -0.040833056, 0)
+
 [node name="Area3D" type="Area3D" parent="TorchPuzzle/RedTorch02"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TorchPuzzle/RedTorch02/Area3D"]
@@ -241,6 +254,11 @@ transform = Transform3D(-1.0900595e-07, 0, -2.4937656, 0, 2.4937656, 0, 2.493765
 visible = false
 light_color = Color(0, 0.79607844, 0.8666667, 1)
 shadow_enabled = true
+
+[node name="FireSpriteBlue" parent="TorchPuzzle/BlueTorch01/OmniLight3D2" instance=ExtResource("11_68l0l")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, -0.037635803, 0)
+modulate = Color(0, 0.79741526, 0.9171657, 1)
+frame_progress = 0.7611919
 
 [node name="Area3D" type="Area3D" parent="TorchPuzzle/BlueTorch01"]
 
@@ -263,6 +281,11 @@ visible = false
 light_color = Color(0.9062763, 0.1623098, 0.9999998, 1)
 shadow_enabled = true
 
+[node name="FireSpritePurple" parent="TorchPuzzle/PurpleTorch01/OmniLight3D2" instance=ExtResource("11_68l0l")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, -0.045765102, 0)
+modulate = Color(0.8205365, 0.24546969, 0.9999996, 1)
+frame_progress = 0.49100912
+
 [node name="Area3D" type="Area3D" parent="TorchPuzzle/PurpleTorch01"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TorchPuzzle/PurpleTorch01/Area3D"]
@@ -284,6 +307,9 @@ transform = Transform3D(-1.0900595e-07, 0, -2.4937656, 0, 2.4937656, 0, 2.493765
 visible = false
 light_color = Color(1, 0.5788655, 0.34784958, 1)
 shadow_enabled = true
+
+[node name="FireSprite3" parent="TorchPuzzle/RedTorch03/OmniLight3D2" instance=ExtResource("10_68l0l")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, -0.04065019, 0)
 
 [node name="Area3D" type="Area3D" parent="TorchPuzzle/RedTorch03"]
 

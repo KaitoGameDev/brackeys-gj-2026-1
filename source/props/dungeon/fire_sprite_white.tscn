@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcr0mjt1vgbux"]
+
+[ext_resource type="Texture2D" uid="uid://45xifgnccgdc" path="res://assets/sprites/dungeon/Group 4 - 5_white.png" id="1_51em5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f377c"]
+atlas = ExtResource("1_51em5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on30h"]
+atlas = ExtResource("1_51em5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g30n"]
+atlas = ExtResource("1_51em5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3byfh"]
+atlas = ExtResource("1_51em5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i71ry"]
+atlas = ExtResource("1_51em5")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1seag"]
+atlas = ExtResource("1_51em5")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxtr7"]
+atlas = ExtResource("1_51em5")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8b68"]
+atlas = ExtResource("1_51em5")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wfp35"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f377c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on30h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g30n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3byfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i71ry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1seag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxtr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8b68")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FireSpriteWhite" type="AnimatedSprite3D"]
+billboard = 2
+double_sided = false
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_wfp35")
+autoplay = "default"
+frame_progress = 0.43677485
