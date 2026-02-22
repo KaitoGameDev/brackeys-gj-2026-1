@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 
 func mark_as_fake() -> void:
 	_is_fake = true
-	get_node("./Sprite").modulate.a = 0.8
+	get_node("./Sprite").modulate.a = 0.5
 	
 func _on_interact():
 	on_hit.emit(_is_fake)
