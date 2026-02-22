@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnw4r416u8ciy" path="res://source/sections/prototype/apartment.gd" id="1_6d8ac"]
 [ext_resource type="PackedScene" uid="uid://bs404hrfjwv2k" path="res://assets/synty_models/apartment/SM_Bld_House_InteriorWall_Door_01.fbx" id="1_f51kj"]
+[ext_resource type="Material" uid="uid://bi0okhwpmv6jf" path="res://resources/proto_d_1_floor.tres" id="2_aroq6"]
 [ext_resource type="PackedScene" uid="uid://ba0xypa55n68t" path="res://assets/synty_models/apartment/SM_Bld_House_InteriorWall_01.fbx" id="2_lsnb3"]
 [ext_resource type="PackedScene" uid="uid://m2ga1vaegm0c" path="res://assets/synty_models/apartment/props/SM_Prop_Rug_02.fbx" id="3_8tieq"]
 [ext_resource type="PackedScene" uid="uid://e4vjfy1bqjg" path="res://assets/synty_models/apartment/characters/SK_Character_Daughter_01.fbx" id="4_fmnw5"]
@@ -10,9 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="8_h82ff"]
 [ext_resource type="PackedScene" uid="uid://c6e8pbemba6ox" path="res://assets/synty_models/apartment/props/SM_Prop_Art_02.fbx" id="9_jfe0j"]
 [ext_resource type="PackedScene" uid="uid://b0w27gtryxrbu" path="res://assets/synty_models/apartment/props/SM_Prop_Art_03.fbx" id="10_pkt5a"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax22t"]
-albedo_color = Color(0.27442613, 0.35170674, 0.41054896, 1)
 
 [sub_resource type="Animation" id="Animation_6d8ac"]
 length = 0.001
@@ -125,7 +123,7 @@ door_number = 1
 door_animator = NodePath("SM_Bld_House_InteriorWall_Door_01/AnimationPlayer2")
 
 [node name="Floor" type="CSGBox3D" parent="."]
-material_override = SubResource("StandardMaterial3D_ax22t")
+material_override = ExtResource("2_aroq6")
 use_collision = true
 collision_layer = 512
 size = Vector3(2, 0.1, 4)
@@ -340,7 +338,7 @@ radius = 0.045
 material = SubResource("StandardMaterial3D_glx5p")
 
 [node name="KeyItem" parent="." instance=ExtResource("8_h82ff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036638834, 0.6461028, -0.052260637)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4705316, 0.6461028, 0.9491193)
 open_door_number = 1
 
 [node name="SM_Prop_Art_02" parent="." instance=ExtResource("9_jfe0j")]

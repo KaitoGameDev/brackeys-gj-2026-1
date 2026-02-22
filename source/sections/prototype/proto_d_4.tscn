@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://btowpe3pof064"]
+[gd_scene load_steps=5 format=3 uid="uid://btowpe3pof064"]
+
+[ext_resource type="Script" uid="uid://b2wehh4amixph" path="res://source/sections/prototype/proto_d_4.gd" id="1_1jp8w"]
+[ext_resource type="PackedScene" uid="uid://ba0xypa55n68t" path="res://assets/synty_models/apartment/SM_Bld_House_InteriorWall_01.fbx" id="1_hvawa"]
+[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="2_auu0n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqhre"]
 albedo_color = Color(0.6392157, 0.70980394, 1, 1)
 
 [node name="ProtoA4" type="Node3D"]
+script = ExtResource("1_1jp8w")
 
 [node name="Floor" type="CSGBox3D" parent="."]
 material_override = SubResource("StandardMaterial3D_aqhre")
@@ -11,11 +16,31 @@ use_collision = true
 collision_layer = 512
 size = Vector3(2, 0.1, 4)
 
-[node name="player_spot" type="CSGSphere3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
-radius = 0.1
-
 [node name="Label" type="Label3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, 1.5)
-pixel_size = 0.01
-text = "D4"
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.9825974, 1.7403564)
+text = "It was really hard
+but you did it.
+
+Now is time for rest
+a little."
+
+[node name="SM_Bld_House_InteriorWall_06" parent="." instance=ExtResource("1_hvawa")]
+transform = Transform3D(4.5708717e-08, 0, 1, 0, 1, 0, -1.53373, 0, 2.9802322e-08, 1, 2.8600135, 1.8531523)
+
+[node name="SM_Bld_House_InteriorWall_07" parent="." instance=ExtResource("1_hvawa")]
+transform = Transform3D(4.5708717e-08, 0, 1, 0, 1, 0, -1.53373, 0, 2.9802322e-08, 1, 0.048671484, 1.8531523)
+
+[node name="SM_Bld_House_InteriorWall_02" parent="." instance=ExtResource("1_hvawa")]
+transform = Transform3D(1.0022038e-07, 0, -1, 0, 1, 0, 1.681419, 0, 5.9604645e-08, -1, 0.049767017, -2.000129)
+
+[node name="SM_Bld_House_InteriorWall_05" parent="." instance=ExtResource("1_hvawa")]
+transform = Transform3D(1.0022038e-07, 0, -1, 0, 1, 0, 1.681419, 0, 5.9604645e-08, -1, 2.8557177, -2.000129)
+
+[node name="SM_Bld_House_InteriorWall_03" parent="." instance=ExtResource("1_hvawa")]
+transform = Transform3D(0.8651499, 0, 1.03316026e-07, 0, 1, 0, -8.938385e-08, 0, 0.99999994, -1.1, 0.031989455, 1.8381722)
+
+[node name="SM_Bld_House_InteriorWall_04" parent="." instance=ExtResource("1_hvawa")]
+transform = Transform3D(0.8651499, 0, 1.03316026e-07, 0, 1, 0, -8.938385e-08, 0, 0.99999994, -1.1, 2.8706164, 2)
+
+[node name="KeyItem" parent="." instance=ExtResource("2_auu0n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013797939, 0.8801425, 0.81690264)

@@ -4,6 +4,8 @@ extends Node3D
 @export var detector: Area3D
 @export var hover_label: String = ''
 
+signal touched
+
 var _is_over_item := false
 
 func _ready() -> void:
@@ -27,6 +29,7 @@ func _on_mouse_exited() -> void:
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and _is_over_item:
+		touched.emit()
 		_on_interact()
 		
 func _on_interact():
