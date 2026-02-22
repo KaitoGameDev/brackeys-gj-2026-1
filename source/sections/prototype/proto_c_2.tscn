@@ -14,6 +14,7 @@ albedo_color = Color(0.80784315, 0.34117648, 0, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_hgad1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40l7c"]
+specular_mode = 2
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="ProtoA2" type="Node3D"]

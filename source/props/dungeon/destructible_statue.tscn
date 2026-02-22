@@ -13,7 +13,7 @@ script = ExtResource("1_gjg6q")
 statue_object = NodePath("Statue")
 rubble_object = NodePath("Rubble")
 detector = NodePath("Statue/Area3D")
-hover_label = "Hit"
+hover_label = "Smash"
 
 [node name="Statue" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.802, 0, 0, 0, 0.802, 0, 0, 0, 0.802, 0, 0, 0)

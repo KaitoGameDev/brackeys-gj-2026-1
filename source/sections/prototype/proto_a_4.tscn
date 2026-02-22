@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bltbuvvsiddny"]
+[gd_scene load_steps=16 format=3 uid="uid://bltbuvvsiddny"]
 
 [ext_resource type="ArrayMesh" uid="uid://cwshth0e6v8kv" path="res://assets/synty_models/dungeon/SM_Env_Tiles_01.res" id="1_gei7q"]
 [ext_resource type="ArrayMesh" uid="uid://d30ys17nd6anv" path="res://assets/synty_models/dungeon/SM_Prop_TorchStick_01.res" id="1_puc3t"]
@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://w58vvtk2mtnw" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_Coner_Inner_01.res" id="5_8rmvq"]
 [ext_resource type="ArrayMesh" uid="uid://cph5ahqfdd2st" path="res://assets/synty_models/dungeon/SM_Env_Wall_End_01.res" id="6_1c7f5"]
 [ext_resource type="Script" uid="uid://b7fbqr2otlmjf" path="res://source/puzzles/torch_puzzle.gd" id="7_8rmvq"]
+[ext_resource type="Texture2D" uid="uid://d22n2xxw0r5xv" path="res://assets/sprites/dungeon/Group 4 - 5.png" id="7_k5uok"]
 [ext_resource type="Script" uid="uid://4vld0spg5bvh" path="res://source/interactions/color_torch.gd" id="9_t7jor"]
 [ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="10_6sf74"]
 [ext_resource type="PackedScene" uid="uid://bq4mt3isnwwmw" path="res://source/props/dungeon/fire_sprite.tscn" id="10_68l0l"]
@@ -157,6 +158,27 @@ skeleton = NodePath("../..")
 transform = Transform3D(-0.40100002, 0, 3.5056534e-08, 0, 0.401, 0, -3.5056534e-08, 0, -0.40100002, 0.87179554, 2, 1.9425838)
 mesh = ExtResource("6_1c7f5")
 skeleton = NodePath("../..")
+
+[node name="Sprite3D" type="Sprite3D" parent="Walls"]
+transform = Transform3D(-4.371138e-08, 0, 0.9999999, -0.3420201, 0.9396926, -1.4950173e-08, -0.9396925, -0.3420201, -4.1075264e-08, 0.8, 1.2518749, -0.608524)
+texture_filter = 0
+texture = ExtResource("7_k5uok")
+region_enabled = true
+region_rect = Rect2(0, 0, 31, 32)
+
+[node name="Sprite3D2" type="Sprite3D" parent="Walls"]
+transform = Transform3D(-4.371138e-08, 0, 0.9999999, 0.49999988, 0.8660253, 2.1855692e-08, -0.8660252, 0.5, -3.7855163e-08, 0.8, 1.5518749, -0.30852407)
+texture_filter = 0
+texture = ExtResource("7_k5uok")
+region_enabled = true
+region_rect = Rect2(0, 0, 31, 32)
+
+[node name="Sprite3D3" type="Sprite3D" parent="Walls"]
+transform = Transform3D(-4.371138e-08, 1.53837e-15, 0.9999999, -0.25881898, 0.9659258, -1.1313338e-08, -0.9659256, -0.258819, -4.222195e-08, 0.8, 1.0518749, -0.30852407)
+texture_filter = 0
+texture = ExtResource("7_k5uok")
+region_enabled = true
+region_rect = Rect2(0, 0, 31, 32)
 
 [node name="TorchPuzzle" type="Node3D" parent="." node_paths=PackedStringArray("color_torch_objects", "reward_container")]
 unique_name_in_owner = true
