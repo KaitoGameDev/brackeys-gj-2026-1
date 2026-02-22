@@ -34,5 +34,10 @@ func empty_bucket():
 	refresh_label()
 	
 func refresh_label():
+	if current_weight > required_weight:
+		label.modulate = Color.RED
+	else:
+		label.modulate = Color.WHITE
+	
 	label.text = str(current_weight) + " / " + str(required_weight)
 	
