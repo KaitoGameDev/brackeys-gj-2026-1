@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjf0ncfvqcfd"]
+[gd_scene load_steps=13 format=3 uid="uid://bjf0ncfvqcfd"]
 
 [ext_resource type="PackedScene" uid="uid://dbuv3wsbxxbva" path="res://source/props/forest/sm_plant_bush_03.tscn" id="1_sup6r"]
 [ext_resource type="PackedScene" uid="uid://dpgyocg3q842w" path="res://source/props/forest/sm_plant_bush_02.tscn" id="2_m2pdo"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dm62lrb6sa24e" path="res://assets/sprites/forest/ground-GreenLeavesWhiteFlowers.png" id="5_yhkby"]
 [ext_resource type="Texture2D" uid="uid://do43qnpmulnff" path="res://assets/sprites/forest/ground-DryForestPineNeedle.png" id="6_0y7ny"]
 [ext_resource type="Texture2D" uid="uid://clvigr4e5ca5y" path="res://assets/sprites/forest/ground-DryForestPineNeedle_Normal.tga" id="7_4wg1w"]
+[ext_resource type="PackedScene" uid="uid://c3rbbcn1b0qdf" path="res://source/props/forest/dig_area.tscn" id="8_qoemr"]
+[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="9_cgpdr"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0y7ny"]
 
@@ -120,3 +122,31 @@ material_override = SubResource("StandardMaterial3D_qoemr")
 use_collision = true
 collision_layer = 512
 size = Vector3(2, 0.1, 4)
+
+[node name="DigArea" parent="." instance=ExtResource("8_qoemr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1798779, 0, 0.79278135)
+buried_item = ExtResource("9_cgpdr")
+
+[node name="DigArea2" parent="." instance=ExtResource("8_qoemr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19774804, 0, -0.34447503)
+
+[node name="DigArea3" parent="." instance=ExtResource("8_qoemr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5194231, 0, 1.2976447)
+
+[node name="DigArea4" parent="." instance=ExtResource("8_qoemr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62654513, 0, -0.4457903)
+
+[node name="DigArea5" parent="." instance=ExtResource("8_qoemr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30689818, -2.3841858e-07, 0.42094624)
+
+[node name="DigArea6" parent="." instance=ExtResource("8_qoemr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12513909, -2.3841858e-07, 0.054077715)
+
+[node name="DigArea7" parent="." instance=ExtResource("8_qoemr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77534866, -2.3841858e-07, 0.5438602)
+
+[node name="DigArea8" parent="." instance=ExtResource("8_qoemr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6435, -2.3841858e-07, 1.3270671)
+
+[node name="DigArea9" parent="." instance=ExtResource("8_qoemr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05787742, -3.5762787e-07, 1.2590233)

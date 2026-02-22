@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3rbbcn1b0qdf"]
+
+[ext_resource type="Script" uid="uid://cc7u850im2y3u" path="res://source/interactions/dig_area.gd" id="1_2phfi"]
+[ext_resource type="Texture2D" uid="uid://do43qnpmulnff" path="res://assets/sprites/forest/ground-DryForestPineNeedle.png" id="1_3t7sd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2phfi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4t48"]
+albedo_texture = ExtResource("1_3t7sd")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y4t48"]
+radius = 0.20198299
+
+[node name="DigArea" type="Node3D" node_paths=PackedStringArray("item_container", "area_model", "detector")]
+script = ExtResource("1_2phfi")
+item_container = NodePath("ItemContainer")
+area_model = NodePath("MeshInstance3D")
+detector = NodePath("Area3D")
+hover_label = "Dig"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("SphereMesh_2phfi")
+surface_material_override/0 = SubResource("StandardMaterial3D_y4t48")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_y4t48")
+
+[node name="ItemContainer" type="Node3D" parent="."]
