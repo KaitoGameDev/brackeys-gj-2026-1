@@ -151,7 +151,7 @@ bucket_container = NodePath("Bucket")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00083088875, 0.5953776, 0.0061130524)
 script = ExtResource("10_vha7p")
 detector = NodePath("Area3D")
-hover_label = "Empty"
+hover_label = "Empty bucket"
 
 [node name="Label" type="Label3D" parent="FruitPuzzle/Bucket"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.15972471, -0.095377624, 0.01678443)
@@ -171,7 +171,7 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.85801756, 0.372117
 script = ExtResource("11_6k0ft")
 weight = 5
 detector = NodePath("Area3D")
-hover_label = "Add"
+hover_label = "Add to bucket"
 
 [node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13333333, 0)
@@ -189,7 +189,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.74198246, 0.21343666
 script = ExtResource("11_6k0ft")
 weight = 2
 detector = NodePath("Area3D")
-hover_label = "Add"
+hover_label = "Add to bucket"
 
 [node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit2"]
 billboard = 2
@@ -206,7 +206,7 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.55801755, 0.372117
 script = ExtResource("11_6k0ft")
 weight = 8
 detector = NodePath("Area3D")
-hover_label = "Add"
+hover_label = "Add to bucket"
 
 [node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit3"]
 billboard = 2
@@ -223,7 +223,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.14198244, 0.17211765
 script = ExtResource("11_6k0ft")
 weight = 3
 detector = NodePath("Area3D")
-hover_label = "Add"
+hover_label = "Add to bucket"
 
 [node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit4"]
 billboard = 2
@@ -240,7 +240,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.35801768, 0.17367482,
 script = ExtResource("11_6k0ft")
 weight = 4
 detector = NodePath("Area3D")
-hover_label = "Add"
+hover_label = "Add to bucket"
 
 [node name="Sprite3D" type="Sprite3D" parent="FruitPuzzle/Fruit5"]
 billboard = 2
