@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://dpgyocg3q842w" path="res://source/props/forest/sm_plant_bush_02.tscn" id="3_8du50"]
 [ext_resource type="PackedScene" uid="uid://c0hastrpd58kk" path="res://source/props/forest/sm_tree_poly_pine_02.tscn" id="6_r2co1"]
 [ext_resource type="Texture2D" uid="uid://dm62lrb6sa24e" path="res://assets/sprites/forest/ground-GreenLeavesWhiteFlowers.png" id="7_vx8s3"]
-[ext_resource type="PackedScene" path="res://source/props/forest/blue_frog.tscn" id="8_r2co1"]
-[ext_resource type="Script" path="res://source/puzzles/guide_frog.gd" id="9_ru7pu"]
-[ext_resource type="PackedScene" path="res://source/props/forest/lilly_pad_large_wo_puzzle.tscn" id="10_ru7pu"]
-[ext_resource type="PackedScene" path="res://source/props/forest/sm_plant_lillypad_large_01.tscn" id="10_sjryf"]
+[ext_resource type="PackedScene" uid="uid://cbfy61e5brdr8" path="res://source/props/forest/blue_frog.tscn" id="8_r2co1"]
+[ext_resource type="Script" uid="uid://bjpurfykmfsp2" path="res://source/puzzles/guide_frog.gd" id="9_ru7pu"]
+[ext_resource type="PackedScene" uid="uid://bfsixam5hdyvi" path="res://source/props/forest/lilly_pad_large_wo_puzzle.tscn" id="10_ru7pu"]
+[ext_resource type="PackedScene" uid="uid://b3o2kw6vxjfa6" path="res://source/props/forest/sm_plant_lillypad_large_01.tscn" id="10_sjryf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax22t"]
 albedo_color = Color(0.5850624, 0.5850619, 0.5850621, 1)
@@ -36,10 +36,12 @@ size = Vector3(2, 0.1, 4)
 
 [node name="player_spot" type="CSGSphere3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+visible = false
 radius = 0.1
 
 [node name="Label" type="Label3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, 1.5)
+visible = false
 pixel_size = 0.01
 text = "B1"
 
