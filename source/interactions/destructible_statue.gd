@@ -1,6 +1,6 @@
 extends Interactable
 
-@export var max_health: int = 10
+@export var max_health: int = 5
 @export var statue_object: Node3D
 @export var rubble_object: Node3D
 
