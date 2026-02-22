@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dcc1thb5d1bl8"]
+[gd_scene load_steps=27 format=3 uid="uid://dcc1thb5d1bl8"]
 
 [ext_resource type="Script" uid="uid://bxwqxnnxepbuy" path="res://source/room/center_room.gd" id="1_5xmys"]
 [ext_resource type="PackedScene" uid="uid://52b8d2sfi07d" path="res://source/sections/prototype/proto_a_1.tscn" id="1_a5ckb"]
@@ -23,8 +23,6 @@
 [ext_resource type="Environment" uid="uid://kssk2vr2adhf" path="res://source/sections/environments/nightmare_environment.tres" id="15_jfsvp"]
 [ext_resource type="Environment" uid="uid://b06pmujrdb7hn" path="res://source/sections/environments/apartment_environment.tres" id="16_sjnex"]
 [ext_resource type="Environment" uid="uid://cr1kbmy0vvjeo" path="res://source/sections/environments/dungeon_environment.tres" id="18_erm4m"]
-[ext_resource type="PackedScene" uid="uid://cbj12sjnq5onk" path="res://source/creature/creature.tscn" id="24_k10tv"]
-[ext_resource type="PackedScene" uid="uid://dsbvt2nfklkcf" path="res://source/creature/sanity_filter.tscn" id="25_ija0u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skmkw"]
 albedo_color = Color(1, 0, 0, 1)
@@ -89,9 +87,6 @@ input_right = "ui_right"
 input_forward = "ui_up"
 input_back = "ui_down"
 
-[node name="Creature" parent="player_pivot" instance=ExtResource("24_k10tv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8523662, 0.63756645, -1.7538409)
-
 [node name="Walls" type="Node3D" parent="."]
 visible = false
 
@@ -126,16 +121,3 @@ mesh = SubResource("PlaneMesh_uon0k")
 [node name="InnerWall4" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1.9106853e-15, -4.3711385e-08, -1, -0.9999999, -4.3711385e-08, 0, -4.3711385e-08, 0.9999999, -4.371139e-08, 0.020195782, 0.7586132, 0.97290695)
 mesh = SubResource("PlaneMesh_uon0k")
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="SanityFilter" parent="Control" instance=ExtResource("25_ija0u")]
-layout_mode = 1
-mouse_filter = 2

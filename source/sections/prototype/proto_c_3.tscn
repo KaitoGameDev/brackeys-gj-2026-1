@@ -36,9 +36,6 @@ transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0
 key_item = NodePath("../KeyItem")
 attack = ExtResource("3_mwqqw")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.465039, -1.4820164)
-
 [node name="KeyItem" parent="." instance=ExtResource("4_84nbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4585511, 1.1908035)
 visible = false

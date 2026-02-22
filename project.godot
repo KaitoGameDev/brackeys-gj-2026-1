@@ -47,3 +47,8 @@ interact={
 
 3d_physics/layer_1="player"
 3d_physics/layer_10="floor"
+
+[rendering]
+
+occlusion_culling/occlusion_rays_per_thread=256
+occlusion_culling/use_occlusion_culling=true

@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5s1byoa42mkb"]
+[gd_scene load_steps=7 format=3 uid="uid://b5s1byoa42mkb"]
 
 [ext_resource type="PackedScene" uid="uid://dsf10vwd7ffyk" path="res://assets/synty_models/nightmare/gate.glb" id="1_fmu2w"]
+[ext_resource type="PackedScene" uid="uid://cbj12sjnq5onk" path="res://source/creature/creature.tscn" id="2_xrfdn"]
+[ext_resource type="FontFile" uid="uid://bqopgw3npg7ys" path="res://assets/fonts/New_Rocker/NewRocker-Regular.ttf" id="3_bchkq"]
+[ext_resource type="Script" uid="uid://ba0s0vctlqcmi" path="res://source/creature/puzzle_4.gd" id="3_q45p7"]
+[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="5_uos46"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqhre"]
 albedo_color = Color(0.80784315, 0.34117648, 0, 1)
@@ -14,17 +18,60 @@ use_collision = true
 collision_layer = 512
 size = Vector3(2, 0.1, 4)
 
-[node name="player_spot" type="CSGSphere3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
-radius = 0.1
-
-[node name="Label" type="Label3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, 1.5)
-pixel_size = 0.01
-text = "C4"
-
 [node name="gate2" parent="." instance=ExtResource("1_fmu2w")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, 0.46421546)
 
 [node name="gate8" parent="." instance=ExtResource("1_fmu2w")]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -1.0341607, 0, -1.0357845)
+
+[node name="Creature" parent="." instance=ExtResource("2_xrfdn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029793918, 0.6999999, 0.22774577)
+
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("key_item", "creature")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_q45p7")
+key_item = NodePath("../KeyItem")
+creature = NodePath("../Creature")
+
+[node name="Background" type="ColorRect" parent="Control"]
+visible = false
+self_modulate = Color(0.47058824, 0.32156864, 0.21176471, 0.5176471)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19791667
+anchor_top = 0.70555556
+anchor_right = 0.8052083
+anchor_bottom = 0.9314815
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Messages" type="RichTextLabel" parent="Control/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("3_bchkq")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyItem" parent="." instance=ExtResource("5_uos46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62241316, 1.5738215)
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.60351086, -1.4676307)
