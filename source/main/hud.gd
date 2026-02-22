@@ -29,8 +29,8 @@ func _render_floor_counter() -> void:
 func _check_floor_changing() -> void:
 	if _moves % 4 != 0: return
 	var tween : Tween = create_tween()
-	tween.tween_property(fade_out_panel, 'color:a', 1, 1.25).set_ease(Tween.EASE_IN)
-	tween.tween_property(fade_out_panel, 'color:a', 0, 0.6).set_ease(Tween.EASE_OUT).set_delay(0.5)
+	tween.tween_property(fade_out_panel, 'color:a', 1, 0.8).set_ease(Tween.EASE_IN)
+	tween.tween_property(fade_out_panel, 'color:a', 0, 0.6).set_ease(Tween.EASE_OUT).set_delay(1)
 	
 	
 func _on_change_cursor(event: ChangeCursorEvent) -> void:

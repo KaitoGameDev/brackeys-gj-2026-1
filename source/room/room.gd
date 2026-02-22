@@ -16,14 +16,17 @@ func _ready() -> void:
 	EventBusSingleton.on_event.connect(_on_event)
 	
 func _on_event(event: Object) -> void:
-	if event is MoveToNextSpotEvent: return _on_move_to_next_spot()
+	if event is MoveToNextSpotEvent:
+		await _on_move_to_next_spot()
+		return
 	if event is PlayerEndMovementEvent: return _on_playern_movement_end()
 	
 func _on_move_to_next_spot() -> void:
 	if _current_hall == 3:
 		var env = environments.pop_front()
-		world_environment.environment = env
 		EventBusSingleton.send_event(PlayerChangedFloorEvent.new())
+		await get_tree().create_timer(0.85).timeout
+		world_environment.environment = env
 	
 func _on_playern_movement_end() -> void:
 	if sections.size() == 0: return
