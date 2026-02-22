@@ -13,14 +13,6 @@ velocity = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4422234, 0, 0)
 velocity = 0.0
 
-[node name="CreatureAttack4" parent="." instance=ExtResource("1_2jbcs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.869969, 0, 0)
-velocity = 0.0
-
 [node name="CreatureAttack5" parent="." instance=ExtResource("1_2jbcs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4020754, 0, 0)
-velocity = 0.0
-
-[node name="CreatureAttack7" parent="." instance=ExtResource("1_2jbcs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8052273, 0, 0)
 velocity = 0.0
