@@ -9,6 +9,7 @@ signal on_eliminated
 
 func _on_interact() -> void:
 	super._on_mouse_exited()
+	EventBusSingleton.send_event(PlaySfxEvent.create('hit_monster'))
 	on_eliminated.emit()
 	queue_free.call_deferred()
 	
@@ -17,6 +18,7 @@ func _physics_process(delta: float) -> void:
 	
 func _ready() -> void:
 	super._ready()
+	EventBusSingleton.send_event(PlaySfxEvent.create('spawn_attack'))
 	sprite.texture = sprites.pick_random()
 	if velocity != 0.0:
 		position.y = randf_range(0.5, 1)

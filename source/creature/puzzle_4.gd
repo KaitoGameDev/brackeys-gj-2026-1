@@ -23,10 +23,13 @@ func _handle_player_movement() -> void:
 		get_tree().create_timer(2.0).timeout.connect(_start_puzzle)
 		
 func _start_puzzle() -> void:
+	EventBusSingleton.send_event(PlaySfxEvent.create('monster_talk'))
 	_show_message('[shake]You maybe win this time[/shake]')
 	await get_tree().create_timer(2.0).timeout
+	EventBusSingleton.send_event(PlaySfxEvent.create('monster_talk'))
 	_show_message('[shake]But I\'m part of you\neven if you like or not[/shake]')
 	await get_tree().create_timer(4.0).timeout
+	EventBusSingleton.send_event(PlaySfxEvent.create('monster_talk'))
 	_show_message('[shake]I\'ll be waiting for you[/shake]')
 	await get_tree().create_timer(3.0).timeout
 	creature.disappear()

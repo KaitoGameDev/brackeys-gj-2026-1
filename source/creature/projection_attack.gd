@@ -14,6 +14,8 @@ func mark_as_fake() -> void:
 	get_node("./Sprite").modulate.a = 0.25
 	
 func _on_interact():
+	if !_is_fake:
+		EventBusSingleton.send_event(PlaySfxEvent.create('hit_monster'))
 	on_hit.emit(_is_fake)
 	
 	

@@ -14,15 +14,18 @@ var sfxs: Dictionary[String, AudioStream] = {
 	"cut": preload("res://assets/audio/sfxs/cut.wav"),
 	"empty_bucket": preload("res://assets/audio/sfxs/empty_bucket.wav"),
 	"pickup_food": preload("res://assets/audio/sfxs/pickup_food.wav"),
+	"hit_monster": preload("res://assets/audio/sfxs/hit_monster.wav"),
+	"spawn_attack": preload("res://assets/audio/sfxs/spawn_attack.wav"),
+	"monster_talk": preload("res://assets/audio/sfxs/monster_talk.wav"),
 }
 
-@export var puzzle_sfx: AudioStream 
 
 @onready var sfxs_player: Array[AudioStreamPlayer] = [$SFX, $SFX2, $SFX3, $SFX4, $SFX5]
 @onready var bgm_players: Array[AudioStreamPlayer] = [$BGM_1, $BGM_2]
 
 var _current_player_index := 0
 var _current_sfx_player_index := 0
+var _bgm_index := 0
 
 func _ready() -> void:
 	EventBusSingleton.on_event.connect(_on_event)
@@ -58,16 +61,18 @@ func _started_game() -> void:
 	for player in bgm_players:
 		player.stop()
 
-	bgm_players[0].stream = bgms.pop_front()
+	bgm_players[0].stream = bgms[_bgm_index]
 	bgm_players[0].play()
+	_bgm_index += 1
 
 func _on_player_changed_floor() -> void:
 	mount_next()
 	
+
 	
 func mount_next() -> void:
 	var _next_player := 1 if _current_player_index == 0 else 0
-	bgm_players[_next_player].stream = bgms.pop_front()
+	bgm_players[_next_player].stream = bgms[_bgm_index]
 	var out_bus_index := _current_player_index + 1
 	var in_bus_index := _next_player + 1
 	var start_db := AudioServer.get_bus_volume_db(out_bus_index)
@@ -93,3 +98,4 @@ func mount_next() -> void:
 			bgm_players[_current_player_index].stop()
 			_current_player_index = _next_player
 	) 
+	_bgm_index += 1
