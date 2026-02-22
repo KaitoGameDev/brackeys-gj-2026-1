@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c0g6431n4qjdi" path="res://assets/sprites/flower_of_hope.png" id="2_lyrkv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ky8m"]
-radius = 0.10888672
-height = 0.3154297
+radius = 0.2
+height = 0.4
 
 [node name="KeyItem" type="Node3D" node_paths=PackedStringArray("detector")]
 script = ExtResource("1_3gwuh")
@@ -19,6 +19,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0017089844, 0)
 shape = SubResource("CapsuleShape3D_8ky8m")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
 billboard = 2
+double_sided = false
 texture_filter = 0
 texture = ExtResource("2_lyrkv")
