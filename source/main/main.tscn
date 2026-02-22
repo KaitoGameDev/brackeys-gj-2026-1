@@ -1,15 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0owgkwrisbf7"]
+[gd_scene load_steps=19 format=3 uid="uid://d0owgkwrisbf7"]
 
 [ext_resource type="PackedScene" uid="uid://dcc1thb5d1bl8" path="res://source/room/room.tscn" id="1_nevys"]
+[ext_resource type="PackedScene" uid="uid://bjf0ncfvqcfd" path="res://source/sections/prototype/proto_b_2.tscn" id="2_n1u7n"]
 [ext_resource type="PackedScene" uid="uid://rr2wjguw6a1w" path="res://source/main/hud.tscn" id="2_n3iyj"]
+[ext_resource type="PackedScene" uid="uid://cdphkxwfbo68" path="res://source/sections/prototype/proto_b_1.tscn" id="3_87t75"]
 [ext_resource type="Script" uid="uid://bjtgbtky6cjs8" path="res://source/main/game_over_screen.gd" id="3_h5hv5"]
 [ext_resource type="FontFile" uid="uid://bqopgw3npg7ys" path="res://assets/fonts/New_Rocker/NewRocker-Regular.ttf" id="4_l81uv"]
+[ext_resource type="PackedScene" uid="uid://d1rfnxjgqxfcv" path="res://source/sections/prototype/proto_b_3.tscn" id="4_vqg2e"]
 [ext_resource type="StyleBox" uid="uid://bf4p7kdtnkahm" path="res://resources/ui/normal_main_btn.tres" id="5_qkuhj"]
+[ext_resource type="PackedScene" uid="uid://dt2gdcuf063fs" path="res://source/sections/prototype/proto_b_4.tscn" id="5_ylukr"]
+[ext_resource type="PackedScene" uid="uid://egp4qiunr7we" path="res://source/sections/prototype/proto_c_1.tscn" id="6_07pcr"]
 [ext_resource type="StyleBox" uid="uid://d0w1d2ob7w2j" path="res://resources/ui/hove_main_btn.tres" id="6_420hx"]
+[ext_resource type="PackedScene" uid="uid://t3d0efu0iffw" path="res://source/sections/prototype/proto_c_2.tscn" id="7_pse4q"]
+[ext_resource type="PackedScene" uid="uid://b1d542srjm7p5" path="res://source/sections/prototype/proto_c_3.tscn" id="8_gqwll"]
+[ext_resource type="PackedScene" uid="uid://b5s1byoa42mkb" path="res://source/sections/prototype/proto_c_4.tscn" id="9_wmji8"]
+[ext_resource type="PackedScene" uid="uid://cegbj2epl8bwf" path="res://source/sections/prototype/proto_d_1.tscn" id="10_7wkfi"]
+[ext_resource type="PackedScene" uid="uid://wtbyiy60vg7s" path="res://source/sections/prototype/proto_d_2.tscn" id="11_3rl2p"]
+[ext_resource type="PackedScene" uid="uid://84fdswhbv20g" path="res://source/sections/prototype/proto_d_3.tscn" id="12_qn0x4"]
+[ext_resource type="PackedScene" uid="uid://btowpe3pof064" path="res://source/sections/prototype/proto_d_4.tscn" id="13_85jym"]
 
 [node name="Main" type="Node"]
 
 [node name="Room" parent="." instance=ExtResource("1_nevys")]
+sections = Array[PackedScene]([ExtResource("2_n1u7n"), ExtResource("3_87t75"), ExtResource("4_vqg2e"), ExtResource("5_ylukr"), ExtResource("6_07pcr"), ExtResource("7_pse4q"), ExtResource("8_gqwll"), ExtResource("9_wmji8"), ExtResource("10_7wkfi"), ExtResource("11_3rl2p"), ExtResource("12_qn0x4"), ExtResource("13_85jym")])
 
 [node name="HUD" parent="." instance=ExtResource("2_n3iyj")]
 
