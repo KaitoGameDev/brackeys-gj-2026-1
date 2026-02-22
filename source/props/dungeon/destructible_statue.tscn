@@ -10,7 +10,6 @@ size = Vector3(1.6, 3, 1.1)
 
 [node name="DestructibleStatue" type="Node3D" node_paths=PackedStringArray("statue_object", "rubble_object", "detector")]
 script = ExtResource("1_gjg6q")
-max_health = 10
 statue_object = NodePath("Statue")
 rubble_object = NodePath("Rubble")
 detector = NodePath("Statue/Area3D")
