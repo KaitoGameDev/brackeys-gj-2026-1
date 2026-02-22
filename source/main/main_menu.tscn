@@ -105,7 +105,7 @@ material_override = SubResource("StandardMaterial3D_pdd2v")
 transform = Transform3D(-1, 1.5180808e-08, 8.609463e-08, 0, 0.9848078, -0.1736482, -8.742278e-08, -0.1736482, -0.9848078, 0, 2, -16)
 
 [node name="Credits" type="Label3D" parent="Tower"]
-transform = Transform3D(0.99403363, 0, -0.10907508, 0, 1, 0, 0.10907508, 0, 0.99403363, -1.9119635, 16.158037, 10.012292)
+transform = Transform3D(0.99403363, 0, -0.10907508, 0, 1, 0, 0.10907508, 0, 0.99403363, -1.9119635, 16.644817, 10.012292)
 pixel_size = 0.01
 text = "Developed By
 

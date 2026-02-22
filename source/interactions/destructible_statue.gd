@@ -16,3 +16,7 @@ func _on_interact():
 	else:
 		var sfx := 'hit_statue_{0}'.format([randi_range(1, 2)])
 		EventBusSingleton.send_event(PlaySfxEvent.create(sfx))
+		var tween := create_tween()
+		tween.tween_property(statue_object, 'position:x', statue_object.position.x - 0.01, 0.1)
+		tween.tween_property(statue_object, 'position:x', statue_object.position.x + 0.01, 0.1)
+		
