@@ -27,7 +27,7 @@ normal_texture = ExtResource("7_jfk3k")
 uv1_scale = Vector3(8, 4.5, 7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cujbt"]
-size = Vector3(0.6, 0.001, 0.3)
+size = Vector3(0.6, 0.7, 0.3)
 
 [node name="ProtoA3" type="Node3D"]
 
@@ -144,7 +144,7 @@ hover_label = "Cut"
 [node name="Area3D" type="Area3D" parent="FlowerPuzzle/RedFlower9"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FlowerPuzzle/RedFlower9/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6645353e-15, 0.4995, -0.049999982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5762787e-07, 0.44900006, -0.049999952)
 shape = SubResource("BoxShape3D_cujbt")
 
 [node name="RedFlower10" parent="FlowerPuzzle" node_paths=PackedStringArray("detector") instance=ExtResource("9_ey4e3")]
