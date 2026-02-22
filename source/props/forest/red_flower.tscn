@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://rdvafdvdykv5"]
+
+[ext_resource type="PackedScene" uid="uid://bycavxqivo1g1" path="res://assets/synty_models/forest/fp_flower_a.gltf" id="1_ujifx"]
+
+[node name="RedFlower" instance=ExtResource("1_ujifx")]

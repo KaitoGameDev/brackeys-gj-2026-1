@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1rfnxjgqxfcv"]
+[gd_scene load_steps=16 format=3 uid="uid://d1rfnxjgqxfcv"]
 
 [ext_resource type="PackedScene" uid="uid://dbuv3wsbxxbva" path="res://source/props/forest/sm_plant_bush_03.tscn" id="1_7lsph"]
 [ext_resource type="PackedScene" uid="uid://dpgyocg3q842w" path="res://source/props/forest/sm_plant_bush_02.tscn" id="2_sxlwx"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dm62lrb6sa24e" path="res://assets/sprites/forest/ground-GreenLeavesWhiteFlowers.png" id="5_3vlc6"]
 [ext_resource type="Texture2D" uid="uid://do43qnpmulnff" path="res://assets/sprites/forest/ground-DryForestPineNeedle.png" id="6_xwbnd"]
 [ext_resource type="Texture2D" uid="uid://clvigr4e5ca5y" path="res://assets/sprites/forest/ground-DryForestPineNeedle_Normal.tga" id="7_jfk3k"]
+[ext_resource type="Script" uid="uid://c4dwl5os3jx6o" path="res://source/puzzles/flower_puzzle.gd" id="8_jfk3k"]
+[ext_resource type="PackedScene" uid="uid://rdvafdvdykv5" path="res://source/props/forest/red_flower.tscn" id="9_ey4e3"]
+[ext_resource type="Script" uid="uid://c4ngasxg2k3m1" path="res://source/interactions/flower.gd" id="9_xwbnd"]
+[ext_resource type="PackedScene" uid="uid://cg1ah23vqw44r" path="res://source/props/key_item.tscn" id="11_ey4e3"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ey4e3"]
 
@@ -21,6 +25,9 @@ albedo_texture = ExtResource("6_xwbnd")
 normal_enabled = true
 normal_texture = ExtResource("7_jfk3k")
 uv1_scale = Vector3(8, 4.5, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cujbt"]
+size = Vector3(0.6, 0.001, 0.3)
 
 [node name="ProtoA3" type="Node3D"]
 
@@ -120,3 +127,146 @@ material_override = SubResource("StandardMaterial3D_amieo")
 use_collision = true
 collision_layer = 512
 size = Vector3(2, 0.1, 4)
+
+[node name="FlowerPuzzle" type="Node3D" parent="." node_paths=PackedStringArray("item_container")]
+unique_name_in_owner = true
+script = ExtResource("8_jfk3k")
+item_container = NodePath("../ItemContainer")
+
+[node name="RedFlower9" parent="FlowerPuzzle" node_paths=PackedStringArray("detector") instance=ExtResource("9_ey4e3")]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, 0.4, 0, -0.3)
+script = ExtResource("9_xwbnd")
+detector = NodePath("Area3D")
+hover_label = "Cut"
+
+[node name="Area3D" type="Area3D" parent="FlowerPuzzle/RedFlower9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlowerPuzzle/RedFlower9/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6645353e-15, 0.4995, -0.049999982)
+shape = SubResource("BoxShape3D_cujbt")
+
+[node name="RedFlower10" parent="FlowerPuzzle" node_paths=PackedStringArray("detector") instance=ExtResource("9_ey4e3")]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, -0.8000001, 0, -0.6)
+script = ExtResource("9_xwbnd")
+detector = NodePath("Area3D")
+hover_label = "Cut"
+
+[node name="Area3D" type="Area3D" parent="FlowerPuzzle/RedFlower10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlowerPuzzle/RedFlower10/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6645353e-15, 0.4995, -0.049999982)
+shape = SubResource("BoxShape3D_cujbt")
+
+[node name="RedFlower11" parent="FlowerPuzzle" node_paths=PackedStringArray("detector") instance=ExtResource("9_ey4e3")]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, 0.39999998, 0, 0.79999995)
+script = ExtResource("9_xwbnd")
+detector = NodePath("Area3D")
+hover_label = "Cut"
+
+[node name="Area3D" type="Area3D" parent="FlowerPuzzle/RedFlower11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlowerPuzzle/RedFlower11/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6645353e-15, 0.4995, -0.049999982)
+shape = SubResource("BoxShape3D_cujbt")
+
+[node name="RedFlower12" parent="FlowerPuzzle" node_paths=PackedStringArray("detector") instance=ExtResource("9_ey4e3")]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, -0.40000004, 0, 1.4)
+script = ExtResource("9_xwbnd")
+detector = NodePath("Area3D")
+hover_label = "Cut"
+
+[node name="Area3D" type="Area3D" parent="FlowerPuzzle/RedFlower12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlowerPuzzle/RedFlower12/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6645353e-15, 0.4995, -0.049999982)
+shape = SubResource("BoxShape3D_cujbt")
+
+[node name="RedFlower13" parent="FlowerPuzzle" node_paths=PackedStringArray("detector") instance=ExtResource("9_ey4e3")]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, 0.099999964, 0, 1.4)
+script = ExtResource("9_xwbnd")
+detector = NodePath("Area3D")
+hover_label = "Cut"
+
+[node name="Area3D" type="Area3D" parent="FlowerPuzzle/RedFlower13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlowerPuzzle/RedFlower13/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6645353e-15, 0.4995, -0.049999982)
+shape = SubResource("BoxShape3D_cujbt")
+
+[node name="RedFlower14" parent="FlowerPuzzle" node_paths=PackedStringArray("detector") instance=ExtResource("9_ey4e3")]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, -0.20000005, 0, 0.7)
+script = ExtResource("9_xwbnd")
+detector = NodePath("Area3D")
+hover_label = "Cut"
+
+[node name="Area3D" type="Area3D" parent="FlowerPuzzle/RedFlower14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlowerPuzzle/RedFlower14/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6645353e-15, 0.4995, -0.049999982)
+shape = SubResource("BoxShape3D_cujbt")
+
+[node name="RedFlower15" parent="FlowerPuzzle" node_paths=PackedStringArray("detector") instance=ExtResource("9_ey4e3")]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, -0.40000004, 0, -0.20000005)
+script = ExtResource("9_xwbnd")
+detector = NodePath("Area3D")
+hover_label = "Cut"
+
+[node name="Area3D" type="Area3D" parent="FlowerPuzzle/RedFlower15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlowerPuzzle/RedFlower15/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6645353e-15, 0.4995, -0.049999982)
+shape = SubResource("BoxShape3D_cujbt")
+
+[node name="RedFlower16" parent="FlowerPuzzle" node_paths=PackedStringArray("detector") instance=ExtResource("9_ey4e3")]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, -0.8000001, 0, 0.39999998)
+script = ExtResource("9_xwbnd")
+detector = NodePath("Area3D")
+hover_label = "Cut"
+
+[node name="Area3D" type="Area3D" parent="FlowerPuzzle/RedFlower16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlowerPuzzle/RedFlower16/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6645353e-15, 0.4995, -0.049999982)
+shape = SubResource("BoxShape3D_cujbt")
+
+[node name="RedFlower17" parent="FlowerPuzzle" node_paths=PackedStringArray("detector") instance=ExtResource("9_ey4e3")]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, -5.9604645e-08, 0, -0.70000005)
+script = ExtResource("9_xwbnd")
+detector = NodePath("Area3D")
+hover_label = "Cut"
+
+[node name="Area3D" type="Area3D" parent="FlowerPuzzle/RedFlower17"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlowerPuzzle/RedFlower17/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6645353e-15, 0.4995, -0.049999982)
+shape = SubResource("BoxShape3D_cujbt")
+
+[node name="RedFlower18" parent="FlowerPuzzle" node_paths=PackedStringArray("detector") instance=ExtResource("9_ey4e3")]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, 0.59999996, 0, 0.39999998)
+script = ExtResource("9_xwbnd")
+detector = NodePath("Area3D")
+hover_label = "Cut"
+
+[node name="Area3D" type="Area3D" parent="FlowerPuzzle/RedFlower18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlowerPuzzle/RedFlower18/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6645353e-15, 0.4995, -0.049999982)
+shape = SubResource("BoxShape3D_cujbt")
+
+[node name="RedFlower19" parent="FlowerPuzzle" node_paths=PackedStringArray("detector") instance=ExtResource("9_ey4e3")]
+transform = Transform3D(-0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, 0.7, 0, -0.7)
+script = ExtResource("9_xwbnd")
+detector = NodePath("Area3D")
+hover_label = "Cut"
+
+[node name="Area3D" type="Area3D" parent="FlowerPuzzle/RedFlower19"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlowerPuzzle/RedFlower19/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6645353e-15, 0.4995, -0.049999982)
+shape = SubResource("BoxShape3D_cujbt")
+
+[node name="ItemContainer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.70000005, 0)
+visible = false
+
+[node name="KeyItem" parent="ItemContainer" instance=ExtResource("11_ey4e3")]
