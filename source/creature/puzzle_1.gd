@@ -44,3 +44,4 @@ func _spawn_attack() -> void:
 	attack.velocity = -0.25
 	attack.on_eliminated.connect(_validate_attacks)
 	add_sibling(attack)
+	attack.activate()

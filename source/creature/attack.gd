@@ -21,9 +21,11 @@ func _ready() -> void:
 	if velocity != 0.0:
 		position.y = randf_range(0.5, 1)
 		position.x = randf_range(-0.5, 1.5)
-		get_tree().create_timer(5.0).timeout.connect(_hit_player)
+
+func activate() -> void:
+	get_tree().create_timer(5.0).timeout.connect(_hit_player)
 	
 	
 func _hit_player() -> void:
-	EventBusSingleton.send_event(PlayerHittedEvent.new())
+	EventBusSingleton.send_event(GameOverEvent.new())
 	queue_free.call_deferred()

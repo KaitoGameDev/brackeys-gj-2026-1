@@ -16,3 +16,4 @@ func mark_as_fake() -> void:
 func _on_interact():
 	on_hit.emit(_is_fake)
 	
+	

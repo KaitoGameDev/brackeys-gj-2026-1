@@ -79,8 +79,9 @@ func _show_hitted_message() -> void:
 	
 func _show_fail_message() -> void:
 	_cancelled_hit = true
-	_start_puzzle()
 	_show_message('[shake]JE je JE! part of you is mine![/shake]')
+	await get_tree().create_timer(3.0).timeout
+	EventBusSingleton.send_event(GameOverEvent.new())
 	
 func _disappear_message() -> void:
 	message_container.visible = false

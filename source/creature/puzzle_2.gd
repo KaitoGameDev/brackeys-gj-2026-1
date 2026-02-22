@@ -54,3 +54,4 @@ func _spawn_attack() -> void:
 		(sub_attack as Attack).on_eliminated.connect(_validate_attacks)
 	add_sibling(attack)
 	emitted_attacks.push_back(attack)
+	attack.activate()
