@@ -1,10 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cg1ah23vqw44r"]
 
 [ext_resource type="Script" uid="uid://5gxm6rgctq4j" path="res://source/props/key_item.gd" id="1_3gwuh"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_8ky8m"]
-radius = 0.1
-height = 0.3
+[ext_resource type="Texture2D" uid="uid://c0g6431n4qjdi" path="res://assets/sprites/flower_of_hope.png" id="2_lyrkv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ky8m"]
 radius = 0.10888672
@@ -15,11 +12,13 @@ script = ExtResource("1_3gwuh")
 detector = NodePath("Detector")
 hover_label = "Take"
 
-[node name="Item" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_8ky8m")
-
 [node name="Detector" type="Area3D" parent="."]
 
 [node name="Collision" type="CollisionShape3D" parent="Detector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0017089844, 0)
 shape = SubResource("CapsuleShape3D_8ky8m")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_lyrkv")
