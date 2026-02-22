@@ -72,6 +72,3 @@ vertical_alignment = 1
 [node name="KeyItem" parent="." instance=ExtResource("5_uos46")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62241316, 1.5738215)
 visible = false
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.60351086, -1.4676307)

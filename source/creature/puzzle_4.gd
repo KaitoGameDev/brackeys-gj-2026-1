@@ -10,7 +10,6 @@ var message_timer: SceneTreeTimer
 @onready var messages_label: RichTextLabel = $Background/Messages
 
 func _ready() -> void:
-	_start_puzzle()
 	EventBusSingleton.on_event.connect(_on_event)
 	
 	
