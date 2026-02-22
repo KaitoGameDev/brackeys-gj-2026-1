@@ -4,21 +4,42 @@ class_name AudioController extends Node
 @export var main_bgm: AudioStream
 @export var main_sfx: AudioStream
 
+var sfxs: Dictionary[String, AudioStream] = {
+	"key_item": preload("res://assets/audio/sfxs/key_item.wav"),
+	"solved_puzzle": preload("res://assets/audio/sfxs/solved_puzzle.wav"),
+	"hit_statue_1": preload("res://assets/audio/sfxs/hit_statue_1.wav"),
+	"hit_statue_2": preload("res://assets/audio/sfxs/hit_statue_2.wav"),
+}
+
 @export var puzzle_sfx: AudioStream 
 
-@onready var sfx_player: AudioStreamPlayer = $SFX
+@onready var sfxs_player: Array[AudioStreamPlayer] = [$SFX, $SFX2, $SFX3, $SFX4, $SFX5]
 @onready var bgm_players: Array[AudioStreamPlayer] = [$BGM_1, $BGM_2]
 
 var _current_player_index := 0
+var _current_sfx_player_index := 0
 
 func _ready() -> void:
 	EventBusSingleton.on_event.connect(_on_event)
 	
 func _on_event(event: Object) -> void:
-	if event is PuzzleSolvedEvent: return _on_puzzle_solved()
+	if event is PlaySfxEvent: return _play_sfx_event(event)
 	if event is GameInitiatedEvent: return _game_initiated()
 	if event is GameStartedEvent: return _started_game()
 	if event is PlayerChangedFloorEvent: return _on_player_changed_floor()
+	
+func _play_sfx_event(event: PlaySfxEvent) -> void:
+	_current_sfx_player_index += 1
+	if _current_sfx_player_index == 5:
+		_current_sfx_player_index = 0
+	sfxs_player[_current_sfx_player_index].stream = sfxs[event.sfx_name]
+	sfxs_player[_current_sfx_player_index].play()
+	if event.should_stop_after > 0:
+		var current_player := sfxs_player[_current_sfx_player_index]
+		get_tree().create_timer(event.should_stop_after).timeout.connect(
+			func():
+				current_player.stop()
+		)
 	
 func _game_initiated() -> void:
 	bgm_players[0].stream = main_bgm
@@ -66,9 +87,4 @@ func mount_next() -> void:
 		func():
 			bgm_players[_current_player_index].stop()
 			_current_player_index = _next_player
-	)
-
-
-func _on_puzzle_solved() -> void:
-	sfx_player.stream = puzzle_sfx
-	sfx_player.play()
+	) 

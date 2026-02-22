@@ -11,6 +11,7 @@ func _on_interact():
 	lid_tween.tween_property(chest_lid_object, "rotation:x", deg_to_rad(-80.0), 1.0)
 	
 	if item != null:
+		EventBusSingleton.send_event(PlaySfxEvent.create('solved_puzzle'))
 		var item_ref: Node3D = item.instantiate()
 		item_ref.scale = Vector3(2.0, 2.0, 2.0)
 		item_container.add_child(item_ref)

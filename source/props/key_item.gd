@@ -22,4 +22,5 @@ func _on_interact():
 	move_event.next_puzzle_limit_time = next_puzzle_limit_time
 	move_event.open_door_number = open_door_number
 	EventBusSingleton.send_event(move_event)
+	EventBusSingleton.send_event(PlaySfxEvent.create('key_item'))
 	queue_free.call_deferred()
