@@ -42,8 +42,7 @@ func _on_restart(event: RestartBgmEvent) -> void:
 	_bgm_index = 0
 	if event.main_menu:
 		_game_initiated()
-	else:
-		_started_game()
+	# When main_menu is false (e.g. Try again), only reset index; scene reload will send GameStartedEvent and _started_game() will run.
 	
 func _play_sfx_event(event: PlaySfxEvent) -> void:
 	_current_sfx_player_index += 1
@@ -59,6 +58,7 @@ func _play_sfx_event(event: PlaySfxEvent) -> void:
 		)
 	
 func _game_initiated() -> void:
+	_bgm_index = 0
 	bgm_players[0].stream = main_bgm
 	bgm_players[0].volume_db = -15.0
 	bgm_players[1].stream = main_sfx

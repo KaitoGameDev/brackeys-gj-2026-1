@@ -13,6 +13,7 @@ func _on_event(event: Object) -> void:
 		visible = true
 		
 func _on_try_again_pressed() -> void:
+	EventBusSingleton.send_event(RestartBgmEvent.new())
 	get_tree().reload_current_scene()
 	
 func _on_back_to_menu_pressed() -> void:
